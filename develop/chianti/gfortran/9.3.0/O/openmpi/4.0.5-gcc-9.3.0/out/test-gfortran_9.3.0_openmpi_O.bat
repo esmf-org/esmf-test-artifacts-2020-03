@@ -1,4 +1,4 @@
-Wed Sep 29 18:01:57 EDT 2021
+Thu Sep 30 01:49:36 EDT 2021
 #!/bin/bash -l
 export JOBID=12346
 
@@ -29,12 +29,3 @@ cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
 ssh chianti /home/mpotts//home/mpotts/gfortran_9.3.0_openmpi_O_develop/getres-int.sh
-
-cd ../src/addon/ESMPy
-
-export PATH=$PATH:$HOME/.local/bin
-python3 setup.py build 2>&1 | tee python_build.log
-ssh chianti /home/mpotts/gfortran_9.3.0_openmpi_O_develop/runpython.sh 2>&1 | tee python_build.log
-python3 setup.py test 2>&1 | tee python_test.log
-python3 setup.py test_examples 2>&1 | tee python_examples.log
-python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
