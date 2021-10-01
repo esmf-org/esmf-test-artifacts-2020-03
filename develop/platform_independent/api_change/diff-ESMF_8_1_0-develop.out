@@ -1,0 +1,345 @@
+1,3c1,5
+< <SPAN <PRE>       subroutine ESMF_Initialize(defaultConfigFileName, defaultCalKind, &amp;
+< <SPAN          defaultLogFileName, logappendflag, logkindflag, mpiCommunicator,  &amp;
+< <SPAN          ioUnitLBound, ioUnitUBound, vm, rc)
+---
+> <SPAN <PRE>       subroutine ESMF_Initialize(configFilename, &amp;
+> <SPAN          defaultCalKind, defaultDefaultLogFilename, defaultLogFilename, &amp;
+> <SPAN          defaultLogAppendFlag, logAppendFlag, defaultLogKindFlag, logKindFlag, &amp;
+> <SPAN          mpiCommunicator,  ioUnitLBound, ioUnitUBound, &amp;
+> <SPAN          defaultGlobalResourceControl, globalResourceControl, config, vm, rc)
+6c8
+< <SPAN        character(len=*),        intent(in),  optional :: defaultConfigFileName
+---
+> <SPAN        character(len=*),        intent(in),  optional :: configFilename
+8,10c10,15
+< <SPAN        character(len=*),        intent(in),  optional :: defaultLogFileName
+< <SPAN        logical,                 intent(in),  optional :: logappendflag
+< <SPAN        type(ESMF_LogKind_Flag), intent(in),  optional :: logkindflag
+---
+> <SPAN        character(len=*),        intent(in),  optional :: defaultDefaultLogFilename
+> <SPAN        character(len=*),        intent(in),  optional :: defaultLogFilename
+> <SPAN        logical,                 intent(in),  optional :: defaultLogAppendFlag
+> <SPAN        logical,                 intent(in),  optional :: logAppendFlag
+> <SPAN        type(ESMF_LogKind_Flag), intent(in),  optional :: defaultLogKindFlag
+> <SPAN        type(ESMF_LogKind_Flag), intent(in),  optional :: logKindFlag
+13a19,21
+> <SPAN        logical,                 intent(in),  optional :: defaultGlobalResourceControl
+> <SPAN        logical,                 intent(in),  optional :: globalResourceControl
+> <SPAN        type(ESMF_Config),       intent(out), optional :: config
+27c35
+< <SPAN <DD>Added argument <TT>logappendflag</TT> to allow specifying that the existing
+---
+> <SPAN <DD>Added argument <TT>logAppendFlag</TT> to allow specifying that the existing
+29c37,58
+< <SPAN <BR>
+---
+> <SPAN    
+> <SPAN </DD>
+> <SPAN <DT><STRONG>8.2.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>globalResourceControl</TT> to support ESMF-aware
+> <SPAN                 threading and resource control on the global VM level.
+> <SPAN <BR>
+> <SPAN Added argument <TT>config</TT> to return default handle to the
+> <SPAN                 defaultConfig.
+> <SPAN <BR>
+> <SPAN Renamed argument <TT>defaultConfigFilename</TT> to
+> <SPAN                 <TT>configFilename</TT>, in order to clarify that provided settings
+> <SPAN                 in the Config file are <EM>not</EM> defaults, but final
+> <SPAN                 overrides.
+> <SPAN <BR>
+> <SPAN Introduce <TT>default</TT> prefixed arguments:
+> <SPAN                 <TT>defaultDefaultLogFilename</TT>,
+> <SPAN                 <TT>defaultLogAppendFlag</TT>, <TT>defaultLogKindFlag</TT>,
+> <SPAN                 <TT>defaultGlobalResourceControl</TT>. These arguments allow
+> <SPAN                 specification of defaults for the associated settings. This
+> <SPAN                 default can be overridden via the associated argument, without
+> <SPAN                 the extra <TT>default</TT> prefix, either specified in the call, or
+> <SPAN                 within the specified Config file.
+741c770,771
+< <SPAN      minStackSize, openMpHandling, openMpNumThreads, rc)
+---
+> <SPAN      pthreadMinStackSize, openMpHandling, openMpNumThreads, &amp;
+> <SPAN      forceChildPthreads, rc)
+749c779
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+751a782
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+757c788
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+765c796,797
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+771c803
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+779c811,812
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+1456c1489
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+1464c1497,1498
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+1470c1504
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+1478c1512,1513
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+1484c1519
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+1492c1527,1528
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+1947c1983
+< <SPAN <LI>DEPRECATED METHOD as of ESMF 5.3.1. Please use <TT>ESMF_StateRemove <A HREF="#esmfstateremovelist">21.7.16</A></TT> instead.
+---
+> <SPAN <LI><B>DEPRECATED METHOD</B> as of ESMF 5.3.1. Please use <TT>ESMF_StateRemove</TT>, section <TT><A HREF="#esmfstateremovelist">21.7.16</A></TT> instead.
+2245a2282,2289
+> <SPAN    subroutine ESMF_MethodCplCompGetList(cplcomp, labelList, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_CplComp)                                   :: cplcomp
+> <SPAN      character(len=:), allocatable, intent(out)           :: labelList(:)
+> <SPAN      integer,                       intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodGet()
+2255a2300,2307
+> <SPAN    subroutine ESMF_MethodGridCompGetList(gcomp, labelList, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_GridComp)                                  :: gcomp
+> <SPAN      character(len=:), allocatable, intent(out)           :: labelList(:)
+> <SPAN      integer,                       intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodGet()
+2264a2317,2324
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodGet()
+> <SPAN    subroutine ESMF_MethodStateGetList(state, labelList, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_State)                                     :: state
+> <SPAN      character(len=:), allocatable, intent(out)           :: labelList(:)
+> <SPAN      integer,                       intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+4398c4458
+< <SPAN <DT><STRONG>8.0.0</STRONG></DT>
+---
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+4416,4419c4476,4477
+< <SPAN    
+< <SPAN </DD>
+< <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+< <SPAN <DD>Added argument <TT>ssiLocalDeCount</TT> and <TT>localarrayList</TT> to
+---
+> <SPAN <BR>
+> <SPAN Added argument <TT>ssiLocalDeCount</TT> and <TT>localarrayList</TT> to
+9954a10013,10018
+> <SPAN <PRE>    subroutine ESMF_MeshGetMOAB(moabOn, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     logical, intent(out)                      :: moabOn
+> <SPAN      integer, intent(out), optional            :: rc
+> <SPAN </PRE>
+> 
+9981,9986d10044
+< <SPAN <PRE>    subroutine ESMF_MeshGetMOAB(moabOn, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>     logical, intent(out)                      :: moabOn
+< <SPAN      integer, intent(out), optional            :: rc
+< <SPAN </PRE>
+< 
+10117a10176
+> <SPAN      coordSys, &amp;
+10130a10190
+> <SPAN  type(ESMF_CoordSys_Flag), intent(out), optional :: coordSys
+14396a14457,14464
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Made argument <TT>vm</TT> optional to simplify usage when calling
+> <SPAN      on the current VM.
+14397a14466,14467
+> <SPAN </DD>
+> <SPAN </DL>
+14458c14528
+< <SPAN <PRE>   subroutine ESMF_VMEpochEnter(vm, epoch, rc)
+---
+> <SPAN <PRE>   subroutine ESMF_VMEpochEnter(vm, epoch, throttle, rc)
+14462a14533
+> <SPAN      integer,                  intent(in),  optional :: throttle
+14524c14595
+< <SPAN      ssiSharedMemoryEnabledFlag, rc)
+---
+> <SPAN      ssiSharedMemoryEnabledFlag, esmfComm, rc)
+14540a14612
+> <SPAN      character(:), allocatable, intent(out), optional :: esmfComm
+14570a14643,14647
+> <SPAN <DT><STRONG>8.2.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>esmfComm</TT> to provide easy access to the
+> <SPAN      <TT>ESMF_COMM</TT> setting used by the ESMF installation.
+> <SPAN    
+> <SPAN </DD>
+15085a15163,15168
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15099a15183,15188
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15109a15199,15204
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15123a15219,15224
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15139a15241,15246
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15163a15271,15276
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15188a15302,15307
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15200a15320,15325
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15223a15349,15354
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15238a15370,15375
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15264a15402,15407
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15291a15435,15440
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15315a15465,15470
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15326a15482,15487
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15347a15509,15514
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15360a15528,15533
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15373a15547,15552
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15396a15576,15581
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15419a15605,15610
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
+> <SPAN <P>
+15436a15628,15633
+> <SPAN <P>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    <B>DEPRECATED CLASS!</B>
+> <SPAN <BR>
+> <SPAN The entire ESMF_Attribute class has been deprecated and is scheduled for removal with ESMF 9.0.0. This includes all of the class derived types, named constants, and methods. Please use the replacment class <TT>ESMF_Info</TT>, section <TT><A HREF="node6.html#esmf_info_class">39</A></TT> instead!
+> <SPAN <BR>
