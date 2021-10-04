@@ -1,10 +1,15 @@
-build time -- 2021-10-03 20:14:53
+build time -- 2021-10-04 20:10:41
 Beginning Test, file ESMC_FieldUTest.C, line 76
 NUMBER_OF_PROCESSORS 1
 PASS MeshCreate, ESMC_FieldUTest.C, line 88
 PASS MeshVTKHeader, ESMC_FieldUTest.C, line 97
 PASS MeshVTKBody, ESMC_FieldUTest.C, line 116
 PASS MeshAddNodes, ESMC_FieldUTest.C, line 136
+PASS MeshAddElements, ESMC_FieldUTest.C, line 146
+PASS ArraySpecSet, ESMC_FieldUTest.C, line 154
+PASS Set up gridToFieldMap, ESMC_FieldUTest.C, line 164
+PASS Set up ungriddedLBound, ESMC_FieldUTest.C, line 175
+PASS Set up ungriddedUBound, ESMC_FieldUTest.C, line 186
  Field Print Starts ====>
  Field base status = Ready
    Name = 'field1'
@@ -25,17 +30,17 @@ DistGrid dimCount = 1
 deCount = 1
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x1ff3880:
-            rank = 1, typekind = 3, base_addr = 0x2031d60
+LocalArrayPrint: Array at address 0x7ef880:
+            rank = 1, typekind = 3, base_addr = 0x82dd60
             dim[0] = 372  
   Integer, *4, Dim 1, Data values:
-( 1) =  -1758744296
-( 2) =  5389
-( 3) =  -1758744296
-( 4) =  5389
-( 5) =  33758544
+( 1) =  406458648
+( 2) =  5259
+( 3) =  406458648
+( 4) =  5259
+( 5) =  8576336
 ( 6) =  0
-( 7) =  33758544
+( 7) =  8576336
 ( 8) =  0
 ( 9) =  65
 (10) =  66
@@ -76,12 +81,7 @@ dim 1: [0]: [1 [1 [1, 372] 372] 372]
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{}Array typekind/rank: RPASS MeshAddElements, ESMC_FieldUTest.C, line 146
-PASS ArraySpecSet, ESMC_FieldUTest.C, line 154
-PASS Set up gridToFieldMap, ESMC_FieldUTest.C, line 164
-PASS Set up ungriddedLBound, ESMC_FieldUTest.C, line 175
-PASS Set up ungriddedUBound, ESMC_FieldUTest.C, line 186
-PASS Create ESMC_Field object, ESMC_FieldUTest.C, line 195
+{}Array typekind/rank: Real*8 / PASS Create ESMC_Field object, ESMC_FieldUTest.C, line 195
 PASS Create ESMC_Field object, ESMC_FieldUTest.C, line 205
 PASS Get an ESMC_Mesh object from ESMC_Field object, ESMC_FieldUTest.C, line 213
 PASS Get an ESMC_Array object from ESMC_Field object, ESMC_FieldUTest.C, line 221
@@ -94,14 +94,15 @@ PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldUTest.C, l
 PASS Print an ESMC_Field object, ESMC_FieldUTest.C, line 277
 PASS Destroy ESMC_Field object, ESMC_FieldUTest.C, line 285
 PASS Destroy ESMC_Mesh object, ESMC_FieldUTest.C, line 293
-eal*8 / 1 
+PASS Create ESMC_Field object from grid and arrayspec, ESMC_FieldUTest.C, line 307
+1 
 ~ lower class' values ~
 DistGrid dimCount = 1
 deCount = 1
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x20345e0:
-            rank = 1, typekind = 6, base_addr = 0x2038550
+LocalArrayPrint: Array at address 0x8305e0:
+            rank = 1, typekind = 6, base_addr = 0x834550
             dim[0] = 608  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -137,7 +138,6 @@ dim 1: [0]: [1 [1 [1, 608] 608] 608]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
-PASS Create ESMC_Field object from grid and arrayspec, ESMC_FieldUTest.C, line 307
 PASS Create ESMC_Field object from grid and arrayspec with null optional arguments, ESMC_FieldUTest.C, line 315
 PASS LocStreamCreateLocal, ESMC_FieldUTest.C, line 326
 PASS LocStreamAddKeyAlloc, ESMC_FieldUTest.C, line 335
@@ -149,4 +149,4 @@ PASS LocStreamGetKeyPtr, ESMC_FieldUTest.C, line 406
 PASS Create ESMC_Field object on LocStream using TypeKind, ESMC_FieldUTest.C, line 430
 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldUTest.C, line 438
 Ending Test, file ESMC_FieldUTest.C, line 499
- PET 0 Test Elapsed Time  16.270000 msec.
+ PET 0 Test Elapsed Time  16.584000 msec.
