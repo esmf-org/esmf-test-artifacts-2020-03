@@ -4,6 +4,7 @@ build time -- 2021-10-03 02:13:48.738841
   Beginning Test, file ESMF_LocalArrayUTest.F90, line 58
   Beginning Test, file ESMF_LocalArrayUTest.F90, line 58
   NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_LocalArrayUTest.F90, line 58
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
@@ -73,6 +74,9 @@ build time -- 2021-10-03 02:13:48.738841
  F90, line 132
   PASS  Testing LocalArray IsCreated for destroyed object, ESMF_LocalArrayUTest.
  F90, line 140
+  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 124
+  PASS  Testing LocalArray IsCreated for destroyed object, ESMF_LocalArrayUTest.
+ F90, line 132
   PASS  Testing LocalArray IsCreated for destroyed object, ESMF_LocalArrayUTest.
  F90, line 140
   PASS  Testing LocalArray IsCreated for destroyed object, ESMF_LocalArrayUTest.
@@ -111,8 +115,12 @@ build time -- 2021-10-03 02:13:48.738841
  ne 168
   PASS  LocalArray assignment and equality Test, ESMF_LocalArrayUTest.F90, line 
  177
+  PASS  LocalArray equality before assignment Test, ESMF_LocalArrayUTest.F90, li
+ ne 168
   PASS  LocalArray assignment and equality Test, ESMF_LocalArrayUTest.F90, line 
  177
+  PASS  LocalArray equality before assignment Test, ESMF_LocalArrayUTest.F90, li
+ ne 168
   PASS  LocalArray assignment and equality Test, ESMF_LocalArrayUTest.F90, line 
  177
   PASS  LocalArrayDestroy Test, ESMF_LocalArrayUTest.F90, line 184
@@ -271,7 +279,6 @@ dim[0] = 10
 ( 2) =  538976288
 ( 3) =  1634890292
 ( 4) =  1700025721
-(-3) =  1348421199
 (-2) =  1162039122
 (-1) =  1380930387
 ( 0) =  538976339
@@ -413,9 +420,6 @@ LocalArrayPrint: Array at address 0x10b1f90:
 (518) =  5698
 (519) =  5709
 (520) =  5720
-(511) =  5621
-(512) =  5632
-(513) =  5643
 (514) =  5654
 (515) =  5665
 (516) =  5676
@@ -425,7 +429,6 @@ LocalArrayPrint: Array at address 0x10b1f90:
 (520) =  5720
   PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F
  90, line 383
-(515) =  5665
 (516) =  5676
 (517) =  5687
 (518) =  5698
@@ -457,11 +460,11 @@ LocalArrayPrint: Array at address 0x10b1f90:
  real lb, ub =            5         520   lib return lb, ub =            5
  array 1b get returned
  real lb, ub =            5         520   lib return lb, ub =            5
-         520
  real lb, ub =            5         520   lib return lb, ub =            5
          520
   PASS  Getting lower and upper index bounds, ESMF_LocalArrayUTest.F90, line 403
  real lb, ub =            5         520   lib return lb, ub =            5
+         520
          520
   PASS  Getting lower and upper index bounds, ESMF_LocalArrayUTest.F90, line 403
          520
@@ -611,16 +614,17 @@ dim[0] = 835
 (832) =  832
 (833) =  833
 (834) =  834
-(835) =  835
- array 1c print returned
+(830) =  830
+(831) =  831
 (832) =  832
 (833) =  833
 (834) =  834
 (835) =  835
  array 1c print returned
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
- array 1c print returned
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
+(835) =  835
+ array 1c print returned
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line
@@ -716,6 +720,10 @@ dim[0] = 1022
 ( 6) =  6
 ( 7) =  7
 ( 8) =  8
+( 5) =  5
+( 6) =  6
+( 7) =  7
+( 8) =  8
 ( 9) =  9
 (10) =  10
   skipping to end ...
@@ -756,6 +764,13 @@ dim[0] = 1022
 (1021) =  1021
 (1022) =  1022
  array 1d print returned
+( 9) =  9
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+(1015) =  1015
+(1016) =  1016
 (1017) =  1017
 (1018) =  1018
 (1019) =  1019
@@ -803,6 +818,12 @@ ESMF_LocalArrayUT  00000000004198A9  MAIN__                    554  ESMF_LocalAr
 ESMF_LocalArrayUT  000000000040DF02  Unknown               Unknown  Unknown
 libc-2.27.so       00007FA31AB6FB97  __libc_start_main     Unknown  Unknown
 ESMF_LocalArrayUT  000000000040DDEA  Unknown               Unknown  Unknown
+ partial print of realptr data =    303.100006103516     
+   304.100006103516        305.100006103516        306.100006103516     
+   353.100006103516        354.100006103516        355.100006103516     
+   356.100006103516        403.100006103516        404.100006103516     
+   405.100006103516        406.100006103516     
+ Creating array2
 forrtl: warning (406): fort: (1): In call to I/O Write routine, an array temporary was created for argument #2
 
 Image              PC                Routine            Line        Source             
@@ -953,7 +974,6 @@ LocalArrayPrint: Array at address 0x1c7ae50:
 (51,37) =  1851.1
 (52,37) =  1852.1
 (53,37) =  1853.1
- array 2a print returned
 (50,37) =  1850.1
 (51,37) =  1851.1
 (52,37) =  1852.1
@@ -1067,6 +1087,9 @@ ESMF_LocalArrayUT  000000000040DDEA  Unknown               Unknown  Unknown
    360.000000000000        362.000000000000        364.000000000000     
    406.000000000000        408.000000000000        410.000000000000     
    412.000000000000        414.000000000000     
+ array 2a destroy returned
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer 
+ Test, ESMF_LocalArrayUTest.F90, line 622
 forrtl: warning (406): fort: (1): In call to I/O Write routine, an array temporary was created for argument #2
 
 Image              PC                Routine            Line        Source             
@@ -1087,6 +1110,8 @@ ESMF_LocalArrayUT  000000000040DDEA  Unknown               Unknown  Unknown
  array 2a destroy returned
   PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer 
  Test, ESMF_LocalArrayUTest.F90, line 622
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 59
+ 7
  array 2a destroy returned
   PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer 
  Test, ESMF_LocalArrayUTest.F90, line 622
@@ -1176,6 +1201,8 @@ LocalArrayPrint: Array at address 0x1c7ae50:
             rank = 2, typekind = 6, base_addr = 0x7f0a9afa2400
             dim[0] = 15  dim[1] = 13  
   Real, *8, Dim 2, Data values:
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 64
+ 5
 ( 1, 1) =  1.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
@@ -1333,6 +1360,8 @@ LocalArrayPrint: Array at address 0x10b1f90:
 (10, 1) =  10.1
   skipping to end ...
 (4006,13) =  52186.1
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer 
+ Test, ESMF_LocalArrayUTest.F90, line 674
 (4007,13) =  52187.1
 (4008,13) =  52188.1
 (4009,13) =  52189.1
@@ -1349,12 +1378,19 @@ LocalArrayPrint: Array at address 0x10b1f90:
 (4011,13) =  52191.1
 (4012,13) =  52192.1
 (4013,13) =  52193.1
+(4015,13) =  52195.1
+ array 2c print returned
 (4014,13) =  52194.1
 (4015,13) =  52195.1
  array 2c print returned
 (4013,13) =  52193.1
 (4014,13) =  52194.1
 (4015,13) =  52195.1
+            dim[0] = 4015  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  1.1
+( 2, 1) =  2.1
+( 3, 1) =  3.1
  array 2c print returned
  array 2c create returned
 LocalArrayPrint: Array at address 0x1d34e50:
@@ -1383,6 +1419,10 @@ LocalArrayPrint: Array at address 0x1d34e50:
 (4014,13) =  52194.1
 (4015,13) =  52195.1
  array 2c print returned
+ realptr data changed after datacopyflag set, now =    2.00000000000000     
+   4.00000000000000        6.00000000000000        4017.00000000000     
+   4019.00000000000        4021.00000000000        8032.00000000000     
+   8034.00000000000        8036.00000000000     
 forrtl: warning (406): fort: (1): In call to I/O Write routine, an array temporary was created for argument #2
 
 Image              PC                Routine            Line        Source             
@@ -1404,6 +1444,7 @@ ESMF_LocalArrayUT  000000000041FACF  MAIN__                    685  ESMF_LocalAr
 ESMF_LocalArrayUT  000000000040DF02  Unknown               Unknown  Unknown
 libc-2.27.so       00007FA31AB6FB97  __libc_start_main     Unknown  Unknown
 ESMF_LocalArrayUT  000000000040DDEA  Unknown               Unknown  Unknown
+ array 2c get returned
 forrtl: warning (406): fort: (1): In call to I/O Write routine, an array temporary was created for argument #2
 
 Image              PC                Routine            Line        Source             
@@ -1547,6 +1588,8 @@ ESMF_LocalArrayUT  000000000040DDEA  Unknown               Unknown  Unknown
  4
   PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 71
  4
+ array 2c destroy returned
+ array 2c destroy returned
   PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 71
  4
  array 2c destroy returned
@@ -1570,6 +1613,7 @@ ESMF_LocalArrayUT  000000000040DDEA  Unknown               Unknown  Unknown
  UTest.F90, line 742
   PASS  Getting Local Array 3D Real Data with wrong dimension array Test, ESMF_L
  ocalArrayUTest.F90, line 751
+ array 4a create returned
   PASS  Getting Local Array 3D Real Data with wrong dimension array Test, ESMF_L
  ocalArrayUTest.F90, line 751
  array 4a create returned
@@ -1710,6 +1754,11 @@ base_addr = 0x7f990122e400
 (31, 8,160) =  0
 (32, 8,160) =  0
 (33, 8,160) =  0
+dim[0] = 33  dim[1] = 8  dim[2] = 160  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  0
+( 2, 1, 1) =  0
+( 3, 1, 1) =  0
  array 4b print returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated 
  array Test, ESMF_LocalArrayUTest.F90, line 862
@@ -2008,6 +2057,7 @@ LocalArrayPrint: Array at address 0x1d34e50:
   PASS  Get Spec rank and verify Test, ESMF_LocalArrayUTest.F90, line 951
   PASS  Creating an Array Spec Test, ESMF_LocalArrayUTest.F90, line 944
   PASS  Get Spec kind and verify Test, ESMF_LocalArrayUTest.F90, line 958
+  PASS  Get Spec rank and verify Test, ESMF_LocalArrayUTest.F90, line 951
   PASS  Get Spec kind and verify Test, ESMF_LocalArrayUTest.F90, line 958
   PASS  Initializing an Array Spec of rank 10 Test, ESMF_LocalArrayUTest.F90, li
  ne 969
@@ -2066,10 +2116,9 @@ LocalArrayPrint: Array at address 0x1d34e50:
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
   PASS  Initializing an Array with data type integer Test, ESMF_LocalArrayUTest.
  F90, line 1034
-  PASS  Initializing an Array with data type integer Test, ESMF_LocalArrayUTest.
- F90, line 1034
  array 1f create returned
  array 1f destroy returned
+ array 1f create returned
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
