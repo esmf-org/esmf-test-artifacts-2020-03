@@ -1,4 +1,4 @@
-Wed Oct 6 03:53:49 EDT 2021
+Wed Oct 6 03:53:47 EDT 2021
 #!/bin/sh -l
 #SBATCH --account=s2326
 #SBATCH -o build-pgi_2020_mpiuni_g.bat_%j.o
@@ -16,7 +16,7 @@ module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_g_develop
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_g_release_8.2.0
 export ESMF_COMPILER=pgi
 export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
