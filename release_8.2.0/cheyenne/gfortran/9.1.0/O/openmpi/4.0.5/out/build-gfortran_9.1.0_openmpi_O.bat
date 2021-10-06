@@ -8,7 +8,7 @@ Wed Oct 6 03:49:15 MDT 2021
 #PBS -l select=1:ncpus=36:mpiprocs=36
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /glade/scratch/mpotts/gfortran_9.1.0_openmpi_O_develop
+cd /glade/scratch/mpotts/gfortran_9.1.0_openmpi_O_release_8.2.0
 module load gnu/9.1.0 openmpi/4.0.5 netcdf/4.7.3
 module list >& module-build.log
 
@@ -16,7 +16,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_F90COMPILER=mpif90
-export ESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O_develop
+export ESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_O_release_8.2.0
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
 export ESMF_BOPT='O'
