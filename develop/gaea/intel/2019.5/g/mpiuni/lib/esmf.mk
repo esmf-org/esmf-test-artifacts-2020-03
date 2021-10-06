@@ -1,4 +1,4 @@
-build time -- 2021-10-05 00:45:59
+build time -- 2021-10-06 00:52:38
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -13,10 +13,10 @@ build time -- 2021-10-05 00:45:59
 #
 
 #----------------------------------------------
-ESMF_VERSION_STRING=8.2.0 beta snapshot
+ESMF_VERSION_STRING=8.3.0 beta snapshot
 
 ESMF_VERSION_MAJOR=8
-ESMF_VERSION_MINOR=2
+ESMF_VERSION_MINOR=3
 ESMF_VERSION_REVISION=0
 ESMF_VERSION_PATCHLEVEL=0
 ESMF_VERSION_PUBLIC='F'
