@@ -1,4 +1,4 @@
-Thu Oct 7 06:29:36 UTC 2021
+Thu Oct 7 06:28:32 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=star
 #SBATCH -o build-intel_2019.0.5_intelmpi_O.bat_%j.o
@@ -20,7 +20,7 @@ module list >& module-build.log
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/scratch/users/mpotts/intel_2019.0.5_intelmpi_O_develop
+export ESMF_DIR=/scratch/users/mpotts/intel_2019.0.5_intelmpi_O_release_8.2.0
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'
