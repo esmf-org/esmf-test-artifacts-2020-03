@@ -1,6 +1,4 @@
-build time -- 2021-10-07 20:14:51
- --------------------------------------- 
- Start of  System Test ESMF_XGridConcurrentSTest
+build time -- 2021-10-08 20:15:34
  --------------------------------------- 
  --------------------------------------- 
  Start of  System Test ESMF_XGridConcurrentSTest
@@ -17,6 +15,8 @@ build time -- 2021-10-07 20:14:51
  --------------------------------------- 
  Start of  System Test ESMF_XGridConcurrentSTest
  --------------------------------------- 
+ --------------------------------------- 
+ Start of  System Test ESMF_XGridConcurrentSTest
  --------------------------------------- 
  Start of  System Test ESMF_XGridConcurrentSTest
  --------------------------------------- 
@@ -63,6 +63,8 @@ build time -- 2021-10-07 20:14:51
  Atmosphere Register starting
  Registered Initialize, Run, and Finalize routines
  Atmosphere Register returning
+ atmos SetServices finished, rc=            0
+ land SetVM finished, rc=            0
  Created component user one-way coupler, rc =           0
  Comp Creates finished
  atmos SetVM finished, rc=            0           0
@@ -78,13 +80,6 @@ build time -- 2021-10-07 20:14:51
  Land Register starting
  Registered Initialize, Run, and Finalize routines
  Land Register returning
- land SetServices finished, rc=            0
- Cpl SetVM finished, rc=            0
- Atmosphere Register starting
- Registered Initialize, Run, and Finalize routines
- Atmosphere Register returning
- atmos SetServices finished, rc=            0
- land SetVM finished, rc=            0
  land SetServices finished, rc=            0
  Cpl SetVM finished, rc=            0
  Atmosphere Register starting
@@ -102,6 +97,9 @@ build time -- 2021-10-07 20:14:51
  land SetServices finished, rc=            0
  Cpl SetVM finished, rc=            0
  User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Cpl SetServices finished, rc=            0
  Atmosphere Register starting
  Registered Initialize, Run, and Finalize routines
  Atmosphere Register returning
@@ -125,8 +123,20 @@ build time -- 2021-10-07 20:14:51
  User Coupler Register returning
  Cpl SetServices finished, rc=            0
  Land Initialize finished, rc =           0
+ Atmosphere Init starting, localPet =           3
+ Atmosphere Register starting
+ Registered Initialize, Run, and Finalize routines
+ Atmosphere Register returning
  atmos SetServices finished, rc=            0
  land SetVM finished, rc=            0
+ land SetServices finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Cpl SetServices finished, rc=            0
+ Land Initialize finished, rc =           0
+ Atmosphere Init starting, localPet =           4
  land SetServices finished, rc=            0
  Cpl SetVM finished, rc=            0
  User Coupler Register starting
@@ -151,20 +161,10 @@ build time -- 2021-10-07 20:14:51
  Cpl SetServices finished, rc=            0
  Land Initialize finished, rc =           0
  Atmosphere Init starting, localPet =           0
- User Coupler Register starting
- Registered Initialize, Run, and Finalize routines
- User Coupler Register returning
- Cpl SetServices finished, rc=            0
  Land Initialize finished, rc =           0
  Atmosphere Init starting, localPet =           1
- Registered Initialize, Run, and Finalize routines
- User Coupler Register returning
- Cpl SetServices finished, rc=            0
  Land Initialize finished, rc =           0
  Atmosphere Init starting, localPet =           2
- Land Initialize finished, rc =           0
- Atmosphere Init starting, localPet =           3
- Atmosphere Init starting, localPet =           4
  land Init returning
  Land Initialize finished, rc =           0
  Atmosphere Initialize finished, rc =           0
@@ -195,12 +195,6 @@ build time -- 2021-10-07 20:14:51
   State name: land_export
      status: Export State, object count: 1
      reconcile needed: F
- Base name    = land_export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: F_lnd
-            type: Field
  ESMF_StatePrint: (pet 1):
   State name: land_export
      status: Export State, object count: 1
@@ -271,6 +265,12 @@ build time -- 2021-10-07 20:14:51
  Root Info (Attributes):
 {}     object: 1,name: F_lnd
             type: Field
+ Base name    = land_export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: F_lnd
+            type: Field
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  User Coupler Init returning
@@ -310,37 +310,9 @@ build time -- 2021-10-07 20:14:51
  Coupler Finalize finished, rc =           0
  Land Finalize finished, rc =           0
  Atmosphere Final starting
- Land Run starting
  Atmosphere Final returning
  Atmosphere Finalize finished, rc =           0
- Land Run returning
- Land Run returned, rc =           0
- User Coupler Run starting
- User Coupler Run returning
- Coupler Run returned, rc =           0
- Land Run returning
- Land Run returned, rc =           0
- User Coupler Run starting
- User Coupler Run returning
- Coupler Run returned, rc =           0
- Atmosphere Run returned, rc =           0
- User Coupler Final starting
- User Coupler Run returning
- Coupler Run returned, rc =           0
- Atmosphere Run starting
- Atmosphere Run returning
- Atmosphere Run returned, rc =           0
- User Coupler Final starting
- User Coupler Run returning
- Coupler Run returned, rc =           0
- Atmosphere Run starting
- Atmosphere Run returning
- Atmosphere Run returned, rc =           0
- User Coupler Final starting
- User Coupler Final returning
- Coupler Finalize finished, rc =           0
- Land Finalize finished, rc =           0
- Atmosphere Final starting
+ Land Run starting
  All Destroy routines done
   System Test ESMF_XGridConcurrentSTest                                         
                                                                                 
@@ -351,12 +323,17 @@ build time -- 2021-10-07 20:14:51
  Test finished, localPet =            7
  ------------------------------------------------------------
  ------------------------------------------------------------
-  PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
- ne 349
  
   System Test ESMF_XGridConcurrentSTest
   SUCCESS:  System Test ESMF_XGridConcurrentSTest finished correctly.
  
+  PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
+ ne 349
+ Land Run returning
+ Land Run returned, rc =           0
+ User Coupler Run starting
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
  Atmosphere Run returned, rc =           0
  User Coupler Final starting
  User Coupler Final returning
@@ -365,6 +342,13 @@ build time -- 2021-10-07 20:14:51
  Land Final returning
  Land Finalize finished, rc =           0
  Atmosphere Finalize finished, rc =           0
+ Land Run returning
+ Land Run returned, rc =           0
+ User Coupler Run starting
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Atmosphere Run returned, rc =           0
+ User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0
  Land Final starting
@@ -376,6 +360,13 @@ build time -- 2021-10-07 20:14:51
                                                                                 
                                                                                 
                      complete.
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            1
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
+ ne 349
  User Coupler Run returning
  Coupler Run returned, rc =           0
  Atmosphere Run starting
@@ -398,6 +389,8 @@ build time -- 2021-10-07 20:14:51
  Test finished, localPet =            2
  ------------------------------------------------------------
  ------------------------------------------------------------
+  PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
+ ne 349
  User Coupler Run returning
  Coupler Run returned, rc =           0
  Atmosphere Run starting
@@ -446,6 +439,12 @@ build time -- 2021-10-07 20:14:51
  ------------------------------------------------------------
   PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
  ne 349
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Atmosphere Run starting
+ Atmosphere Run returning
+ Atmosphere Run returned, rc =           0
+ User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0
  Land Finalize finished, rc =           0
@@ -464,6 +463,16 @@ build time -- 2021-10-07 20:14:51
  ------------------------------------------------------------
   PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
  ne 349
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Atmosphere Run starting
+ Atmosphere Run returning
+ Atmosphere Run returned, rc =           0
+ User Coupler Final starting
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0
+ Land Finalize finished, rc =           0
+ Atmosphere Final starting
  Atmosphere Final returning
  Atmosphere Finalize finished, rc =           0
  All Destroy routines done
@@ -494,19 +503,10 @@ build time -- 2021-10-07 20:14:51
   System Test ESMF_XGridConcurrentSTest
   SUCCESS:  System Test ESMF_XGridConcurrentSTest finished correctly.
  
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, localPet =            1
- ------------------------------------------------------------
- ------------------------------------------------------------
-  PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
- ne 349
  
   System Test ESMF_XGridConcurrentSTest
   SUCCESS:  System Test ESMF_XGridConcurrentSTest finished correctly.
  
-  PASS  System Test ESMF_XGridConcurrentSTest, ESMF_XGridConcurrentSTest.F90, li
- ne 349
  
   System Test ESMF_XGridConcurrentSTest
   SUCCESS:  System Test ESMF_XGridConcurrentSTest finished correctly.
