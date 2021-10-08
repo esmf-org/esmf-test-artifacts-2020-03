@@ -1,4 +1,4 @@
-Thu Oct 7 07:15:17 UTC 2021
+Fri Oct 8 06:19:23 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-intel_18.0.4_intelmpi_O.bat_%j.o
