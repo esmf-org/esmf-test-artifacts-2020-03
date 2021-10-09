@@ -1,4 +1,4 @@
-Fri Oct 8 07:58:43 UTC 2021
+Sat Oct 9 06:26:27 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-gfortran_9.2.0_mpiuni_O.bat_%j.o
@@ -10,6 +10,7 @@ Fri Oct 8 07:58:43 UTC 2021
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+export ESMF_MPIRUN=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_mpiuni_O_release_8.2.0/src/Infrastructure/stubs/mpiuni/mpirun
 module load gnu/9.2.0  netcdf/4.7.2
 module load hdf5/1.10.5 
 module list >& module-build.log
