@@ -1,4 +1,4 @@
-Fri Oct 8 01:58:04 EDT 2021
+Sat Oct 9 00:29:26 EDT 2021
 #!/bin/sh -l
 #SBATCH --account=nggps_emc
 #SBATCH -o build-intel_2019.5_mpiuni_O.bat_%j.o
@@ -10,6 +10,7 @@ Fri Oct 8 01:58:04 EDT 2021
 #SBATCH --ntasks-per-node=24
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+export ESMF_MPIRUN=/lustre/f2/dev/ncep/Mark.Potts/intel_2019.5_mpiuni_O_release_8.2.0/src/Infrastructure/stubs/mpiuni/mpirun
 module load intel/19.0.5.281  cray-netcdf/4.6.3.2
 module list >& module-build.log
 
