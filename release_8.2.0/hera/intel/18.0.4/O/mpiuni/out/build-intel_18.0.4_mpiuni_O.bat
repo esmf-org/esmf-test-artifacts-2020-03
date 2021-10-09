@@ -1,4 +1,4 @@
-Fri Oct 8 07:29:02 UTC 2021
+Sat Oct 9 06:31:21 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-intel_18.0.4_mpiuni_O.bat_%j.o
@@ -10,6 +10,7 @@ Fri Oct 8 07:29:02 UTC 2021
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+export ESMF_MPIRUN=/scratch1/NCEPDEV/stmp2/Mark.Potts/intel_18.0.4_mpiuni_O_release_8.2.0/src/Infrastructure/stubs/mpiuni/mpirun
 module load intel/18.0.5.274  netcdf/4.7.0
 module list >& module-build.log
 
