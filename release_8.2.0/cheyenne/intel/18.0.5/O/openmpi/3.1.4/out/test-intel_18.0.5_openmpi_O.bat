@@ -1,4 +1,4 @@
-Wed Oct 13 07:09:33 MDT 2021
+Wed Oct 13 13:33:37 MDT 2021
 #!/bin/sh -l
 #PBS -N test-intel_18.0.5_openmpi_O.bat
 #PBS -l walltime=3:00:00
@@ -8,6 +8,8 @@ Wed Oct 13 07:09:33 MDT 2021
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/intel_18.0.5_openmpi_O_release_8.2.0
+
+module load python
 module load intel/18.0.5 openmpi/3.1.4 netcdf/4.6.3
 module list >& module-test.log
 
