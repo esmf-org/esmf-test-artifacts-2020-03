@@ -1,4 +1,4 @@
-Wed Oct 13 04:33:09 GMT 2021
+Thu Oct 14 04:00:32 GMT 2021
 #!/bin/sh -l
 #SBATCH --account=hfv3gfs
 #SBATCH -o test-gfortran_9.2.0_openmpi_O.bat_%j.o
@@ -27,10 +27,8 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh fe3 /mnt/lfs4/HFIP/hfv3gfs/Mark.Potts//mnt/lfs4/HFIP/hfv3gfs/Mark.Potts/gfortran_9.2.0_openmpi_O_release_8.2.0/getres-int.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh fe3 /mnt/lfs4/HFIP/hfv3gfs/Mark.Potts//mnt/lfs4/HFIP/hfv3gfs/Mark.Potts/gfortran_9.2.0_openmpi_O_release_8.2.0/getres-int.sh
