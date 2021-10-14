@@ -1,4 +1,4 @@
-Wed Oct 13 02:54:59 CDT 2021
+Thu Oct 14 02:29:21 CDT 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-gfortran_8.3.0_mpiuni_O.bat_%j.o
@@ -28,10 +28,8 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh Orion-login-1.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox//work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_release_8.2.0/getres-int.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh Orion-login-1.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox//work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_release_8.2.0/getres-int.sh
