@@ -1,4 +1,4 @@
-Thu Oct 14 08:59:53 UTC 2021
+Thu Oct 14 11:45:32 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-gfortran_9.2.0_openmpi_O.bat_%j.o
@@ -23,7 +23,7 @@ export ESMF_NETCDF_INCLUDE=$NETCDF/include
 export ESMF_NETCDF_LIBPATH=$NETCDF/lib
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
 export ESMF_NETCDF=nc-config
-tar xvfz pytest-input.tar.gz
+tar xvfz ~/pytest-input.tar.gz
 export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_O_release_8.2.0
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
@@ -43,7 +43,7 @@ cd ../src/addon/ESMPy
 
 export PATH=$PATH:$HOME/.local/bin
 python3 setup.py build 2>&1 | tee python_build.log
-ssh hfe10 /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_O_release_8.2.0/runpython.sh 2>&1 | tee python_build.log
+ssh hfe02 /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_O_release_8.2.0/runpython.sh 2>&1 | tee python_build.log
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
