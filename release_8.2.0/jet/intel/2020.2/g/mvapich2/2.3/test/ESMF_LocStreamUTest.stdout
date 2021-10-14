@@ -1,4 +1,4 @@
-build time -- 2021-10-13 04:06:39
+build time -- 2021-10-14 04:07:00
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -58,6 +58,8 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 147
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
+ 0, line 155
+  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 147
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 155
@@ -65,8 +67,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  0, line 155
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 155
-  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
- 0, line 155
   PASS  Testing LocStream Validate, ESMF_LocStreamUTest.F90, line 187
   PASS  Testing LocStream Validate, ESMF_LocStreamUTest.F90, line 187
   PASS  Testing LocStream Validate, ESMF_LocStreamUTest.F90, line 187
@@ -74,8 +74,8 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
  .F90, line 335
   PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
-  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
  .F90, line 335
+  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
  .F90, line 335
   PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
  .F90, line 335
@@ -97,22 +97,22 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  2
   PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
   PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
+  PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
   PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
   PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
+  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
+  375
   PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
   PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
   PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
-  PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
-  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
-  375
-  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
-  375
-  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
-  375
-  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
-  375
   PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, lin
  e 382
+  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
+  375
+  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
+  375
+  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
+  375
   PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, lin
  e 382
   PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, lin
@@ -148,9 +148,9 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Testing LocStream Create defaults and LocStream Get, ESMF_LocStreamUTest
  .F90, line 650
   PASS  Testing LocStream Create defaults and LocStream Get, ESMF_LocStreamUTest
+ .F90, line 650
   PASS  Testing LocStream Create defaults and LocStream Get, ESMF_LocStreamUTest
  .F90, line 650
- .F90, line 650
   PASS  Test keyCount and keyNames response to ESMF_LocStreamAddKey, ESMF_LocStr
  eamUTest.F90, line 706
   PASS  Test keyCount and keyNames response to ESMF_LocStreamAddKey, ESMF_LocStr
@@ -167,9 +167,9 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  amUTest.F90, line 767
   PASS  Test ESMF_LocStreamGetKey getting an I4 pointer and bounds, ESMF_LocStre
  amUTest.F90, line 767
-  PASS  Test ESMF_LocStreamGetKey getting an R4 pointer and bounds, ESMF_LocStre
   PASS  Test ESMF_LocStreamGetKey getting an R4 pointer and bounds, ESMF_LocStre
  amUTest.F90, line 828
+  PASS  Test ESMF_LocStreamGetKey getting an R4 pointer and bounds, ESMF_LocStre
  amUTest.F90, line 828
   PASS  Test ESMF_LocStreamGetKey getting an R4 pointer and bounds, ESMF_LocStre
  amUTest.F90, line 828
@@ -198,27 +198,33 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  LocStream Print Starts ====>
  LocStream Print Starts ====>
  Name =     'LocStream048'
- Name =     'LocStream048'
  KeyCount =           2
  Keys:
-    A1 - LN1    U1
  LocStream Print Starts ====>
- Name =     'LocStream048'
- KeyCount =           2
- Keys:
- KeyCount =           2
- Keys:
-    A1 - LN1    U1
-    A1 - LN1    U1
  LocStream Print Starts ====>
  Name =     'LocStream048'
  KeyCount =           2
  Keys:
     A1 - LN1    U1
-     arr(           1 )=   2.369656010249745E-310
-     arr(           1 )=   2.350913896716452E-310
-     arr(           1 )=   2.322056269300557E-310
+    A1 - LN1    U1
+ Name =     'LocStream048'
+ KeyCount =           2
+ Keys:
+ Name =     'LocStream048'
+ KeyCount =           2
+ Keys:
+    A1 - LN1    U1
+    A1 - LN1    U1
+     arr(           1 )=   2.344206195038751E-310
+     arr(           1 )=   2.323158512485475E-310
+     arr(           1 )=   2.351688251466357E-310
      arr(           2 )=    512.000122547150     
+     arr(           1 )=   2.348017248287989E-310
+     arr(           2 )=    512.000122547150     
+     arr(           3 )=    8192.00197219849     
+     arr(           4 )=    131072.031677246     
+     arr(           5 )=    524288.127075195     
+    A2 - LN2    U2
      arr(           3 )=    8192.00197219849     
      arr(           4 )=    131072.031677246     
      arr(           5 )=    524288.127075195     
@@ -233,25 +239,25 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
      arr(           4 )=    131072.031677246     
      arr(           5 )=    524288.127075195     
     A2 - LN2    U2
-     arr(           1 )=   2.320866491684621E-310
-     arr(           2 )=    512.000122547150     
-     arr(           3 )=    8192.00197219849     
-     arr(           4 )=    131072.031677246     
-     arr(           5 )=    524288.127075195     
-    A2 - LN2    U2
-     arr(           1 )=   2.322056269294233E-310
-     arr(           1 )=   2.369656010243421E-310
+     arr(           1 )=   2.323158512479151E-310
+     arr(           2 )=   7.676145470849514E+218
+     arr(           1 )=   2.351688251460033E-310
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
+     arr(           4 )=   1.377080536897474E+093
+     arr(           1 )=   2.348017248281665E-310
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
      arr(           5 )=   2.221052049552993E+252
  LocStream Print Ends   ====>
+     arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
      arr(           5 )=   2.221052049552993E+252
  LocStream Print Ends   ====>
-     arr(           1 )=   2.350913896710128E-310
+     arr(           5 )=   2.221052049552993E+252
+ LocStream Print Ends   ====>
+     arr(           1 )=   2.344206195032427E-310
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
@@ -259,12 +265,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  LocStream Print Ends   ====>
   PASS  Test Print, ESMF_LocStreamUTest.F90, line 1053
   PASS  Test Print, ESMF_LocStreamUTest.F90, line 1053
-     arr(           1 )=   2.320866491678297E-310
-     arr(           2 )=   7.676145470849514E+218
-     arr(           3 )=   3.035286940369342E-152
-     arr(           4 )=   1.377080536897474E+093
-     arr(           5 )=   2.221052049552993E+252
- LocStream Print Ends   ====>
   PASS  Test Print, ESMF_LocStreamUTest.F90, line 1053
   PASS  Test Print, ESMF_LocStreamUTest.F90, line 1053
   PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
@@ -325,9 +325,9 @@ Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           0  Test Elapsed Time    56.1310000000000       msec.
-  PET           3  Test Elapsed Time    56.1830000000000       msec.
-  PET           1  Test Elapsed Time    56.1920000000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           2  Test Elapsed Time    56.4190000000000       msec.
+  PET           0  Test Elapsed Time    56.1290000000000       msec.
+  PET           1  Test Elapsed Time    56.0990000000000       msec.
+  PET           2  Test Elapsed Time    55.9790000000000       msec.
+  PET           3  Test Elapsed Time    56.2050000000000       msec.
