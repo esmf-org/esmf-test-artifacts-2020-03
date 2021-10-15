@@ -1,4 +1,4 @@
-Thu Oct 14 06:38:29 CDT 2021
+Fri Oct 15 02:33:29 CDT 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-intel_2020_intelmpi_O.bat_%j.o
@@ -18,6 +18,7 @@ module list >& module-test.log
 set -x
 export ESMF_NETCDF=nc-config
 
+tar xvfz ~/pytest-input.tar.gz
 export ESMF_DIR=/work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_O_release_8.2.0
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
