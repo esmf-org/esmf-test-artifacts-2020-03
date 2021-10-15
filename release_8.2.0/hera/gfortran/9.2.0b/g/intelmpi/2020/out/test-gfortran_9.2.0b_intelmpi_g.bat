@@ -1,4 +1,4 @@
-Fri Oct 15 09:11:55 UTC 2021
+Fri Oct 15 11:19:28 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-gfortran_9.2.0b_intelmpi_g.bat_%j.o
