@@ -1,4 +1,4 @@
-Thu Oct 14 03:05:25 CDT 2021
+Fri Oct 15 02:33:31 CDT 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-gfortran_8.3.0_mpiuni_g.bat_%j.o
@@ -19,6 +19,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
+tar xvfz ~/pytest-input.tar.gz
 export ESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_g_release_8.2.0
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpiuni
