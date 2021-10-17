@@ -1,4 +1,4 @@
-build time -- 2021-10-16 03:05:22.677726
+build time -- 2021-10-17 06:03:56.482644
   Beginning Test, file ESMF_AlarmUTest.F90, line 98
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_AlarmUTest.F90, line 98
@@ -7,11 +7,11 @@ build time -- 2021-10-16 03:05:22.677726
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_AlarmUTest.F90, line 98
   NUMBER_OF_PROCESSORS           4
+  PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
   PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
   PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
   PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
   PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 150
-  PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
   PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 150
   PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 150
   PASS  Set Start Time Initialization Test, ESMF_AlarmUTest.F90, line 150
@@ -51,8 +51,6 @@ build time -- 2021-10-16 03:05:22.677726
  212
   PASS  Testing Alarm IsCreated for uncreated object, ESMF_AlarmUTest.F90, line 
  212
-  PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
-  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 22
   PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
   PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 22
  8
@@ -62,6 +60,8 @@ build time -- 2021-10-16 03:05:22.677726
   PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
   PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 22
  8
+  PASS  Create test Alarm for IsCreated, ESMF_AlarmUTest.F90, line 220
+  PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 22
  8
   PASS  Testing Alarm IsCreated for created object, ESMF_AlarmUTest.F90, line 23
  6
@@ -467,6 +467,8 @@ Alarm ----------------------------------
 name = ALARM1
 ringInterval = 
 TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
 Alarm ----------------------------------
 name = ALARM1
 ringInterval = 
@@ -475,6 +477,11 @@ BaseTime -------------------------------
 s = 0
 sN = 0
 sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
 Alarm ----------------------------------
 name = ALARM1
 ringInterval = 
@@ -486,6 +493,16 @@ sD = 1
 end BaseTime ---------------------------
 
 yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+ringDuration = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
 BaseTime -------------------------------
 s = 0
 sN = 0
@@ -512,29 +529,8 @@ d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
-BaseTime -------------------------------
-s = 0
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-ringDuration = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
 end BaseTime ---------------------------
 
 yy    = 0
@@ -558,9 +554,6 @@ d_r8  = 0
 end TimeInterval -----------------------
 
 ringTime = 
-Time -----------------------------------
-mm    = 0
-d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
@@ -583,14 +576,15 @@ Time -----------------------------------
 BaseTime -------------------------------
 s = 211930387200
 sN = 0
-ringTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
 sD = 1
 end BaseTime ---------------------------
 
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
@@ -602,49 +596,7 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
+ringTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211930387200
@@ -652,36 +604,6 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211930387200
@@ -692,38 +614,16 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-firstRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -733,94 +633,6 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
-timeZone = 0
-end Time -------------------------------
-
-prevRingTime = 
-31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-prevRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-prevRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-prevRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-stopTime = 
 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -833,16 +645,13 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-stopTime = 
+firstRingTime = 
 Time -----------------------------------
 BaseTime -------------------------------
-s = 0
+s = 211930387200
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-30 31 
+30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -854,20 +663,14 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-stopTime = 
+firstRingTime = 
 Time -----------------------------------
 BaseTime -------------------------------
-s = 0
+s = 211930387200
 sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-timeZone = 0
-end Time -------------------------------
-
-ringBegin = 
-Time -----------------------------------
-BaseTime -------------------------------
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -879,10 +682,10 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-stopTime = 
+firstRingTime = 
 Time -----------------------------------
 BaseTime -------------------------------
-s = 0
+s = 211930387200
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -890,77 +693,10 @@ end BaseTime ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-ringBegin = 
+firstRingTime = 
 Time -----------------------------------
 BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringBegin = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringEnd = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914387927
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-end Time -------------------------------
-
-ringBegin = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringEnd = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914387927
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-daysPerMonth = s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringEnd = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914387927
+s = 211930387200
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -970,42 +706,27 @@ name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 end BaseTime ---------------------------
 
-timeZone = 0
-end Time -------------------------------
-
-ringEnd = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914387927
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-daysPerMonth = 31 28 31 30 31 30 Calendar -------------------------------
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
-31 28 31 30 31 30 31 31 30 31 30 31 
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -1018,13 +739,277 @@ end Calendar ---------------------------
 timeZone = 0
 end Time -------------------------------
 
-refTime = 
+prevRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+prevRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+prevRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+prevRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+stopTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 0
 sN = 0
 sD = 1
-31 31 30 31 30 31 
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringBegin = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+end Time -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringBegin = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringEnd = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914387927
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringBegin = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringEnd = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914387927
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringBegin = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringEnd = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914387927
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+ringEnd = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914387927
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+refTime = 
+Time -----------------------------------
+31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -1047,6 +1032,8 @@ end BaseTime ---------------------------
 timeZone = 0
 end Time -------------------------------
 
+ringTimeStepCount = 1
+timeStepRingingCount = 0
 daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
@@ -1074,6 +1061,17 @@ enabled = true
 sticky = true
 end Alarm ------------------------------
 
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+refTime = 
+Time -----------------------------------
+BaseTime -------------------------------
 s = 0
 sN = 0
 sD = 1
@@ -1090,6 +1088,10 @@ enabled = true
 sticky = true
 end Alarm ------------------------------
 
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
 end BaseTime ---------------------------
 
 timeZone = 0
@@ -1103,9 +1105,6 @@ enabled = true
 sticky = true
 end Alarm ------------------------------
 
-  PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
-ringTimeStepCount = 1
-timeStepRingingCount = 0
 ringing = false
 ringingOnPrevTimeStep = false
 enabled = true
@@ -1115,6 +1114,7 @@ end Alarm ------------------------------
   PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
   PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
   PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
+  PASS  Alarm Print Test, ESMF_AlarmUTest.F90, line 968
   PASS  Disable Alarm Test, ESMF_AlarmUTest.F90, line 977
   PASS  Disable Alarm Test, ESMF_AlarmUTest.F90, line 977
   PASS  Disable Alarm Test, ESMF_AlarmUTest.F90, line 977
@@ -1293,12 +1293,12 @@ end Alarm ------------------------------
   PASS  Sticky Alarm Test 1, ESMF_AlarmUTest.F90, line 1729
   PASS  Sticky Alarm Test 2, ESMF_AlarmUTest.F90, line 1782
   PASS  Sticky Alarm Test 2, ESMF_AlarmUTest.F90, line 1782
-  PASS  Sticky Alarm Test 3, ESMF_AlarmUTest.F90, line 1906
   PASS  Sticky Alarm Test 2, ESMF_AlarmUTest.F90, line 1782
   PASS  Sticky Alarm Test 2, ESMF_AlarmUTest.F90, line 1782
   PASS  Sticky Alarm Test 3, ESMF_AlarmUTest.F90, line 1906
   PASS  Sticky Alarm Test 3, ESMF_AlarmUTest.F90, line 1906
   PASS  Sticky Alarm Test 3, ESMF_AlarmUTest.F90, line 1906
+  PASS  Sticky Alarm Test 3, ESMF_AlarmUTest.F90, line 1906
   PASS  Sticky Alarm Test 4, ESMF_AlarmUTest.F90, line 2042
   PASS  Sticky Alarm Test 4, ESMF_AlarmUTest.F90, line 2042
   PASS  Sticky Alarm Test 4, ESMF_AlarmUTest.F90, line 2042
@@ -1315,20 +1315,20 @@ end Alarm ------------------------------
   PASS  Sticky Alarm Test 7, ESMF_AlarmUTest.F90, line 2326
   PASS  Sticky Alarm Test 7, ESMF_AlarmUTest.F90, line 2326
   PASS  Sticky Alarm Test 7, ESMF_AlarmUTest.F90, line 2326
-  PASS  Fractional Time Alarm Test 1, ESMF_AlarmUTest.F90, line 2364
   PASS  Fractional Time Alarm Test 1, ESMF_AlarmUTest.F90, line 2364
   PASS  Fractional Time Alarm Test 2, ESMF_AlarmUTest.F90, line 2410
+  PASS  Fractional Time Alarm Test 1, ESMF_AlarmUTest.F90, line 2364
   PASS  Test Alarm ringTime = Clock startTime, ESMF_AlarmUTest.F90, line 2434
   PASS  Alarm ringTime = Clock startTime with ringInterval, test 1, ESMF_AlarmUT
  est.F90, line 2462
   PASS  Fractional Time Alarm Test 1, ESMF_AlarmUTest.F90, line 2364
   PASS  Fractional Time Alarm Test 2, ESMF_AlarmUTest.F90, line 2410
   PASS  Test Alarm ringTime = Clock startTime, ESMF_AlarmUTest.F90, line 2434
+  PASS  Fractional Time Alarm Test 1, ESMF_AlarmUTest.F90, line 2364
   PASS  Alarm ringTime = Clock startTime with ringInterval, test 1, ESMF_AlarmUT
  est.F90, line 2462
   PASS  Fractional Time Alarm Test 2, ESMF_AlarmUTest.F90, line 2410
   PASS  Test Alarm ringTime = Clock startTime, ESMF_AlarmUTest.F90, line 2434
-  PASS  Fractional Time Alarm Test 1, ESMF_AlarmUTest.F90, line 2364
   PASS  Alarm ringTime = Clock startTime with ringInterval, test 1, ESMF_AlarmUT
  est.F90, line 2462
   PASS  Fractional Time Alarm Test 2, ESMF_AlarmUTest.F90, line 2410
@@ -1383,41 +1383,38 @@ end Alarm ------------------------------
  REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
   PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_
  REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
-  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_
- REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
-  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, E
- SMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
-  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, E
- SMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
-  PASS  Test forward to an alarm point, then step backward using a negative time
- Step, ESMF_AlarmUTest.F90, line 3104
   PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, E
  SMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
   PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_
  REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
+  PASS  Test ESMF_DIRECTION_FORWARD to a non-sticky alarm point, ESMF_DIRECTION_
+ REVERSE, ESMF_DIRECTION_FORWARD, ESMF_AlarmUTest.F90, line 2918
   PASS  Test forward to an alarm point, then step backward using a negative time
  Step, ESMF_AlarmUTest.F90, line 3104
-  PASS  Test forward to a non-ringing step, then step backward using a negative 
- timeStep, ESMF_AlarmUTest.F90, line 3176
-  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, l
- ine 3187
-  PASS  Test forward to an alarm point, then step backward using a negative time
- Step, ESMF_AlarmUTest.F90, line 3104
-  PASS  Test forward to a non-ringing step, then step backward using a negative 
- timeStep, ESMF_AlarmUTest.F90, line 3176
-  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, l
- ine 3187
+  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, E
+ SMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
   PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, E
  SMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
   PASS  Test forward to a non-ringing step, then step backward using a negative 
  timeStep, ESMF_AlarmUTest.F90, line 3176
+  PASS  Test forward to an alarm point, then step backward using a negative time
+ Step, ESMF_AlarmUTest.F90, line 3104
+  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, l
+ ine 3187
+  PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, E
+ SMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
+  PASS  Test forward to an alarm point, then step backward using a negative time
+ Step, ESMF_AlarmUTest.F90, line 3104
+  PASS  Test forward to a non-ringing step, then step backward using a negative 
+ timeStep, ESMF_AlarmUTest.F90, line 3176
   PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, l
  ine 3187
   PASS  Test forward to an alarm point, then step backward using a negative time
  Step, ESMF_AlarmUTest.F90, line 3104
-  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ES
- MF_AlarmUTest.F90, line 3349
-  Ending Test, file ESMF_AlarmUTest.F90, line 3388
+  PASS  Test forward to a non-ringing step, then step backward using a negative 
+ timeStep, ESMF_AlarmUTest.F90, line 3176
+  PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, l
+ ine 3187
   PASS  Test forward to a non-ringing step, then step backward using a negative 
  timeStep, ESMF_AlarmUTest.F90, line 3176
   PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ES
@@ -1431,7 +1428,10 @@ end Alarm ------------------------------
   PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ES
  MF_AlarmUTest.F90, line 3349
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
-  PET           0  Test Elapsed Time    55.2430000000000       msec.
-  PET           1  Test Elapsed Time    55.2330000000000       msec.
-  PET           2  Test Elapsed Time    55.2330000000000       msec.
-  PET           3  Test Elapsed Time    55.2200000000000       msec.
+  PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ES
+ MF_AlarmUTest.F90, line 3349
+  Ending Test, file ESMF_AlarmUTest.F90, line 3388
+  PET           0  Test Elapsed Time    59.3140000000000       msec.
+  PET           1  Test Elapsed Time    59.3410000000000       msec.
+  PET           2  Test Elapsed Time    59.3550000000000       msec.
+  PET           3  Test Elapsed Time    59.3560000000000       msec.
