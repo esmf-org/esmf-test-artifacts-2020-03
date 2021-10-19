@@ -1,4 +1,4 @@
-build time -- 2021-10-18 11:42:45
+build time -- 2021-10-18 21:23:49
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -14,7 +14,7 @@ build time -- 2021-10-18 11:42:45
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_22-11-g7374d1320b
+ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_22-13-g3d528dadb7
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -34,7 +34,7 @@ ESMF_F90LINKER=mpifort
 
 ESMF_F90COMPILEOPTS=-O   -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp
 ESMF_F90COMPILEPATHS=-I/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0/mod/modO/Darwin.gfortran.64.openmpi.default -I/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0/src/include -I/project/esmf/stack/install/gcc/9.3.0/netcdf-c/4.7.4/include -I/project/esmf/stack/install/gcc/9.3.0/netcdf-fortran/4.5.3/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_22-11-g7374d1320b' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_22-13-g3d528dadb7' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=-ffree-form
 ESMF_F90COMPILEFIXCPP=-cpp -ffixed-form
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=mpicxx
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -O -DNDEBUG  -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp
 ESMF_CXXCOMPILEPATHS= -I/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0/src/include  -I/project/esmf/stack/install/gcc/9.3.0/netcdf-c/4.7.4/include -I/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_22-11-g7374d1320b' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0 -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_22-13-g3d528dadb7' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=openmpi -DESMF_DIR=/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0 -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small -pthread  -fopenmp
 ESMF_CXXLINKPATHS=-L/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_openmpi_O_release_8.2.0/lib/libO/Darwin.gfortran.64.openmpi.default -L/project/esmf/stack/install/gcc/9.3.0/netcdf-c/4.7.4/lib -L/project/esmf/stack/install/gcc/9.3.0/netcdf-fortran/4.5.3/lib -L/Volumes/esmf/stack/homebrew/Cellar/gcc@9/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin18/9.3.0/../../../
