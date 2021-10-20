@@ -1,8 +1,8 @@
-build time -- 2021-10-19 06:39:54
-[1634626411.612456] [h6c45:53480:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1634626411.617579] [h6c45:53480:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1634626411.612461] [h6c45:53479:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1634626411.617611] [h6c45:53479:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+build time -- 2021-10-20 09:10:39
+[1634721406.785940] [h6c51:196158:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1634721406.791179] [h6c51:196158:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1634721406.785747] [h6c51:196159:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1634721406.790602] [h6c51:196159:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
@@ -11,10 +11,10 @@ build time -- 2021-10-19 06:39:54
  -- exiting f90ints subroutine
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
-  Beginning Test, file ESMF_StringUTest.F90, line 46
-  NUMBER_OF_PROCESSORS           2
   ints=         102         204         409         819
   strlen =          60
+  Beginning Test, file ESMF_StringUTest.F90, line 46
+  NUMBER_OF_PROCESSORS           2
   fstr=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string2 subroutine
   PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
@@ -26,9 +26,14 @@ build time -- 2021-10-19 06:39:54
   fstr2=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string3 subroutine
   PASS  Calling f90string3() directly from F90, ESMF_StringUTest.F90, line 83
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
 
 
 -- entering c_strings, slen = 120
+  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
 102 204 409 819
  strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
 
@@ -66,6 +71,9 @@ build time -- 2021-10-19 06:39:54
 
 -- ready to call f90string2 by callback, passing 25
  -- entering f90string2 subroutine
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          60
   ints=         102         204         409         819
   strlen =          25
   fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
@@ -90,17 +98,13 @@ build time -- 2021-10-19 06:39:54
 
 -- leaving c_strings
   PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
- -- entering f90ints subroutine
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
-  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          60
   fstr=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string2 subroutine
   PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
+  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
+
+
+-- entering c_strings, slen = 60
  -- entering f90string3 subroutine
   ints=         102         204         409         819
   strlen =         120
@@ -109,10 +113,6 @@ build time -- 2021-10-19 06:39:54
   fstr2=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string3 subroutine
   PASS  Calling f90string3() directly from F90, ESMF_StringUTest.F90, line 83
-  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
-
-
--- entering c_strings, slen = 60
 102 204 409 819
  strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
 
@@ -305,5 +305,5 @@ build time -- 2021-10-19 06:39:54
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time    13.497000000000009       msec.
-  PET           1  Test Elapsed Time    14.166999999999986       msec.
+  PET           0  Test Elapsed Time    12.976000000000043       msec.
+  PET           1  Test Elapsed Time    13.910000000000034       msec.
