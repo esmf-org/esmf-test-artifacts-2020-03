@@ -1,4 +1,4 @@
-build time -- 2021-10-14 18:23:41.843687
+build time -- 2021-10-22 14:53:23.711106
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -14,7 +14,7 @@ build time -- 2021-10-14 18:23:41.843687
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_22-10-g6974ca47a6
+ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_23
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -34,7 +34,7 @@ ESMF_F90LINKER=ftn
 
 ESMF_F90COMPILEOPTS=-g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs   -qopenmp
 ESMF_F90COMPILEPATHS=-I/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0/mod/modg/Unicos.intel.64.mpiuni.default -I/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0/src/include -I/opt/cray/pe/netcdf/4.6.3.2/include -I/opt/cray/pe/netcdf/4.6.3.2/INTEL/19.0/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_22-10-g6974ca47a6' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpiuni -DESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0 -DESMF_MPIUNI
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_23' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpiuni -DESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0 -DESMF_MPIUNI
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=CC
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -traceback -Wcheck -fPIC -pthread  -qopenmp
 ESMF_CXXCOMPILEPATHS= -I/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0/src/include  -I/opt/cray/pe/netcdf/4.6.3.2/include -I/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0/src/Infrastructure/stubs/mpiuni -I/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_22-10-g6974ca47a6' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpiuni -DESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0 -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_MPIUNI -DESMF_NO_POSIXIPC
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_23' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpiuni -DESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0 -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_MPIUNI -DESMF_NO_POSIXIPC
 
 ESMF_CXXLINKOPTS=  -pthread -Wl,--no-as-needed  -qopenmp
 ESMF_CXXLINKPATHS=-L/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_release_8.2.0/lib/libg/Unicos.intel.64.mpiuni.default -L/opt/cray/pe/netcdf/4.6.3.2/INTEL/19.0/lib -L/opt/intel/compilers_and_libraries_2019.3.199/linux/compiler/lib/intel64_lin/
