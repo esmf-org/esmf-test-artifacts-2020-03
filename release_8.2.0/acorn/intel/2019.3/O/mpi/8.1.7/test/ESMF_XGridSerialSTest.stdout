@@ -1,4 +1,4 @@
-build time -- 2021-10-23 20:12:28
+build time -- 2021-10-24 20:12:26
  --------------------------------------- 
  Start of  System Test ESMF_XGridSerialSTest
  --------------------------------------- 
@@ -13,17 +13,14 @@ build time -- 2021-10-23 20:12:28
  --------------------------------------- 
  Created component landrc =           0
  Created component oceanrc =           0
+ Created component landrc =           0
+ Created component oceanrc =           0
+ Created component landrc =           0
  Created component landrc =           0
  Created component oceanrc =           0
  Created component landrc =           0
  Created component user one-way coupler, rc =           0
  Comp Creates finished
- Created component landrc =           0
- Created component oceanrc =           0
- Created component landrc =           0
- Created component user one-way coupler, rc =           0
- Comp Creates finished
- atmos SetVM finished, rc=            0           0
  Created component landrc =           0
  Created component oceanrc =           0
  Created component landrc =           0
@@ -31,6 +28,9 @@ build time -- 2021-10-23 20:12:28
  Comp Creates finished
  atmos SetVM finished, rc=            0           0
  Created component landrc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ atmos SetVM finished, rc=            0           0
  Created component user one-way coupler, rc =           0
  Comp Creates finished
  atmos SetVM finished, rc=            0           0
@@ -38,6 +38,7 @@ build time -- 2021-10-23 20:12:28
  Atmosphere Register starting
  Registered Initialize, Run, and Finalize routines
  Atmosphere Register returning
+ atmos SetServices finished, rc=            0
  Atmosphere Register starting
  Registered Initialize, Run, and Finalize routines
  Atmosphere Register returning
@@ -53,16 +54,15 @@ build time -- 2021-10-23 20:12:28
  Land Register returning
  land SetServices finished, rc=            0
  ocean SetVM finished, rc=            0
- Atmosphere Register starting
- Registered Initialize, Run, and Finalize routines
- Atmosphere Register returning
- atmos SetServices finished, rc=            0
  land SetVM finished, rc=            0
  Land Register starting
  Registered Initialize, Run, and Finalize routines
  Land Register returning
  land SetServices finished, rc=            0
  ocean SetVM finished, rc=            0
+ Atmosphere Register starting
+ Registered Initialize, Run, and Finalize routines
+ Atmosphere Register returning
  atmos SetServices finished, rc=            0
  land SetVM finished, rc=            0
  Land Register starting
@@ -108,12 +108,12 @@ build time -- 2021-10-23 20:12:28
  User Coupler Register returning
  Cpl SetServices finished, rc=            0
  Land Init starting, localPet =           0
+ Land Init starting, localPet =           1
+ Land Init starting, localPet =           2
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0
- Land Init starting, localPet =           1
- Land Init starting, localPet =           2
  Land Init starting, localPet =           3
  ESMF_StatePrint: (pet 0):
   State name: land_export
@@ -126,7 +126,11 @@ build time -- 2021-10-23 20:12:28
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{} ESMF_StatePrint: (pet 2):
+{}     object: 1,name: F_lnd
+            type: Field
+ land Init returning
+ Land Initialize finished, rc =           0
+ ESMF_StatePrint: (pet 2):
   State name: land_export
      status: Export State, object count: 1
      reconcile needed: T
@@ -162,10 +166,6 @@ build time -- 2021-10-23 20:12:28
  land Init returning
  Land Initialize finished, rc =           0
  Ocean Init starting, localPet =           0
-     object: 1,name: F_lnd
-            type: Field
- land Init returning
- Land Initialize finished, rc =           0
  Ocean Init starting, localPet =           1
  ocean Init returning
  Ocean Initialize finished, rc =           0
@@ -209,9 +209,6 @@ build time -- 2021-10-23 20:12:28
  Land Run returning
  Land Run returned, rc =           0
  Ocean Run starting
- Land Run returning
- Land Run returned, rc =           0
- Ocean Run starting
  Ocean Run returning
  Ocean Run returned, rc =           0
  User Coupler Run starting
@@ -221,14 +218,15 @@ build time -- 2021-10-23 20:12:28
  Ocean Run returning
  Ocean Run returned, rc =           0
  User Coupler Run starting
+ Land Run returning
+ Land Run returned, rc =           0
+ Ocean Run starting
  Ocean Run returning
  Ocean Run returned, rc =           0
  User Coupler Run starting
  Ocean Run returning
  Ocean Run returned, rc =           0
  User Coupler Run starting
- User Coupler Run returning
- Coupler Run returned, rc =           0
  User Coupler Run returning
  Coupler Run returned, rc =           0
  Atmosphere Run starting
@@ -241,6 +239,8 @@ build time -- 2021-10-23 20:12:28
  Atmosphere Run returning
  Atmosphere Run returned, rc =           0
  User Coupler Final starting
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
  Atmosphere Run starting
  Atmosphere Run returning
  Atmosphere Run returned, rc =           0
@@ -300,6 +300,11 @@ build time -- 2021-10-23 20:12:28
                                                                                 
                                                                                 
                      complete.
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            2
+ ------------------------------------------------------------
+ ------------------------------------------------------------
  All Destroy routines done
   System Test ESMF_XGridSerialSTest                                             
                                                                                 
@@ -310,6 +315,7 @@ build time -- 2021-10-23 20:12:28
  Test finished, localPet =            0
  ------------------------------------------------------------
  ------------------------------------------------------------
+  PASS  System Test ESMF_XGridSerialSTest, ESMF_XGridSerialSTest.F90, line 448
  
   System Test ESMF_XGridSerialSTest
   SUCCESS:  System Test ESMF_XGridSerialSTest finished correctly.
@@ -329,11 +335,6 @@ build time -- 2021-10-23 20:12:28
   System Test ESMF_XGridSerialSTest
   SUCCESS:  System Test ESMF_XGridSerialSTest finished correctly.
  
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, localPet =            2
- ------------------------------------------------------------
- ------------------------------------------------------------
   PASS  System Test ESMF_XGridSerialSTest, ESMF_XGridSerialSTest.F90, line 448
  
   System Test ESMF_XGridSerialSTest
@@ -354,4 +355,3 @@ build time -- 2021-10-23 20:12:28
   System Test ESMF_XGridSerialSTest
   SUCCESS:  System Test ESMF_XGridSerialSTest finished correctly.
  
-  PASS  System Test ESMF_XGridSerialSTest, ESMF_XGridSerialSTest.F90, line 448
