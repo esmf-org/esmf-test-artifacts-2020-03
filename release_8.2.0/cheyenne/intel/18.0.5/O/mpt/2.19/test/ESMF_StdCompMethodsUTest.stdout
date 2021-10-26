@@ -1,4 +1,4 @@
-build time -- 2021-10-25 04:09:22.415552
+build time -- 2021-10-26 04:10:59.346571
   Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
   Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
   NUMBER_OF_PROCESSORS           4
@@ -19,7 +19,7 @@ build time -- 2021-10-25 04:09:22.415552
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
---- ESMCI::VMId::print() end ---
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
@@ -28,20 +28,20 @@ build time -- 2021-10-25 04:09:22.415552
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0xbb27d0
+vm located at: 0x181e7d0
 npets = 4, mypet=2
-  pth_mutex =		 0x1c38b50
+  pth_mutex =		 0x28a4b50
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
-  vmKeyWidth = 1
+MPI_Comm_rank in MPI_COMM_WORLD: 2
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0xbb2880
+vm located at: 0x181e880
 npets = 4, mypet=3
-  pth_mutex =		 0x1c38c10
+  pth_mutex =		 0x28a4c10
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
@@ -50,10 +50,11 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
+--- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0xbb26a0
+vm located at: 0x181e6a0
 npets = 4, mypet=0
-  pth_mutex =		 0x1c38a50
+  pth_mutex =		 0x28a4a50
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -63,11 +64,10 @@ mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
 --- VMK::print() start ---
-vm located at: 0xbb2740
+vm located at: 0x181e740
 npets = 4, mypet=1
-  pth_mutex =		 0x1c38ad0
+  pth_mutex =		 0x28a4ad0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
@@ -79,10 +79,6 @@ threadsflag: 0
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-MPI_Comm_rank in MPI_COMM_WORLD: 2
 MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
@@ -94,10 +90,6 @@ threadsflag: 0
 ncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
---- ESMCI::VM::print() end ---
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
@@ -109,6 +101,7 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
 ncores = 4
@@ -118,7 +111,14 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---
+--- ESMCI::VM::print() end ---
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
@@ -209,6 +209,9 @@ ncores = 4
   445
   PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
  UTest.F90, line 452
+  PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
+  PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
+ UTest.F90, line 452
   PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
  UTest.F90, line 452
   PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
@@ -216,9 +219,6 @@ ncores = 4
   PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
  UTest.F90, line 452
   PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
-  PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethods
- UTest.F90, line 452
-  PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
   PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 469
   PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 469
   PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 469
@@ -375,7 +375,7 @@ ncores = 4
   Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
   Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
   Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
-  PET           2  Test Elapsed Time    7.05700000000000       msec.
-  PET           3  Test Elapsed Time    3.88400000000000       msec.
-  PET           0  Test Elapsed Time    7.07500000000000       msec.
-  PET           1  Test Elapsed Time    1.99300000000000       msec.
+  PET           1  Test Elapsed Time    1.97400000000000       msec.
+  PET           3  Test Elapsed Time    2.60600000000000       msec.
+  PET           0  Test Elapsed Time    4.12700000000000       msec.
+  PET           2  Test Elapsed Time    2.57200000000000       msec.
