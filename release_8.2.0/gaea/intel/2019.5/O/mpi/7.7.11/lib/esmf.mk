@@ -1,4 +1,4 @@
-build time -- 2021-10-25 00:38:59
+build time -- 2021-10-26 00:39:24
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -13,14 +13,14 @@ build time -- 2021-10-25 00:38:59
 #
 
 #----------------------------------------------
-ESMF_VERSION_STRING=8.2.0 beta snapshot
+ESMF_VERSION_STRING=8.2.0
 
 ESMF_VERSION_MAJOR=8
 ESMF_VERSION_MINOR=2
 ESMF_VERSION_REVISION=0
 ESMF_VERSION_PATCHLEVEL=0
-ESMF_VERSION_PUBLIC='F'
-ESMF_VERSION_BETASNAPSHOT='T'
+ESMF_VERSION_PUBLIC='T'
+ESMF_VERSION_BETASNAPSHOT='F'
 
 
 ESMF_APPSDIR=/lustre/f2/dev/ncep/Mark.Potts/intel_2019.5_mpi_O_release_8.2.0/apps/appsO/Unicos.intel.64.mpi.default
