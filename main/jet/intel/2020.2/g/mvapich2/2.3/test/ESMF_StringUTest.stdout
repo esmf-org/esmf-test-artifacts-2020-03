@@ -1,21 +1,21 @@
-build time -- 2021-10-27 04:06:20
+build time -- 2021-10-28 04:06:50
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
 Use MV2_USE_THREAD_WARNING=0 to suppress this message
   Beginning Test, file ESMF_StringUTest.F90, line 46
+  NUMBER_OF_PROCESSORS           2
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
-  NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
  -- exiting f90ints subroutine
  -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
   ints=         102         204         409         819
@@ -52,6 +52,13 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 -- entering c_strings, slen = 120
 -- entering c_strings, slen = 120
 102 204 409 819
+ strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
+
+
+-- ready to call f90int by callback with passed ints
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
 102 204 409 819
  strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
 
@@ -70,7 +77,117 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
- strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with local ints
+
+
+-- ready to call f90string2 by callback, passing 15
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with passed ints
+
+
+-- ready to call f90int by callback with local ints
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with local ints
+
+
+-- ready to call f90string2 by callback, passing 15
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          15
+  fstr=ABCDEFGHIJKLMNO
+  strlen =          15
+  fstr=ABCDEFGHIJKLMNO
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
+
+
+-- ready to call f90string2 by callback, passing 25
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          25
+  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
+
+
+-- ready to call f90string3 by callback, passing 14, 24
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =          14
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
+
+
+-- ready to call f90string2 by callback, passing 25
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          25
+  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
+
+
+-- ready to call f90string3 by callback, passing 14, 24
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =          14
+  fstr=ABCDEFGHIJKLMN
+  strlen2 =          24
+  fstr=ABCDEFGHIJKLMN
+  strlen2 =          24
+  fstr2=0123456789abcdefghijklmn
+ -- leaving f90string3 subroutine
+
+
+-- returned from call f90string3 by callback
+
+
+-- leaving c_strings
+  PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
+  fstr2=0123456789abcdefghijklmn
+ -- leaving f90string3 subroutine
+
+
+-- returned from call f90string3 by callback
+
+
+-- leaving c_strings
+  PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
+  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
+  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
+
+
+-- entering c_strings, slen = 60
+
+
+-- entering c_strings, slen = 60
+102 204 409 819
+ strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
+
+
+-- ready to call f90int by callback with passed ints
+102 204 409 819
+ strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
 
 
 -- ready to call f90int by callback with passed ints
@@ -86,10 +203,32 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 -- ready to call f90int by callback with local ints
  -- entering f90ints subroutine
   ints=         102         204         409         819
+  rc=           0
  -- exiting f90ints subroutine
 
 
 -- returned from call of f90int by callback with local ints
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with passed ints
+
+
+-- ready to call f90int by callback with local ints
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with local ints
+
+
+-- ready to call f90string2 by callback, passing 15
+ -- entering f90string2 subroutine
 
 
 -- ready to call f90string2 by callback, passing 15
@@ -112,17 +251,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 
 
 -- returned from call f90string2 by callback
-
-
-  rc=           0
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with local ints
-
-
--- ready to call f90string2 by callback, passing 15
- -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          15
   fstr=ABCDEFGHIJKLMNO
@@ -145,119 +273,8 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 
 -- ready to call f90string3 by callback, passing 14, 24
  -- entering f90string3 subroutine
--- ready to call f90string3 by callback, passing 14, 24
- -- entering f90string3 subroutine
   ints=         102         204         409         819
   strlen =          14
-  fstr=ABCDEFGHIJKLMN
-  strlen2 =          24
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
-
-
--- returned from call f90string3 by callback
-
-
--- leaving c_strings
-  PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
-  ints=         102         204         409         819
-  strlen =          14
-  fstr=ABCDEFGHIJKLMN
-  strlen2 =          24
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
-
-
--- returned from call f90string3 by callback
-
-
--- leaving c_strings
-  PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
-  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
-  PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
-
-
--- entering c_strings, slen = 60
-102 204 409 819
- strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
-
-
--- ready to call f90int by callback with passed ints
-
-
--- entering c_strings, slen = 60
- -- entering f90ints subroutine
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with passed ints
-
-
--- ready to call f90int by callback with local ints
- -- entering f90ints subroutine
-  ints=         102         204         409         819
-102 204 409 819
- strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
-
-
--- ready to call f90int by callback with passed ints
- -- entering f90ints subroutine
-  ints=         102         204         409         819
-  rc=           0
-  rc=           0
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with local ints
-
-
--- ready to call f90string2 by callback, passing 15
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          15
-  fstr=ABCDEFGHIJKLMNO
- -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
-
-
--- ready to call f90string2 by callback, passing 25
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with passed ints
-
-
--- ready to call f90int by callback with local ints
- -- entering f90ints subroutine
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with local ints
-
-
--- ready to call f90string2 by callback, passing 15
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          15
-  fstr=ABCDEFGHIJKLMNO
- -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
-  strlen =          25
-  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
- -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
 
 
 -- ready to call f90string3 by callback, passing 14, 24
@@ -275,23 +292,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
-
-
--- ready to call f90string2 by callback, passing 25
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          25
-  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
- -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
-
-
--- ready to call f90string3 by callback, passing 14, 24
- -- entering f90string3 subroutine
-  ints=         102         204         409         819
-  strlen =          14
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
@@ -309,5 +309,5 @@ Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           0  Test Elapsed Time    1.13900000000000       msec.
-  PET           1  Test Elapsed Time    1.32499999999999       msec.
+  PET           0  Test Elapsed Time    1.19300000000000       msec.
+  PET           1  Test Elapsed Time    1.35600000000000       msec.
