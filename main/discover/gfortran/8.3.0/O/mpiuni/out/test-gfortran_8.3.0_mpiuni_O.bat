@@ -1,4 +1,4 @@
-Fri Oct 29 01:04:21 EDT 2021
+Fri Oct 29 01:25:26 EDT 2021
 #!/bin/sh -l
 #SBATCH --account=s2326
 #SBATCH -o test-gfortran_8.3.0_mpiuni_O.bat_%j.o
