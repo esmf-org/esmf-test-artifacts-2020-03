@@ -1,4 +1,4 @@
-Wed Oct 6 07:12:43 MDT 2021
+Sat Oct 30 04:10:33 MDT 2021
 #!/bin/sh -l
 #PBS -N test-intel_18.0.5_intelmpi_O.bat
 #PBS -l walltime=3:00:00
@@ -8,6 +8,8 @@ Wed Oct 6 07:12:43 MDT 2021
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop
+
+module load python
 module load intel/18.0.5 impi/2018.4.274 netcdf/4.6.3
 module list >& module-test.log
 
@@ -23,13 +25,11 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh cheyenne6 /glade/scratch/mpotts//glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop/getres-int.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh cheyenne6 /glade/scratch/mpotts//glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop/getres-int.sh
 
 cd ../src/addon/ESMPy
 
