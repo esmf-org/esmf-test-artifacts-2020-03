@@ -1,9 +1,9 @@
-Fri Oct 8 09:28:02 UTC 2021
+Sat Oct 30 09:21:26 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-pgi_18.1_intelmpi_g.bat_%j.o
 #SBATCH -e build-pgi_18.1_intelmpi_g.bat_%j.e
-#SBATCH --time=1:20:00
+#SBATCH --time=2:00:00
 #SBATCH --partition=hera
 #SBATCH --qos=batch
 #SBATCH --nodes=1
