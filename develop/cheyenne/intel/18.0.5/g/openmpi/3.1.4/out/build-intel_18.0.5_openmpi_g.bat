@@ -1,4 +1,4 @@
-Wed Oct 6 07:17:15 MDT 2021
+Sat Oct 30 04:09:28 MDT 2021
 #!/bin/sh -l
 #PBS -N build-intel_18.0.5_openmpi_g.bat
 #PBS -l walltime=1:00:00
@@ -9,6 +9,8 @@ Wed Oct 6 07:17:15 MDT 2021
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/intel_18.0.5_openmpi_g_develop
+
+module load python
 module load intel/18.0.5 openmpi/3.1.4 netcdf/4.6.3
 module list >& module-build.log
 
