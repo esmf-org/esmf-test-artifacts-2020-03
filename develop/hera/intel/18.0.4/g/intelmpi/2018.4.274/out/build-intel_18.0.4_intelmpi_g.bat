@@ -1,4 +1,4 @@
-Fri Oct 8 08:42:38 UTC 2021
+Sat Oct 30 08:00:41 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-intel_18.0.4_intelmpi_g.bat_%j.o
@@ -17,6 +17,7 @@ module list >& module-build.log
 set -x
 export ESMF_NETCDF=nc-config
 
+tar xvfz ~/pytest-input.tar.gz
 export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/intel_18.0.4_intelmpi_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
