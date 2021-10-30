@@ -1,9 +1,9 @@
-Fri Oct 8 08:49:31 UTC 2021
+Sat Oct 30 09:11:00 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-pgi_18.1_intelmpi_O.bat_%j.o
 #SBATCH -e test-pgi_18.1_intelmpi_O.bat_%j.e
-#SBATCH --time=1:30:00
+#SBATCH --time=2:00:00
 #SBATCH --partition=hera
 #SBATCH --qos=batch
 #SBATCH --nodes=1
@@ -26,10 +26,8 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh hfe10 /scratch1/NCEPDEV/stmp2/Mark.Potts//scratch1/NCEPDEV/stmp2/Mark.Potts/pgi_18.1_intelmpi_O_develop/getres-int.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh hfe10 /scratch1/NCEPDEV/stmp2/Mark.Potts//scratch1/NCEPDEV/stmp2/Mark.Potts/pgi_18.1_intelmpi_O_develop/getres-int.sh
