@@ -1,4 +1,4 @@
-build time -- 2021-10-06 03:58:19.810566
+build time -- 2021-11-01 03:51:44.843273
   Beginning Test, file ESMF_FileRegridUTest.F90, line 63
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_FileRegridUTest.F90, line 63
@@ -30,7 +30,7 @@ build time -- 2021-10-06 03:58:19.810566
  Variable Name           = nodedata
   
  Value min:    1.0023919096530998          Value max:    3.9976080903468993     
- Mean relative error     =    2.8067638164245494E-004
+ Mean relative error     =    2.8067638164245521E-004
  Maximum relative error  =    1.7939074934945195E-003
   
   PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 105
@@ -75,14 +75,14 @@ build time -- 2021-10-06 03:58:19.810566
    Ignore unmapped destination points
 
   PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
-  PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
   PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
-  PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
+  Ending Test, file ESMF_FileRegridUTest.F90, line 182
   PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
   PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
   PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
   Ending Test, file ESMF_FileRegridUTest.F90, line 182
-  Ending Test, file ESMF_FileRegridUTest.F90, line 182
+  PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
+  PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
   Ending Test, file ESMF_FileRegridUTest.F90, line 182
   
  Variable Name           = elmtdata
@@ -93,7 +93,30 @@ build time -- 2021-10-06 03:58:19.810566
   
   PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
   Ending Test, file ESMF_FileRegridUTest.F90, line 182
-  PET           1  Test Elapsed Time    1145.8010000000002       msec.
-  PET           3  Test Elapsed Time    1146.0949999999998       msec.
-  PET           0  Test Elapsed Time    1146.8499999999999       msec.
-  PET           2  Test Elapsed Time    1146.1859999999999       msec.
+  PET           3  Test Elapsed Time    1187.0409999999999       msec.
+  PET           1  Test Elapsed Time    1187.1140000000000       msec.
+  PET           0  Test Elapsed Time    1187.7629999999999       msec.
+  PET           2  Test Elapsed Time    1187.4879999999998       msec.
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 2 with PID 0 on
+node r1i1n21 exiting improperly. There are three reasons this could occur:
+
+1. this process did not call "init" before exiting, but others in
+the job did. This can cause a job to hang indefinitely while it waits
+for all processes to call "init". By rule, if one process calls "init",
+then ALL processes must call "init" prior to termination.
+
+2. this process called "init", but exited without calling "finalize".
+By rule, all processes that call "init" MUST call "finalize" prior to
+exiting or it will be considered an "abnormal termination"
+
+3. this process called "MPI_Abort" or "orte_abort" and the mca parameter
+orte_create_session_dirs is set to false. In this case, the run-time cannot
+detect that the abort call was an abnormal termination. Hence, the only
+error message you will receive is this one.
+
+This may have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+
+You can avoid this message by specifying -quiet on the mpirun command line.
+--------------------------------------------------------------------------

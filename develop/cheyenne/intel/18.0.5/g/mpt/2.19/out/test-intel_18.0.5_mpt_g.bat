@@ -1,4 +1,4 @@
-Wed Oct 6 05:33:51 MDT 2021
+Mon Nov 1 05:40:18 MDT 2021
 #!/bin/sh -l
 #PBS -N test-intel_18.0.5_mpt_g.bat
 #PBS -l walltime=3:00:00
@@ -8,6 +8,8 @@ Wed Oct 6 05:33:51 MDT 2021
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/intel_18.0.5_mpt_g_develop
+
+module load python
 module load intel/18.0.5 mpt/2.19 netcdf/4.6.3
 module list >& module-test.log
 
@@ -23,10 +25,8 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh cheyenne6 /glade/scratch/mpotts//glade/scratch/mpotts/intel_18.0.5_mpt_g_develop/getres-int.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh cheyenne6 /glade/scratch/mpotts//glade/scratch/mpotts/intel_18.0.5_mpt_g_develop/getres-int.sh

@@ -1,4 +1,4 @@
-Wed Oct 6 05:33:51 MDT 2021
+Mon Nov 1 05:40:19 MDT 2021
 #!/bin/sh -l
 #PBS -N build-intel_18.0.5_mpt_g.bat
 #PBS -l walltime=1:00:00
@@ -9,6 +9,8 @@ Wed Oct 6 05:33:51 MDT 2021
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/intel_18.0.5_mpt_g_develop
+
+module load python
 module load intel/18.0.5 mpt/2.19 netcdf/4.6.3
 module list >& module-build.log
 
