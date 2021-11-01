@@ -1,4 +1,4 @@
-Mon Nov 1 08:38:27 UTC 2021
+Mon Nov 1 09:41:41 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-intel_18.0.4_intelmpi_g.bat_%j.o
