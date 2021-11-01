@@ -1,4 +1,4 @@
-Fri Oct 8 10:14:46 UTC 2021
+Mon Nov 1 09:30:58 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-gfortran_9.2.0_openmpi_g.bat_%j.o
@@ -23,6 +23,7 @@ export ESMF_NETCDF_INCLUDE=$NETCDF/include
 export ESMF_NETCDF_LIBPATH=$NETCDF/lib
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
 export ESMF_NETCDF=nc-config
+tar xvfz ~/pytest-input.tar.gz
 export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi
