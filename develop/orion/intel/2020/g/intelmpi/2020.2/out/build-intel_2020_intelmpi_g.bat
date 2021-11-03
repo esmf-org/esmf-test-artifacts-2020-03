@@ -1,4 +1,4 @@
-Tue Nov 2 06:30:50 CDT 2021
+Wed Nov 3 02:29:41 CDT 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-intel_2020_intelmpi_g.bat_%j.o
