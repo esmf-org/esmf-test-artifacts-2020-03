@@ -1,4 +1,4 @@
-Thu Nov 4 06:25:36 UTC 2021
+Thu Nov 4 07:14:19 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-gfortran_9.2.0_mpiuni_O.bat_%j.o
