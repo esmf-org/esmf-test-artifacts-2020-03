@@ -1,4 +1,4 @@
-Fri Nov 5 09:07:14 UTC 2021
+Fri Nov 5 09:55:24 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-pgi_18.1_intelmpi_g.bat_%j.o
