@@ -1,4 +1,4 @@
-build time -- 2021-11-11 03:46:48.779878
+build time -- 2021-11-12 03:46:50.712274
  --------------------------------------- 
  Start of  System Test ESMF_XGridSerialSTest
  --------------------------------------- 
@@ -37,12 +37,12 @@ build time -- 2021-11-11 03:46:48.779878
  atmos SetVM finished, rc=            0           0
  Atmosphere Register starting
  Atmosphere Register starting
- Registered Initialize, Run, and Finalize routines
- Atmosphere Register returning
  Atmosphere Register starting
  Registered Initialize, Run, and Finalize routines
  Atmosphere Register returning
  Atmosphere Register starting
+ Registered Initialize, Run, and Finalize routines
+ Atmosphere Register returning
  Registered Initialize, Run, and Finalize routines
  Atmosphere Register returning
  Registered Initialize, Run, and Finalize routines
@@ -69,9 +69,9 @@ build time -- 2021-11-11 03:46:48.779878
  land SetServices finished, rc=            0
  Registered Initialize, Run, and Finalize routines
  Land Register returning
+ land SetServices finished, rc=            0
  land SetServices finished, rc=            0
  ocean SetVM finished, rc=            0
- land SetServices finished, rc=            0
  ocean SetVM finished, rc=            0
  ocean SetVM finished, rc=            0
  ocean SetVM finished, rc=            0
@@ -111,34 +111,32 @@ build time -- 2021-11-11 03:46:48.779878
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0
- Land Init starting, localPet =           2
  Land Init starting, localPet =           0
- Land Init starting, localPet =           1
  Land Init starting, localPet =           3
+ Land Init starting, localPet =           1
+ Land Init starting, localPet =           2
  ESMF_StatePrint: (pet 0):
  ESMF_StatePrint: (pet 1):
   State name: land_export
  ESMF_StatePrint: (pet 2):
   State name: land_export
+  State name: land_export
  ESMF_StatePrint: (pet 3):
   State name: land_export
-  State name: land_export
+     status: Export State, object count: 1
      status: Export State, object count: 1
      reconcile needed: T
      status: Export State, object count: 1
      reconcile needed: T
      status: Export State, object count: 1
      reconcile needed: T
- Base name    = land_export
-     status: Export State, object count: 1
      reconcile needed: T
  Base name    = land_export
  Base name    = land_export
  Status: Base = Ready,  object = Ready
  Proxy        = no
+ Base name    = land_export
  Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
  Base name    = land_export
  Status: Base = Ready,  object = Ready
  Proxy        = no
@@ -146,10 +144,11 @@ build time -- 2021-11-11 03:46:48.779878
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Root Info (Attributes):
+ Proxy        = no
  Root Info (Attributes):
 {}     object: 1,name: F_lnd
             type: Field
- land Init returning
 {}     object: 1,name: F_lnd
             type: Field
  land Init returning
@@ -161,6 +160,7 @@ build time -- 2021-11-11 03:46:48.779878
             type: Field
  land Init returning
  Land Initialize finished, rc =           0
+ land Init returning
  Land Initialize finished, rc =           0
  Land Initialize finished, rc =           0
  Ocean Init starting, localPet =           0
@@ -182,15 +182,15 @@ build time -- 2021-11-11 03:46:48.779878
  Atmos Init returning
  Atmos Init returning
  Atmosphere Initialize finished, rc =           0
- Atmosphere Initialize finished, rc =           0
  Atmos Init returning
  Atmos Init returning
  Atmosphere Initialize finished, rc =           0
  Atmosphere Initialize finished, rc =           0
  User Coupler Init starting, localPet =           2
+ Atmosphere Initialize finished, rc =           0
+ User Coupler Init starting, localPet =           1
  User Coupler Init starting, localPet =           3
  User Coupler Init starting, localPet =           0
- User Coupler Init starting, localPet =           1
  User Coupler Init returning
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
@@ -206,18 +206,16 @@ build time -- 2021-11-11 03:46:48.779878
  Land Run returning
  Land Run returning
  Land Run returned, rc =           0
+ Land Run returning
  Land Run returning
  Land Run returned, rc =           0
  Land Run returned, rc =           0
  Ocean Run starting
  Ocean Run starting
- Land Run returning
  Land Run returned, rc =           0
  Ocean Run starting
  Ocean Run starting
  Ocean Run returning
- Ocean Run returning
- Ocean Run returned, rc =           0
  Ocean Run returning
  Ocean Run returned, rc =           0
  Ocean Run returning
@@ -225,6 +223,8 @@ build time -- 2021-11-11 03:46:48.779878
  User Coupler Run starting
  Ocean Run returned, rc =           0
  User Coupler Run starting
+ Ocean Run returning
+ Ocean Run returned, rc =           0
  User Coupler Run starting
  User Coupler Run starting
  User Coupler Run returning
@@ -243,10 +243,10 @@ build time -- 2021-11-11 03:46:48.779878
  User Coupler Run returning
  Coupler Run returned, rc =           0
  Atmosphere Run starting
- Atmosphere Run starting
  Atmosphere Run returning
  Atmosphere Run returned, rc =           0
  User Coupler Final starting
+ Atmosphere Run starting
  Atmosphere Run returning
  Atmosphere Run returned, rc =           0
  User Coupler Final starting
@@ -256,8 +256,8 @@ build time -- 2021-11-11 03:46:48.779878
  Coupler Finalize finished, rc =           0
  User Coupler Final returning
  Coupler Finalize finished, rc =           0
- Coupler Finalize finished, rc =           0
  User Coupler Final returning
+ Coupler Finalize finished, rc =           0
  Coupler Finalize finished, rc =           0
  Land Final starting
  Land Final starting
@@ -270,19 +270,19 @@ build time -- 2021-11-11 03:46:48.779878
  Ocean Final starting
  Land Final returning
  Land Finalize finished, rc =           0
+ Ocean Final starting
  Land Final returning
  Land Finalize finished, rc =           0
+ Ocean Final starting
  Ocean Final starting
  Ocean Final returning
- Ocean Final starting
- Ocean Final starting
+ Ocean Final returning
+ Ocean Finalize finished, rc =           0
+ Ocean Final returning
+ Ocean Finalize finished, rc =           0
  Ocean Finalize finished, rc =           0
  Atmosphere Final starting
- Ocean Final returning
- Ocean Finalize finished, rc =           0
  Atmosphere Final starting
- Ocean Final returning
- Ocean Finalize finished, rc =           0
  Atmosphere Final starting
  Ocean Final returning
  Ocean Finalize finished, rc =           0
@@ -299,6 +299,7 @@ build time -- 2021-11-11 03:46:48.779878
   System Test ESMF_XGridSerialSTest                                                                                                                                                                                                                               complete.
  All Destroy routines done
   System Test ESMF_XGridSerialSTest                                                                                                                                                                                                                               complete.
+ ------------------------------------------------------------
  All Destroy routines done
   System Test ESMF_XGridSerialSTest                                                                                                                                                                                                                               complete.
  ------------------------------------------------------------
@@ -316,7 +317,6 @@ build time -- 2021-11-11 03:46:48.779878
  ------------------------------------------------------------
  ------------------------------------------------------------
  Test finished, localPet =            0
- ------------------------------------------------------------
  ------------------------------------------------------------
  ------------------------------------------------------------
  ------------------------------------------------------------
