@@ -1,4 +1,4 @@
-build time -- 2021-11-11 04:06:36
+build time -- 2021-11-12 04:06:56
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -6,11 +6,11 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   Beginning Test, file ESMF_SciCompCreateUTest.F90, line 59
   Beginning Test, file ESMF_SciCompCreateUTest.F90, line 59
   Beginning Test, file ESMF_SciCompCreateUTest.F90, line 59
+  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_SciCompCreateUTest.F90, line 59
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
   PASS  Testing SciComp IsCreated for uncreated object, ESMF_SciCompCreateUTest.
  F90, line 67
   PASS  Testing SciComp IsCreated for uncreated object, ESMF_SciCompCreateUTest.
@@ -56,12 +56,12 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  SciComp equality before assignment Test, ESMF_SciCompCreateUTest.F90, li
  ne 103
   PASS  SciComp assignment and equality Test, ESMF_SciCompCreateUTest.F90, line 
-  PASS  SciComp assignment and equality Test, ESMF_SciCompCreateUTest.F90, line 
  112
   PASS  SciComp assignment and equality Test, ESMF_SciCompCreateUTest.F90, line 
  112
   PASS  SciComp assignment and equality Test, ESMF_SciCompCreateUTest.F90, line 
  112
+  PASS  SciComp assignment and equality Test, ESMF_SciCompCreateUTest.F90, line 
  112
   PASS  SciCompDestroy Test, ESMF_SciCompCreateUTest.F90, line 119
   PASS  SciCompDestroy Test, ESMF_SciCompCreateUTest.F90, line 119
@@ -97,6 +97,8 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  ne 149
   PASS  SciComp non-equality after destroy Test, ESMF_SciCompCreateUTest.F90, li
  ne 149
+  PASS  Double SciCompDestroy through alias Test, ESMF_SciCompCreateUTest.F90, l
+ ine 156
   PASS  SciComp non-equality after destroy Test, ESMF_SciCompCreateUTest.F90, li
  ne 149
   PASS  Double SciCompDestroy through alias Test, ESMF_SciCompCreateUTest.F90, l
@@ -105,8 +107,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  ine 156
   PASS  Double SciCompDestroy through alias Test, ESMF_SciCompCreateUTest.F90, l
  ine 156
-  PASS  Double SciCompDestroy through alias Test, ESMF_SciCompCreateUTest.F90, l
- ine 156
   PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 169
   PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 169
   PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 169
@@ -131,31 +131,42 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  Atmosphere                                                                     
                                                                                 
                                                                                 
- Name: 
- Atmosphere                                                                     
-                                                                                
-                                                                                
                     
  Name: 
  Atmosphere                                                                     
                                                                                 
                                                                                 
-                    
  Name: 
  Atmosphere                                                                     
                                                                                 
                                                                                 
                     
                     
+ Name: 
+ Atmosphere                                                                     
+                                                                                
+                                                                                
+                    
   PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 220
   PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 220
   PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 220
   PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 220
- cname = 
  cname = 
  Atmosphere                                                                     
                                                                                 
                                                                                 
+                    
+ cname = 
+ Atmosphere                                                                     
+                                                                                
+ bname = 
+ Atmosphere                                                                     
+                                                                                
+                                                                                
+                    
+  PASS  Verifying the correct Component name was returned Test, ESMF_SciCompCrea
+ teUTest.F90, line 231
+ cname = 
  Atmosphere                                                                     
                                                                                 
                                                                                 
@@ -166,9 +177,7 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
                                                                                 
                     
   PASS  Verifying the correct Component name was returned Test, ESMF_SciCompCrea
- cname = 
- Atmosphere                                                                     
-                                                                                
+ teUTest.F90, line 231
                                                                                 
                     
  bname = 
@@ -190,15 +199,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
                     
   PASS  Verifying the correct Component name was returned Test, ESMF_SciCompCrea
  teUTest.F90, line 231
-                    
- bname = 
- Atmosphere                                                                     
-                                                                                
-                                                                                
-                    
-  PASS  Verifying the correct Component name was returned Test, ESMF_SciCompCrea
- teUTest.F90, line 231
- teUTest.F90, line 231
   PASS  Setting  a Science Component name Test, ESMF_SciCompCreateUTest.F90, lin
  e 241
   PASS  Setting  a Science Component name Test, ESMF_SciCompCreateUTest.F90, lin
@@ -207,17 +207,17 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  e 241
   PASS  Setting  a Science Component name Test, ESMF_SciCompCreateUTest.F90, lin
  e 241
+ Science Component:
+  Component name = CAM
  Science Component:
   Component name = CAM
   PASS  Printing a Component Test, ESMF_SciCompCreateUTest.F90, line 252
  Science Component:
   Component name = CAM
- Science Component:
-  Component name = CAM
- Science Component:
-  Component name = CAM
   PASS  Printing a Component Test, ESMF_SciCompCreateUTest.F90, line 252
   PASS  Printing a Component Test, ESMF_SciCompCreateUTest.F90, line 252
+ Science Component:
+  Component name = CAM
   PASS  Printing a Component Test, ESMF_SciCompCreateUTest.F90, line 252
   PASS  Destroying a Component Test, ESMF_SciCompCreateUTest.F90, line 263
   PASS  Destroying a Component Test, ESMF_SciCompCreateUTest.F90, line 263
@@ -231,11 +231,11 @@ Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           0  Test Elapsed Time    2.48899999999999       msec.
-  PET           1  Test Elapsed Time    2.60000000000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           3  Test Elapsed Time    2.74900000000000       msec.
-  PET           2  Test Elapsed Time    2.80800000000001       msec.
+  PET           3  Test Elapsed Time    2.54099999999999       msec.
+  PET           0  Test Elapsed Time    2.58499999999998       msec.
+  PET           2  Test Elapsed Time    2.70300000000000       msec.
+  PET           1  Test Elapsed Time    2.73100000000000       msec.
