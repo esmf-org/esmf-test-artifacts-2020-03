@@ -1,4 +1,4 @@
-build time -- 2021-11-12 06:23:38
+build time -- 2021-11-13 06:23:21
   Beginning Test, file ESMF_VMComponentUTest.F90, line 216
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMComponentUTest.F90, line 216
@@ -14,28 +14,36 @@ build time -- 2021-11-12 06:23:38
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0xF0000000
-  localID = 0
---- ESMCI::VMId::print() end ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x1853240
+vm located at: 0x1c36240
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0xF0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+--- VMK::print() start ---
+vm located at: 0x1f6b240
 npets = 4, mypet=2
+  pth_mutex =		 0x1fc6d80
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 2
+MPI_Comm_rank in MPI_COMM_WORLD: 2
+MPI thread level support: 3
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x1373240
+vm located at: 0x1577240
 npets = 4, mypet=3
-  pth_mutex =		 0x16d14b0
+  pth_mutex =		 0x15d2d80
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
@@ -44,12 +52,17 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0xb4b240
+vm located at: 0x1aad240
 npets = 4, mypet=0
-  pth_mutex =		 0xea9a00
+  pth_mutex =		 0x1e0ba40
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -69,10 +82,8 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
---- VMK::print() start ---
-vm located at: 0xe71240
 npets = 4, mypet=1
-  pth_mutex =		 0x11cf4b0
+  pth_mutex =		 0x1c91d80
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
@@ -92,12 +103,6 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
-  pth_mutex =		 0x1bb14b0
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 2
-MPI_Comm_rank in MPI_COMM_WORLD: 2
-MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
@@ -112,11 +117,6 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
@@ -133,6 +133,10 @@ ncores = 4
  ne 255
   PASS  Component Create/SetServices/Destroy ForcePthreads Test, ESMF_VMComponen
  tUTest.F90, line 289
+  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
+ ne 296
+  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
+ ne 303
   PASS  Component Create/SetServices/Destroy ForcePthreads Test, ESMF_VMComponen
  tUTest.F90, line 289
   PASS  Component Create/SetServices/Destroy ForcePthreads Test, ESMF_VMComponen
@@ -146,44 +150,40 @@ ncores = 4
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
  ne 296
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
-  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
- ne 296
-  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
  ne 303
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
  ne 303
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
- ne 303
  ne 303
   PASS  Create test VM for IsCreated, ESMF_VMComponentUTest.F90, line 311
   PASS  Create test VM for IsCreated, ESMF_VMComponentUTest.F90, line 311
   PASS  Create test VM for IsCreated, ESMF_VMComponentUTest.F90, line 311
   PASS  Create test VM for IsCreated, ESMF_VMComponentUTest.F90, line 311
   PASS  Set test VM for IsCreated, ESMF_VMComponentUTest.F90, line 320
+  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  336
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  343
   PASS  Set test VM for IsCreated, ESMF_VMComponentUTest.F90, line 320
   PASS  Set test VM for IsCreated, ESMF_VMComponentUTest.F90, line 320
   PASS  Set test VM for IsCreated, ESMF_VMComponentUTest.F90, line 320
-  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
-  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
-  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
-  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  336
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  336
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  336
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  336
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  343
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  343
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  343
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  343
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
+  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
+  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
+  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  336
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  336
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  336
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  343
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  343
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  343
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
@@ -203,23 +203,23 @@ ncores = 4
   PASS  Exhaustive Component Create/SetServices/Destroy ForcePthreads Test, ESMF
  _VMComponentUTest.F90, line 420
   Ending Test, file ESMF_VMComponentUTest.F90, line 425
+  Ending Test, file ESMF_VMComponentUTest.F90, line 425
   PASS  Exhaustive Component Create/SetServices/Destroy ForcePthreads Test, ESMF
  _VMComponentUTest.F90, line 420
   Ending Test, file ESMF_VMComponentUTest.F90, line 425
-  Ending Test, file ESMF_VMComponentUTest.F90, line 425
-  PET           3  Test Elapsed Time    1897.30700000000       msec.
-  PET           2  Test Elapsed Time    1899.79700000000       msec.
-  PET           0  Test Elapsed Time    1900.27900000000       msec.
-  PET           1  Test Elapsed Time    1901.83900000000       msec.
-TOTCPU=06:14:24 ELAP=00:11:42 REQMEM=5875Mc REQCPUS=24 ALLOCCPUS=32 TIMELIMIT=02:30:00 PART=s4 ACCT=star
-MAXRSS=0 MAXVMSIZE=2239500K
+  PET           0  Test Elapsed Time    1822.10300000000       msec.
+  PET           1  Test Elapsed Time    1823.22000000000       msec.
+  PET           2  Test Elapsed Time    1823.55400000000       msec.
+  PET           3  Test Elapsed Time    1823.00000000000       msec.
+TOTCPU=06:12:48 ELAP=00:11:39 REQMEM=5875Mc REQCPUS=24 ALLOCCPUS=32 TIMELIMIT=02:30:00 PART=s4 ACCT=star
+MAXRSS=0 MAXVMSIZE=196896K
 ________________________________________________________________
-Job Resource Usage Summary for 11598406
+Job Resource Usage Summary for 11601230
 
-  CPU Time Used : 06:14:24
+  CPU Time Used : 06:12:48
   Memory Used : 0
-  Virtual Memory Used : 2239500K
-  Walltime Used : 00:11:42
+  Virtual Memory Used : 196896K
+  Walltime Used : 00:11:39
 
   Memory Requested : 5875Mc (n=per node; c=per core)
   CPUs Requested / Allocated : 24 / 32
@@ -229,6 +229,6 @@ Job Resource Usage Summary for 11598406
   Head Node : 
   Charged to : star
 
-  Job Stopped : Fri Nov 12 06:35:21 UTC 2021
+  Job Stopped : Sat Nov 13 06:35:01 UTC 2021
 _____________________________________________________________________
 
