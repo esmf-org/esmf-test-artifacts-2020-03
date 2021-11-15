@@ -1,12 +1,12 @@
-build time -- 2021-11-07 06:16:10
-[1636267641.289611] [h25c25:287689:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1636267641.294956] [h25c25:287689:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1636267641.289556] [h25c25:287691:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1636267641.295000] [h25c25:287691:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1636267641.280472] [h25c25:287690:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1636267641.285403] [h25c25:287690:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1636267641.280470] [h25c25:287692:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1636267641.285342] [h25c25:287692:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+build time -- 2021-11-15 15:18:04
+[1636991541.568217] [h6c39:284399:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1636991541.573224] [h6c39:284399:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1636991541.568097] [h6c39:284401:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1636991541.573174] [h6c39:284401:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1636991541.559768] [h6c39:284402:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1636991541.564896] [h6c39:284402:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1636991541.559799] [h6c39:284400:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1636991541.565043] [h6c39:284400:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
  State Reconcile Example 1: Component Creation
  State Reconcile Example 1: Component Creation
  State Reconcile Example 1: Component Creation
@@ -29,7 +29,6 @@ build time -- 2021-11-07 06:16:10
  State Example 1 finished
  ready to set entry point 1
  ready to set entry point 2
- ready to call init for comp 1
  ready to set entry point 1
  ready to set entry point 2
  ready to call init for comp 1
@@ -39,38 +38,41 @@ build time -- 2021-11-07 06:16:10
  ready to set entry point 1
  ready to set entry point 2
  ready to call init for comp 1
+ ready to call init for comp 1
+ i am comp1_init
  ready to call init for comp 2
+ ready to call init for comp 2
+ i am comp2_init
  i am comp1_init
  i am comp2_init
  ready to call init for comp 2
- i am comp2_init
- i am comp1_init
  State Example 2 finished
  State before calling StateReconcile()
  ready to call init for comp 2
  State Example 2 finished
  State before calling StateReconcile()
- State Example 2 finished
- State before calling StateReconcile()
- ready to call init for comp 2
+ ESMF_StatePrint: (pet 1):
  State Example 2 finished
  State before calling StateReconcile()
  ESMF_StatePrint: (pet 2):
+  State name: Ocn2Atm
+ State Example 2 finished
+ State before calling StateReconcile()
+ ESMF_StatePrint: (pet 3):
+  State name: Ocn2Atm
  ESMF_StatePrint: (pet 0):
   State name: Ocn2Atm
- ESMF_StatePrint: (pet 3):
-  State name: Ocn2Atm
-  State name: Ocn2Atm
- ESMF_StatePrint: (pet 1):
+     status: Unspecified intent direction, object count: 0
   State name: Ocn2Atm
      status: Unspecified intent direction, object count: 0
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
+     reconcile needed: F
+ Base name    = Ocn2Atm
+ Base name    = Ocn2Atm
  Base name    = Ocn2Atm
  Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
@@ -79,25 +81,13 @@ build time -- 2021-11-07 06:16:10
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {} State after calling StateReconcile()
-{} State after calling StateReconcile()
-{} State after calling StateReconcile()
- ESMF_StatePrint: (pet 2):
-  State name: Ocn2Atm
-     status: Unspecified intent direction, object count: 0
-{} State after calling StateReconcile()
- ESMF_StatePrint: (pet 3):
-  State name: Ocn2Atm
-     status: Unspecified intent direction, object count: 0
-     reconcile needed: F
  ESMF_StatePrint: (pet 0):
   State name: Ocn2Atm
      status: Unspecified intent direction, object count: 0
@@ -106,6 +96,8 @@ build time -- 2021-11-07 06:16:10
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+{} State Example 3 finished
+{} State after calling StateReconcile()
  ESMF_StatePrint: (pet 1):
   State name: Ocn2Atm
      status: Unspecified intent direction, object count: 0
@@ -114,18 +106,26 @@ build time -- 2021-11-07 06:16:10
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+{} State Example 3 finished
+{} State after calling StateReconcile()
+ ESMF_StatePrint: (pet 2):
+  State name: Ocn2Atm
+     status: Unspecified intent direction, object count: 0
      reconcile needed: F
  Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {} State Example 3 finished
+{} State after calling StateReconcile()
+ ESMF_StatePrint: (pet 3):
+  State name: Ocn2Atm
+     status: Unspecified intent direction, object count: 0
+     reconcile needed: F
  Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{} State Example 3 finished
-{} State Example 3 finished
 {} State Example 3 finished
   PASS  Example ESMF_StateReconcileEx, ESMF_StateReconcileEx.F90, line 294
   PASS  Example ESMF_StateReconcileEx, ESMF_StateReconcileEx.F90, line 294
