@@ -1,4 +1,4 @@
-Mon Nov 15 05:36:43 MST 2021
+Tue Nov 16 04:12:17 MST 2021
 #!/bin/sh -l
 #PBS -N test-intel_18.0.5_openmpi_g.bat
 #PBS -l walltime=3:00:00
