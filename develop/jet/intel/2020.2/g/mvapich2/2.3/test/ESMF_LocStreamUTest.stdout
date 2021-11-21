@@ -1,4 +1,4 @@
-build time -- 2021-11-20 04:06:23
+build time -- 2021-11-21 04:06:17
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -60,13 +60,13 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 155
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
- 0, line 155
-  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 147
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 155
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 155
+  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
+ 0, line 155
   PASS  Testing LocStream Validate, ESMF_LocStreamUTest.F90, line 187
   PASS  Testing LocStream Validate, ESMF_LocStreamUTest.F90, line 187
   PASS  Testing LocStream Validate, ESMF_LocStreamUTest.F90, line 187
@@ -196,30 +196,35 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Test LocStream Serialize/Deserialize, ESMF_LocStreamUTest.F90, line 1020
   PASS  Test LocStream Serialize/Deserialize, ESMF_LocStreamUTest.F90, line 1020
  LocStream Print Starts ====>
- LocStream Print Starts ====>
  Name =     'LocStream048'
- Name =     'LocStream048'
- KeyCount =           2
- Keys:
  KeyCount =           2
  Keys:
  LocStream Print Starts ====>
  Name =     'LocStream048'
- KeyCount =           2
- Keys:
-    A1 - LN1    U1
-    A1 - LN1    U1
  LocStream Print Starts ====>
  Name =     'LocStream048'
  KeyCount =           2
  Keys:
     A1 - LN1    U1
+ KeyCount =           2
+ Keys:
     A1 - LN1    U1
-     arr(           1 )=   2.325755788736949E-310
-     arr(           1 )=   2.352339512260178E-310
+ LocStream Print Starts ====>
+ Name =     'LocStream048'
+ KeyCount =           2
+ Keys:
+    A1 - LN1    U1
+    A1 - LN1    U1
+     arr(           1 )=   2.339509037905838E-310
+     arr(           1 )=   2.343814811212605E-310
+     arr(           1 )=   2.352360241351141E-310
      arr(           2 )=    512.000122547150     
      arr(           3 )=    8192.00197219849     
-     arr(           1 )=   2.342278536900836E-310
+     arr(           2 )=    512.000122547150     
+     arr(           3 )=    8192.00197219849     
+     arr(           4 )=    131072.031677246     
+     arr(           5 )=    524288.127075195     
+    A2 - LN2    U2
      arr(           4 )=    131072.031677246     
      arr(           5 )=    524288.127075195     
     A2 - LN2    U2
@@ -228,36 +233,31 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
      arr(           4 )=    131072.031677246     
      arr(           5 )=    524288.127075195     
     A2 - LN2    U2
-     arr(           1 )=   2.355842263183625E-310
+     arr(           1 )=   2.356717364650658E-310
      arr(           2 )=    512.000122547150     
      arr(           3 )=    8192.00197219849     
      arr(           4 )=    131072.031677246     
      arr(           5 )=    524288.127075195     
     A2 - LN2    U2
-     arr(           2 )=    512.000122547150     
-     arr(           3 )=    8192.00197219849     
-     arr(           4 )=    131072.031677246     
-     arr(           5 )=    524288.127075195     
-    A2 - LN2    U2
-     arr(           1 )=   2.325755788730625E-310
+     arr(           1 )=   2.339509037899514E-310
+     arr(           1 )=   2.352360241344817E-310
+     arr(           2 )=   7.676145470849514E+218
+     arr(           3 )=   3.035286940369342E-152
+     arr(           4 )=   1.377080536897474E+093
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
      arr(           5 )=   2.221052049552993E+252
  LocStream Print Ends   ====>
-     arr(           1 )=   2.342278536894512E-310
+     arr(           5 )=   2.221052049552993E+252
+ LocStream Print Ends   ====>
+     arr(           1 )=   2.343814811206281E-310
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
      arr(           5 )=   2.221052049552993E+252
  LocStream Print Ends   ====>
-     arr(           1 )=   2.352339512253854E-310
-     arr(           2 )=   7.676145470849514E+218
-     arr(           3 )=   3.035286940369342E-152
-     arr(           4 )=   1.377080536897474E+093
-     arr(           5 )=   2.221052049552993E+252
- LocStream Print Ends   ====>
-     arr(           1 )=   2.355842263177301E-310
+     arr(           1 )=   2.356717364644334E-310
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
@@ -325,9 +325,9 @@ Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           0  Test Elapsed Time    55.5590000000000       msec.
-  PET           3  Test Elapsed Time    55.6180000000000       msec.
-  PET           1  Test Elapsed Time    55.6340000000000       msec.
+  PET           0  Test Elapsed Time    56.1980000000000       msec.
+  PET           1  Test Elapsed Time    56.2650000000000       msec.
+  PET           3  Test Elapsed Time    56.2750000000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           2  Test Elapsed Time    55.8130000000000       msec.
+  PET           2  Test Elapsed Time    56.4790000000000       msec.
