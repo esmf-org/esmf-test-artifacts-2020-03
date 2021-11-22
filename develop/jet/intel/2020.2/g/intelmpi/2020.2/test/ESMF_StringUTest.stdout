@@ -1,33 +1,33 @@
-build time -- 2021-11-21 03:59:43
+build time -- 2021-11-22 03:59:32
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
   Beginning Test, file ESMF_StringUTest.F90, line 46
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
   NUMBER_OF_PROCESSORS           2
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
  -- exiting f90ints subroutine
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
- -- entering f90ints subroutine
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
+  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          60
-  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
   fstr=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string2 subroutine
-  PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
   strlen =          60
   fstr=0123456789abcdefghijklmnopqrstuvwxyz
  -- leaving f90string2 subroutine
   PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
  -- entering f90string3 subroutine
+  PASS  Calling f90string2() directly from F90, ESMF_StringUTest.F90, line 76
   ints=         102         204         409         819
   strlen =         120
   fstr=abcdefghijklmnopqrstuvwxyz0123456789
@@ -47,15 +47,14 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
 -- entering c_strings, slen = 
 
--- entering c_strings, slen = 120
-120
-102102 204 409 819
+-- entering c_strings, slen = 120120
+102 204 409 819
+ strlen = 
+102 204 409 819
  strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
 
 
--- ready to call f90int by callback with passed ints
- 204 409 819
- strlen = 120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
+-- ready to call f90int by callback with passed ints120, str='abcdefghijklmnopqrstuvwxyz0123456789                                                                                    '
 
 
 -- ready to call f90int by callback with passed ints
@@ -72,6 +71,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with local ints
+
+
+-- ready to call f90string2 by callback, passing 15
+ -- entering f90string2 subroutine
+
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
@@ -106,15 +114,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          25
-  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with local ints
-
-
--- ready to call f90string2 by callback, passing 15
- -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          15
   fstr=ABCDEFGHIJKLMNO
@@ -141,6 +140,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   strlen =          14
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
+  fstr2=0123456789abcdefghijklmn
+ -- leaving f90string3 subroutine
+
+
+-- returned from call f90string3 by callback
+
+
+-- leaving c_strings
+  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
  -- leaving f90string2 subroutine
 
 
@@ -162,14 +170,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
 -- leaving c_strings
   PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
-
-
--- returned from call f90string3 by callback
-
-
--- leaving c_strings
   PASS  Calling c_strings with fstr, ESMF_StringUTest.F90, line 90
   PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
   PASS  Calling c_5strings, ESMF_StringUTest.F90, line 97
@@ -180,7 +180,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
 -- entering c_strings, slen = 60
 102 204 409 819
- strlen = 60, str=' 409 819
+ strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        ' 409 819
  strlen = 60, str='0123456789abcdefghijklmnopqrstuvwxyz                        '
 
 
@@ -195,7 +195,10 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
 
 -- ready to call f90int by callback with local ints
-0123456789abcdefghijklmnopqrstuvwxyz                        '
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+
 
 
 -- ready to call f90int by callback with passed ints
@@ -211,9 +214,16 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 -- ready to call f90int by callback with local ints
  -- entering f90ints subroutine
   ints=         102         204         409         819
- -- entering f90ints subroutine
-  ints=         102         204         409         819
   rc=           0
+ -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with local ints
+
+
+-- ready to call f90string2 by callback, passing 15
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
  -- exiting f90ints subroutine
 
 
@@ -236,16 +246,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   ints=         102         204         409         819
   strlen =          25
   fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
-  rc=           0
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with local ints
-
-
--- ready to call f90string2 by callback, passing 15
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
+ -- leaving f90string2 subroutine
   strlen =          15
   fstr=ABCDEFGHIJKLMNO
  -- leaving f90string2 subroutine
@@ -265,7 +266,10 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 -- returned from call f90string2 by callback
 
 
--- ready to call f90string3 by callback, passing 14, 24 -- leaving f90string2 subroutine
+-- ready to call f90string3 by callback, passing 14, 24
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =          14
 
 
 -- returned from call f90string2 by callback
@@ -286,10 +290,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
-
- -- entering f90string3 subroutine
-  ints=         102         204         409         819
-  strlen =          14
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
@@ -303,5 +303,5 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time    2.59899999999999       msec.
-  PET           1  Test Elapsed Time    2.61100000000000       msec.
+  PET           0  Test Elapsed Time    2.37100000000001       msec.
+  PET           1  Test Elapsed Time    2.49600000000003       msec.
