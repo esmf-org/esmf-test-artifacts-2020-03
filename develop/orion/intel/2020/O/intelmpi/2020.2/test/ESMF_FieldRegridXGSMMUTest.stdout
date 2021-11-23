@@ -1,4 +1,4 @@
-build time -- 2021-11-22 02:31:12
+build time -- 2021-11-23 02:32:23
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
   Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
@@ -115,8 +115,8 @@ DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x23ac9f0:
-            rank = 1, typekind = 6, base_addr = 0x7f32fe08bb80
+LocalArrayPrint: Array at address 0x11f74f0:
+            rank = 1, typekind = 6, base_addr = 0x7fd8ca607b80
             dim[0] = 5  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -228,8 +228,8 @@ DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x13df7b0:
-            rank = 1, typekind = 6, base_addr = 0x7f193fa07a00
+LocalArrayPrint: Array at address 0x1a18950:
+            rank = 1, typekind = 6, base_addr = 0x7f1254583a00
             dim[0] = 7  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -344,7 +344,7 @@ dimCount = 1
 tileCount = 1
 elementCountPTile: 12 
 regDecomp = NO
-tileListPDe: 1  Field Print Starts ====>
+tileListPDe:  Field Print Starts ====>
  Field base status = Ready
    Name = 'Field068'
  Base name    = Field068
@@ -364,8 +364,8 @@ DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x24f8ec0:
-            rank = 1, typekind = 6, base_addr = 0x7f32fe08b9c0
+LocalArrayPrint: Array at address 0x1343960:
+            rank = 1, typekind = 6, base_addr = 0x7fd8ca6079c0
             dim[0] = 5  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -385,7 +385,7 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
-
+1 
 elementCountPDe: 7 5 
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 
@@ -483,8 +483,8 @@ DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x152bcf0:
-            rank = 1, typekind = 6, base_addr = 0x7f193fa07740
+LocalArrayPrint: Array at address 0x1b64e90:
+            rank = 1, typekind = 6, base_addr = 0x7f1254583740
             dim[0] = 7  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -511,8 +511,8 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
   0.000000000000000E+000  0.000000000000000E+000
  - SMM from A -> X
- - SMM from A -> X
    1.00000000000000        1.00000000000000        1.00000000000000     
+ - SMM from A -> X
    1.00000000000000        1.00000000000000        1.00000000000000     
   0.000000000000000E+000
    1.00000000000000        1.00000000000000        1.00000000000000     
@@ -545,8 +545,8 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
  idXGSMMUTest.F90, line 67
            0 weights:            8 -   1.00000000000000     
    1.00000000000000        1.00000000000000        1.00000000000000     
-           1 weights:            8 -   1.00000000000000     
    1.00000000000000        1.00000000000000        1.00000000000000     
+           1 weights:            8 -   1.00000000000000     
    1.00000000000000     
            0 indices:            2 -           8
            1 ->           1
@@ -581,10 +581,10 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
    2.00000000000000        2.00000000000000        2.00000000000000     
   PASS  Regrid then create xgrid and regrid through xgrid, half overlap, ESMF_Fi
  eldRegridXGSMMUTest.F90, line 74
+           1 weights:           32 -   1.00000000000000     
            0 weights:           32 -   1.00000000000000     
    1.00000000000000        1.00000000000000       0.999999999999999     
    1.00000000000000       0.999999999999998        1.00000000000000     
-           1 weights:           32 -   1.00000000000000     
    1.00000000000000        1.00000000000000        1.00000000000000     
    1.00000000000000        1.00000000000000       0.999999999999998     
    1.00000000000000        1.00000000000000        1.00000000000000     
@@ -615,6 +615,7 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
           64          64
            0 flux on xgrid:    2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
            1 flux on xgrid:    2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
@@ -625,30 +626,29 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
+  PASS  Regrid then create xgrid and regrid through xgrid, check containment, ES
    2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+ MF_FieldRegridXGSMMUTest.F90, line 81
   PASS  Regrid then create xgrid and regrid through xgrid, check containment, ES
  MF_FieldRegridXGSMMUTest.F90, line 81
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-  PASS  Regrid then create xgrid and regrid through xgrid, check containment, ES
- MF_FieldRegridXGSMMUTest.F90, line 81
+           1 weights:         3828
            0 weights:         3741
            0 indices:         3741
-           1 weights:         3828
            1 indices:         3828
         7569        7569
         7569        7569
-           0 src idx range:            1          74
-           0 dst idx range:            1        6360
            1 src idx range:            4          78
+           0 src idx range:            1          74
            1 dst idx range:           41        6400
+           0 dst idx range:            1        6360
   PASS  Regrid then create xgrid and regrid through xgrid, check clipping, ESMF_
  FieldRegridXGSMMUTest.F90, line 88
   PASS  Regrid then create xgrid and regrid through xgrid, check clipping, ESMF_
@@ -811,16 +811,16 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
   PASS  Regrid then create xgrid and regrid through xgrid, exact cut, ESMF_Field
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
+   2.00000000000000        2.00000000000000        2.00000000000000     
  RegridXGSMMUTest.F90, line 95
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
-   2.00000000000000        2.00000000000000        2.00000000000000     
   PASS  Regrid then create xgrid and regrid through xgrid, exact cut, ESMF_Field
  RegridXGSMMUTest.F90, line 95
            1         254 -   1.00000000000000       0.333333657701149     
@@ -1547,7 +1547,7 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 0: (1, 98) / 
  for DE 1: (99, 196) / 
 indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193,            0   2.00000000000000        2.00000000000000     
+ for localDE 0 - DE 1:  (99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196) /           0   2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
    2.00000000000000        2.00000000000000        2.00000000000000     
@@ -1583,7 +1583,7 @@ indexListPDimPLocalDe (dims separated by / ):
   PASS  Regrid then create xgrid and regrid through xgrid, overlapping cut, ESMF
  _FieldRegridXGSMMUTest.F90, line 102
   Ending Test, file ESMF_FieldRegridXGSMMUTest.F90, line 112
-194, 195, 196) /
+
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
@@ -1631,5 +1631,5 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
   PASS  Regrid then create xgrid and regrid through xgrid, overlapping cut, ESMF
  _FieldRegridXGSMMUTest.F90, line 102
   Ending Test, file ESMF_FieldRegridXGSMMUTest.F90, line 112
-  PET           0  Test Elapsed Time    164.901000000000       msec.
-  PET           1  Test Elapsed Time    160.734000000000       msec.
+  PET           0  Test Elapsed Time    156.014000000000       msec.
+  PET           1  Test Elapsed Time    151.364000000000       msec.
