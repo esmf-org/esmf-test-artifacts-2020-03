@@ -1,7 +1,7 @@
-build time -- 2021-11-22 06:12:34
+build time -- 2021-11-23 06:28:22
 running test
-[1637563553.400900] [h8c27:104532:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1637563553.405631] [h8c27:104532:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1637650992.408204] [h23c47:32712:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1637650992.412757] [h23c47:32712:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
 test_assertNumpyAll_bad_mask (ESMF.test.base_test.Test) ... ok
 test_assertNumpyAll_type_differs (ESMF.test.base_test.Test) ... ok
 test_copy (ESMF.test.test_api.test_array.TestMaskedArray) ... ok
@@ -95,7 +95,13 @@ test_grid_slice_periodic (ESMF.test.test_api.test_grid.TestGrid) ... ok
 test_slice_grid_created_from_file_scrip (ESMF.test.test_api.test_grid.TestGrid) ... ok
 test_copy (ESMF.test.test_api.test_locstream.TestLocStream) ... ok
 test_create (ESMF.test.test_api.test_locstream.TestLocStream) ... ok
-test_mask (ESMF.test.test_api.test_locstream.TestLocStream) ... ok
+test_mask (ESMF.test.test_api.test_locstream.TestLocStream) ... LocStream:
+    name = 'Test LocStream' 
+    lower_bounds = array([0], dtype=int32) 
+    upper_bounds = array([5], dtype=int32) 
+    keys = [('ESMF:Y', array([7, 7, 7, 7, 7])), ('ESMF:X', array([1, 2, 3, 4, 5])), ('ESMF:Mask', array([0, 0, 1, 1, 1]))] 
+
+ok
 test_pickle (ESMF.test.test_api.test_locstream.TestLocStream) ... SKIP
 test_properties (ESMF.test.test_api.test_locstream.TestLocStream) ... SKIP
 test_slice (ESMF.test.test_api.test_locstream.TestLocStream) ... ok
@@ -103,13 +109,7 @@ test_mesh_10 (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_5 (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_50 (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_50_mask_area (ESMF.test.test_api.test_mesh.TestMesh) ... ok
-test_mesh_50_moab (ESMF.test.test_api.test_mesh.TestMesh) ... LocStream:
-    name = 'Test LocStream' 
-    lower_bounds = array([0], dtype=int32) 
-    upper_bounds = array([5], dtype=int32) 
-    keys = [('ESMF:Y', array([7, 7, 7, 7, 7])), ('ESMF:X', array([1, 2, 3, 4, 5])), ('ESMF:Mask', array([0, 0, 1, 1, 1]))] 
-
-ok
+test_mesh_50_moab (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_50_ngons (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_copy (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_create_from_file_esmfmesh (ESMF.test.test_api.test_mesh.TestMesh) ... ok
@@ -132,7 +132,7 @@ test_vm (ESMF.test.test_cbindings.TestCbindings) ... ok
 ----------------------------------------------------------------------
 XML: /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_g_develop/src/addon/ESMPy/nosetests.xml
 ----------------------------------------------------------------------
-Ran 89 tests in 2.996s
+Ran 89 tests in 2.791s
 
 OK (SKIP=12)
 
