@@ -1,4 +1,4 @@
-build time -- 2021-11-26 04:11:29
+build time -- 2021-11-27 04:11:32
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -7,17 +7,17 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 --- ESMCI::Array::print start ---
 --- ESMCI::Array::print start ---
  Base name    = Array002
- Base name    = Array002
- Base name    = Array002
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
 --- ESMCI::Array::print start ---
  Base name    = Array002
- Status: Base = Ready,  object = Ready
+ Base name    = Array002
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Base name    = Array002
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Status: Base = Ready,  object = Ready
@@ -32,7 +32,7 @@ deCount = 4
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
-~ local data in LocalArray for DE 3 ~
+~ local data in LocalArray for DE 2 ~
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
 {}Array typekind/rank: Real*8 / 2 
@@ -41,33 +41,36 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
+LocalArrayPrint: Array at address 0x1b2ec60:
+            rank = 2, typekind = 6, base_addr = 0x2aef62293fe0
+LocalArrayPrint: Array at address 0xad3c60:
+            rank = 2, typekind = 6, base_addr = 0x2b5f3a8e3fe0
+            dim[0] = 2  dim[1] = 2  
+  Real, *8, Dim 2, Data values:
 {}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
-~ local data in LocalArray for DE 2 ~
-LocalArrayPrint: Array at address 0x160ec00:
-            rank = 2, typekind = 6, base_addr = 0x2b7a8101bfe0
-LocalArrayPrint: Array at address 0x159bc00:
-            rank = 2, typekind = 6, base_addr = 0x2ba4ffe17fe0
+~ local data in LocalArray for DE 3 ~
+LocalArrayPrint: Array at address 0x1f6dc60:
+            rank = 2, typekind = 6, base_addr = 0x2b4f68a3bfe0
             dim[0] = 2  dim[1] = 2  
   Real, *8, Dim 2, Data values:
-LocalArrayPrint: Array at address 0xf42a00:
-            rank = 2, typekind = 6, base_addr = 0x2aed177effe0
+LocalArrayPrint: Array at address 0x2964a10:
+            rank = 2, typekind = 6, base_addr = 0x2b12722dffe0
             dim[0] = 2  dim[1] = 2  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  100
-LocalArrayPrint: Array at address 0x1b3ac00:
-            rank = 2, typekind = 6, base_addr = 0x2af55bf0ffe0
+( 2, 1) =  100
+( 1, 2) =  100
+( 2, 2) =  100
             dim[0] = 2  dim[1] = 2  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  101
 ( 2, 1) =  101
 ( 1, 2) =  101
 ( 2, 2) =  101
-            dim[0] = 2  dim[1] = 2  
-  Real, *8, Dim 2, Data values:
 ( 1, 1) =  102
 ( 2, 1) =  102
 ( 1, 2) =  102
@@ -75,6 +78,8 @@ LocalArrayPrint: Array at address 0x1b3ac00:
 dim 1: [0]: [1 [1 [1, 2] 2] 2]
 dim 2: [1]: [1 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = Array003
 ( 1, 1) =  103
 ( 2, 1) =  103
 ( 1, 2) =  103
@@ -84,9 +89,6 @@ dim 2: [1]: [1 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
 --- ESMCI::Array::print start ---
  Base name    = Array003
-( 2, 1) =  100
-( 1, 2) =  100
-( 2, 2) =  100
 dim 1: [0]: [1 [1 [1, 2] 2] 2]
 dim 2: [1]: [1 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
@@ -103,8 +105,6 @@ dim 2: [1]: [1 [1 [1, 2] 2] 2]
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
---- ESMCI::Array::print start ---
- Base name    = Array003
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
@@ -114,7 +114,11 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 2 ~
-LocalArrayPrint: Array at address 0x160f650:
+LocalArrayPrint: Array at address 0xad46b0:
+            rank = 2, typekind = 6, base_addr = 0x2b5f3a8e3fc0
+            dim[0] = 2  dim[1] = 2  
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  202
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
@@ -124,22 +128,23 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 3 ~
-LocalArrayPrint: Array at address 0x159c650:
-            rank = 2, typekind = 6, base_addr = 0x2ba4ffe17fc0
+LocalArrayPrint: Array at address 0x1f6e6b0:
+            rank = 2, typekind = 6, base_addr = 0x2b4f68a3bfc0
             dim[0] = 2  dim[1] = 2  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  203
 ( 2, 1) =  203
 ( 1, 2) =  203
 ( 2, 2) =  203
+dim 1: [0]: [1 [1 [1, 2] 2] 2]
 {}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0xf431f0:
-            rank = 2, typekind = 6, base_addr = 0x2aed177effc0
+LocalArrayPrint: Array at address 0x2965200:
+            rank = 2, typekind = 6, base_addr = 0x2b12722dffc0
             dim[0] = 2  dim[1] = 2  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  200
@@ -149,14 +154,16 @@ LocalArrayPrint: Array at address 0xf431f0:
 dim 1: [0]: [1 [1 [1, 2] 2] 2]
 dim 2: [1]: [1 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = Array004
 {}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x1b3b650:
-            rank = 2, typekind = 6, base_addr = 0x2af55bf0ffc0
+LocalArrayPrint: Array at address 0x1b2f6b0:
+            rank = 2, typekind = 6, base_addr = 0x2aef62293fc0
             dim[0] = 2  dim[1] = 2  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  201
@@ -168,11 +175,6 @@ dim 2: [1]: [1 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
 --- ESMCI::Array::print start ---
  Base name    = Array004
- Status: Base = Ready,  object = Ready
-            rank = 2, typekind = 6, base_addr = 0x2b7a8101bfc0
-            dim[0] = 2  dim[1] = 2  
-  Real, *8, Dim 2, Data values:
-( 1, 1) =  202
 ( 2, 1) =  202
 ( 1, 2) =  202
 ( 2, 2) =  202
@@ -190,7 +192,10 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 2 ~
-dim 1: [0]: [1 [1 [1, 2] 2] 2]
+LocalArrayPrint: Array at address 0xad5220:
+            rank = 2, typekind = 6, base_addr = 0x2b5f3a8e7f80
+            dim[0] = 4  dim[1] = 4  
+  Real, *8, Dim 2, Data values:
 dim 2: [1]: [1 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
 --- ESMCI::Array::print start ---
@@ -204,16 +209,10 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 3 ~
-LocalArrayPrint: Array at address 0x159d1c0:
-            rank = 2, typekind = 6, base_addr = 0x2ba4ffe1bf80
+LocalArrayPrint: Array at address 0x1f6f220:
+            rank = 2, typekind = 6, base_addr = 0x2b4f68a3ff80
             dim[0] = 4  dim[1] = 4  
   Real, *8, Dim 2, Data values:
-( 0, 0) =  300
-( 1, 0) =  301
-( 2, 0) =  301
-( 3, 0) =  303
---- ESMCI::Array::print start ---
- Base name    = Array004
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
@@ -223,8 +222,8 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0xf439e0:
-            rank = 2, typekind = 6, base_addr = 0x2aed177f3f80
+LocalArrayPrint: Array at address 0x29659f0:
+            rank = 2, typekind = 6, base_addr = 0x2b12722e3f80
             dim[0] = 4  dim[1] = 4  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  300
@@ -235,6 +234,8 @@ LocalArrayPrint: Array at address 0xf439e0:
 ( 1, 1) =  300
 ( 2, 1) =  300
 ( 3, 1) =  301
+( 0, 2) =  300
+ Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {}Array typekind/rank: Real*8 / 2 
@@ -243,8 +244,8 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x1b3c1c0:
-            rank = 2, typekind = 6, base_addr = 0x2af55bf13f80
+LocalArrayPrint: Array at address 0x1b30220:
+            rank = 2, typekind = 6, base_addr = 0x2aef62297f80
             dim[0] = 4  dim[1] = 4  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  301
@@ -256,14 +257,6 @@ LocalArrayPrint: Array at address 0x1b3c1c0:
 ( 2, 1) =  301
 ( 3, 1) =  301
 ( 0, 2) =  300
-( 1, 2) =  301
-( 2, 2) =  301
-( 3, 2) =  301
-( 0, 3) =  302
-LocalArrayPrint: Array at address 0x16101c0:
-            rank = 2, typekind = 6, base_addr = 0x2b7a8101ff80
-            dim[0] = 4  dim[1] = 4  
-  Real, *8, Dim 2, Data values:
 ( 0, 0) =  302
 ( 1, 0) =  300
 ( 2, 0) =  300
@@ -285,6 +278,13 @@ dim 2: [1]: [0 [1 [1, 2] 2] 3]
 --- ESMCI::Array::print end ---
 --- ESMCI::Array::print start ---
  Base name    = Array005
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+( 0, 0) =  300
+( 1, 0) =  301
+( 2, 0) =  301
+( 3, 0) =  303
 ( 0, 1) =  302
 ( 1, 1) =  303
 ( 2, 1) =  303
@@ -303,11 +303,6 @@ dim 2: [1]: [0 [1 [1, 2] 2] 3]
 --- ESMCI::Array::print start ---
  Base name    = Array005
  Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}Array typekind/rank: Real*8 / 2 
-~ lower class' values ~
-( 0, 2) =  300
 ( 1, 2) =  300
 ( 2, 2) =  300
 ( 3, 2) =  301
@@ -329,7 +324,12 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0xf441d0:
+LocalArrayPrint: Array at address 0x29661e0:
+            rank = 2, typekind = 6, base_addr = 0x2b12722e3f00
+( 1, 2) =  301
+( 2, 2) =  301
+( 3, 2) =  301
+( 0, 3) =  302
 ( 1, 3) =  303
 ( 2, 3) =  303
 ( 3, 3) =  301
@@ -347,24 +347,16 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x1b3cf60:
-            rank = 2, typekind = 6, base_addr = 0x2af55bf13f00
-            dim[0] = 4  dim[1] = 4  
-  Real, *8, Dim 2, Data values:
-( 0, 0) =  401
-( 1, 0) =  401
-( 2, 0) =  401
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
+LocalArrayPrint: Array at address 0x1b30fc0:
+            rank = 2, typekind = 6, base_addr = 0x2aef62297f00
 {}Array typekind/rank: Real*8 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 2 ~
-LocalArrayPrint: Array at address 0x1610f80:
-            rank = 2, typekind = 6, base_addr = 0x2b7a8101ff00
+LocalArrayPrint: Array at address 0xad5fe0:
+            rank = 2, typekind = 6, base_addr = 0x2b5f3a8e7f00
             dim[0] = 4  dim[1] = 4  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  402
@@ -379,12 +371,21 @@ LocalArrayPrint: Array at address 0x1610f80:
 ( 1, 2) =  402
 ( 2, 2) =  402
 ( 3, 2) =  403
+( 0, 3) =  402
+( 1, 3) =  402
+( 2, 3) =  402
+( 3, 3) =  402
+dim 1: [0]: [0 [1 [1, 2] 2] 3]
+ Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Real*8 / 2 
+~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 3 ~
-LocalArrayPrint: Array at address 0x159df80:
-            rank = 2, typekind = 6, base_addr = 0x2ba4ffe1bf00
+LocalArrayPrint: Array at address 0x1f6ffe0:
+            rank = 2, typekind = 6, base_addr = 0x2b4f68a3ff00
             dim[0] = 4  dim[1] = 4  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  400
@@ -402,11 +403,6 @@ LocalArrayPrint: Array at address 0x159df80:
 ( 0, 3) =  403
 ( 1, 3) =  403
 ( 2, 3) =  403
-( 3, 3) =  403
-dim 1: [0]: [0 [1 [1, 2] 2] 3]
-dim 2: [1]: [0 [1 [1, 2] 2] 3]
---- ESMCI::Array::print end ---
-            rank = 2, typekind = 6, base_addr = 0x2aed177f3f00
             dim[0] = 4  dim[1] = 4  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  400
@@ -431,6 +427,11 @@ dim 2: [1]: [0 [1 [1, 2] 2] 3]
 --- ESMCI::Array::print start ---
  Base name    = Array006
  Status: Base = Ready,  object = Ready
+            dim[0] = 4  dim[1] = 4  
+  Real, *8, Dim 2, Data values:
+( 0, 0) =  401
+( 1, 0) =  401
+( 2, 0) =  401
 ( 3, 0) =  401
 ( 0, 1) =  400
 ( 1, 1) =  401
@@ -450,15 +451,6 @@ dim 2: [1]: [0 [1 [1, 2] 2] 3]
 --- ESMCI::Array::print start ---
  Base name    = Array006
  Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}Array typekind/rank: Real*8 / 2 
-~ lower class' values ~
-( 0, 3) =  402
-( 1, 3) =  402
-( 2, 3) =  402
-( 3, 3) =  402
-dim 1: [0]: [0 [1 [1, 2] 2] 3]
 dim 2: [1]: [0 [1 [1, 2] 2] 3]
 --- ESMCI::Array::print end ---
 --- ESMCI::Array::print start ---
@@ -472,8 +464,8 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 2 ~
-LocalArrayPrint: Array at address 0x1611be0:
-            rank = 2, typekind = 6, base_addr = 0x2b7a81027fa0
+LocalArrayPrint: Array at address 0xad6c40:
+            rank = 2, typekind = 6, base_addr = 0x2b5f3a8effa0
             dim[0] = 4  dim[1] = 3  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  502
@@ -482,6 +474,12 @@ LocalArrayPrint: Array at address 0x1611be0:
 ( 3, 0) =  501
 ( 0, 1) =  502
 ( 1, 1) =  502
+( 2, 1) =  502
+( 3, 1) =  503
+( 3, 3) =  403
+dim 1: [0]: [0 [1 [1, 2] 2] 3]
+dim 2: [1]: [0 [1 [1, 2] 2] 3]
+--- ESMCI::Array::print end ---
 --- ESMCI::Array::print start ---
  Base name    = Array006
  Status: Base = Ready,  object = Ready
@@ -493,8 +491,8 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 3 ~
-LocalArrayPrint: Array at address 0x159ebe0:
-            rank = 2, typekind = 6, base_addr = 0x2ba4ffe23fa0
+LocalArrayPrint: Array at address 0x1f70c40:
+            rank = 2, typekind = 6, base_addr = 0x2b4f68a47fa0
             dim[0] = 4  dim[1] = 3  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  500
@@ -503,13 +501,6 @@ LocalArrayPrint: Array at address 0x159ebe0:
 ( 3, 0) =  503
 ( 0, 1) =  502
 ( 1, 1) =  503
-( 2, 1) =  503
-( 3, 1) =  503
-( 0, 2) =  502
-( 1, 2) =  503
-( 2, 2) =  503
-( 3, 2) =  503
-dim 1: [0]: [0 [1 [1, 2] 2] 3]
  Proxy        = no
  Root Info (Attributes):
 {}Array typekind/rank: Real*8 / 2 
@@ -518,8 +509,8 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0xf449c0:
-            rank = 2, typekind = 6, base_addr = 0x2aed177fbfa0
+LocalArrayPrint: Array at address 0x29669d0:
+            rank = 2, typekind = 6, base_addr = 0x2b12722ebfa0
             dim[0] = 4  dim[1] = 3  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  500
@@ -537,12 +528,16 @@ LocalArrayPrint: Array at address 0xf449c0:
 dim 1: [0]: [0 [1 [1, 2] 2] 3]
 dim 2: [1]: [0 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
+ Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Real*8 / 2 
+~ lower class' values ~
 DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x1b3dbc0:
-            rank = 2, typekind = 6, base_addr = 0x2af55bf1bfa0
+LocalArrayPrint: Array at address 0x1b31c20:
+            rank = 2, typekind = 6, base_addr = 0x2aef6229ffa0
             dim[0] = 4  dim[1] = 3  
   Real, *8, Dim 2, Data values:
 ( 0, 0) =  501
@@ -560,8 +555,6 @@ LocalArrayPrint: Array at address 0x1b3dbc0:
 dim 1: [0]: [0 [1 [1, 2] 2] 3]
 dim 2: [1]: [0 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
-( 2, 1) =  502
-( 3, 1) =  503
 ( 0, 2) =  502
 ( 1, 2) =  502
 ( 2, 2) =  502
@@ -569,6 +562,13 @@ dim 2: [1]: [0 [1 [1, 2] 2] 2]
 dim 1: [0]: [0 [1 [1, 2] 2] 3]
 dim 2: [1]: [0 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
+( 2, 1) =  503
+( 3, 1) =  503
+( 0, 2) =  502
+( 1, 2) =  503
+( 2, 2) =  503
+( 3, 2) =  503
+dim 1: [0]: [0 [1 [1, 2] 2] 3]
 dim 2: [1]: [0 [1 [1, 2] 2] 2]
 --- ESMCI::Array::print end ---
   PASS  Example ESMF_ArrayBundleHaloEx, ESMF_ArrayBundleHaloEx.F90, line 172
