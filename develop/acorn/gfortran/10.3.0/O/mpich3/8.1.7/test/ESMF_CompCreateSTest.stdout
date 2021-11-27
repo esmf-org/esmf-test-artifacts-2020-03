@@ -1,4 +1,4 @@
-build time -- 2021-11-26 01:27:59
+build time -- 2021-11-27 01:28:03
  System Test CompCreate:
  System Test CompCreate:
  System Test CompCreate:
@@ -16,6 +16,8 @@ build time -- 2021-11-26 01:27:59
   Component name = System Test CompCreate
  Comp Create finished, name = System Test CompCreate
  Comp SetVM finished, rc=            0
+ In user register routine
+ Registered Initialize, Run, and Finalize routines
   Component name = System Test CompCreate
  Comp Create finished, name = System Test CompCreate
  Comp SetVM finished, rc=            0
@@ -48,8 +50,6 @@ build time -- 2021-11-26 01:27:59
   State name: igrid export state
      status: Export State, object count: 0
      reconcile needed: F
- In user register routine
- Registered Initialize, Run, and Finalize routines
  Registered local datablock
   initial data =          13  0.660000026              25
  Comp Register finished, rc=            0
@@ -93,17 +93,6 @@ build time -- 2021-11-26 01:27:59
 {} init, ready to call get data ptr
  init, back from data ptr
  init, data =           13  0.660000026              25
- ESMF_StatePrint: (pet 1):
-  State name: igrid export state
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = igrid export state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: humidity
-            type: Field
- User Comp Init returning
  Base name    = igrid export state
  Status: Base = Ready,  object = Ready
  Proxy        = no
@@ -120,29 +109,6 @@ build time -- 2021-11-26 01:27:59
  Proxy        = no
  Root Info (Attributes):
 {}     object: 1,name: humidity
-            type: Field
- User Comp Init returning
- Comp Initialize 2 finished
- User Comp Run starting
- in run, ready to get data block
- run, local data =          13  0.660000026              25
- ESMF_StatePrint: (pet 2):
-  State name: igrid import state
-     status: Import State, object count: 1
-     reconcile needed: T
- Base name    = igrid import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: humidity
-            type: Field
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'humidity'
- Base name    = humidity
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
 {} init, ready to call get data ptr
  init, back from data ptr
  init, data =           13  0.660000026              25
@@ -171,36 +137,6 @@ build time -- 2021-11-26 01:27:59
  Root Info (Attributes):
 {}     object: 1,name: humidity
             type: Field
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'humidity'
- Base name    = humidity
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
- ESMF_StatePrint: (pet 3):
-  State name: igrid export state
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = igrid export state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: humidity
-            type: Field
- User Comp Run returning
- Comp Run returned first time
- User Comp Run starting
  ESMF_StatePrint: (pet 0):
   State name: igrid export state
      status: Export State, object count: 1
@@ -258,7 +194,18 @@ build time -- 2021-11-26 01:27:59
  User Comp Run starting
  in run, ready to get data block
  run, local data =          13  0.660000026              25
- ESMF_StatePrint: (pet 0) Comp Initialize 2 finished
+ ESMF_StatePrint: (pet 0) ESMF_StatePrint: (pet 1):
+  State name: igrid export state
+     status: Export State, object count: 1
+     reconcile needed: T
+ Base name    = igrid export state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: humidity
+            type: Field
+ User Comp Init returning
+ Comp Initialize 2 finished
  User Comp Run starting
  in run, ready to get data block
  run, local data =          13  0.660000026              25
@@ -304,7 +251,13 @@ build time -- 2021-11-26 01:27:59
  User Comp Run starting
  in run, ready to get data block
  run, local data =          13  0.660000026              25
- ESMF_StatePrint: (pet 1):
+ ESMF_StatePrint: (pet 1)            type: Field
+ User Comp Init returning
+ Comp Initialize 2 finished
+ User Comp Run starting
+ in run, ready to get data block
+ run, local data =          13  0.660000026              25
+ ESMF_StatePrint: (pet 2):
   State name: igrid import state
      status: Import State, object count: 1
      reconcile needed: T
@@ -315,7 +268,13 @@ build time -- 2021-11-26 01:27:59
 {}     object: 1,name: humidity
             type: Field
  Field Print Starts ====>
- Field base status = Read{} Field status =            2
+ Field base status = Ready
+   Name = 'humidity'
+ Base name    = humidity
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -350,33 +309,7 @@ build time -- 2021-11-26 01:27:59
  Root Info (Attributes):
 {}     object: 1,name: humidity
             type: Field
- Field Print Starts ====>
- Field base status = Ready
-   Name = 'humidity'
- Base name    = humidity
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1 in run, ready to get data block
- run, local data =          13  0.660000026              25
- ESMF_StatePrint: (pet 3):
-  State name: igrid import state
-     status: Import State, object count: 1
-     reconcile needed: T
- Base name    = igrid import state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: humidity
-            type: Field
- Field Print Starts ====>
+  Field Print Starts ====>
  Field base status = Ready
    Name = 'humidity'
  Base name    = humidity
@@ -404,7 +337,7 @@ build time -- 2021-11-26 01:27:59
 {}     object: 1,name: humidity
             type: Field
  User Comp Run returning
- Comp Run returned second time
+ Comp Run returned first time
  User Comp Run starting
  in run, ready to get data block
  run, local data =          13  0.660000026              25
@@ -422,7 +355,15 @@ build time -- 2021-11-26 01:27:59
  Field base status = Ready
    Name = 'humidity'
  Base name    = humidity
- St:
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1   :
   State name: igrid import state
      status: Import State, object count: 1
      reconcile needed: T
@@ -482,7 +423,18 @@ build time -- 2021-11-26 01:27:59
  Proxy        = no
  Root Info (Attributes):
 {} Field status =            2
- gridToy
+ gridTo:
+  State name: igrid import state
+     status: Import State, object count: 1
+     reconcile needed: T
+ Base name    = igrid import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: humidity
+            type: Field
+ Field Print Starts ====>
+ Field base status = Ready
    Name = 'humidity'
  Base name    = humidity
  Status: Base = Ready,  object = Ready
@@ -531,7 +483,17 @@ build time -- 2021-11-26 01:27:59
  Proxy        = no
  Root Info (Attributes):
 {} Field status =            2
+ gridToField Print Starts ====>
+ Field base status = Ready
+   Name = 'humidity'
+ Base name    = humidity
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            2
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -568,32 +530,6 @@ build time -- 2021-11-26 01:27:59
    Name = 'humidity'
  Base name    = humidity
  Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} Field status =            2
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
- ESMF_StatePrint: (pet 2):
-  State name: igrid export state
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = igrid export state
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: humidity
-            type: Field
- User Comp Run returning
- Comp Run returned third time
- User Comp Final starting
- final, ready to callatus: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {} Field status =            2
@@ -617,21 +553,45 @@ build time -- 2021-11-26 01:27:59
 {}     object: 1,name: humidity
             type: Field
  User Comp Run returning
- Comp Run returned third time
- User Comp Final starting
- final, ready to call get data ptr
- final, local data =          13  0.660000026              25
- User Comp Final returning
- -----------------------------------------------------------------
- -----------------------------------------------------------------
- Test finished, my_pet =            3
- -----------------------------------------------------------------
- -----------------------------------------------------------------
- Comp Finalize returned
- All Destroy routines done
- System Test CompCreate complete
-  PASS  System Test CompCreate: Component Create Test, ESMF_CompCreateSTest.F90, line 199
-FieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+ Comp Run returned second time
+ User Comp Run starting
+ in run, ready to get data block
+ run, local data =          13  0.660000026              25
+ ESMF_StatePrint: (pet 3):
+  State name: igrid import state
+     status: Import State, object count: 1
+     reconcile needed: T
+ Base name    = igrid import state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: humidity
+            type: Field
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'humidity'
+ Base name    = humidity
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ ESMF_StatePrint: (pet 3):
+  State name: igrid export state
+     status: Export State, object count: 1
+     reconcile needed: T
+ Base name    = igrid export state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ FieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -665,7 +625,11 @@ FieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
  All Destroy routines done
  System Test CompCreate complete
   PASS  System Test CompCreate: Component Create Test, ESMF_CompCreateSTest.F90, line 199
-
+FieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
@@ -695,12 +659,48 @@ FieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
  All Destroy routines done
  System Test CompCreate complete
   PASS  System Test CompCreate: Component Create Test, ESMF_CompCreateSTest.F90, line 199
- get data ptr
+       -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ ESMF_StatePrint: (pet 2):
+  State name: igrid export state
+     status: Export State, object count: 1
+     reconcile needed: T
+ Base name    = igrid export state
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: humidity
+            type: Field
+ User Comp Run returning
+ Comp Run returned third time
+ User Comp Final starting
+ final, ready to call get data ptr
  final, local data =          13  0.660000026              25
  User Comp Final returning
  -----------------------------------------------------------------
  -----------------------------------------------------------------
  Test finished, my_pet =            2
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+ Comp Finalize returned
+ All Destroy routines done
+ System Test CompCreate complete
+  PASS  System Test CompCreate: Component Create Test, ESMF_CompCreateSTest.F90, line 199
+Root Info (Attributes):
+{}     object: 1,name: humidity
+            type: Field
+ User Comp Run returning
+ Comp Run returned third time
+ User Comp Final starting
+ final, ready to call get data ptr
+ final, local data =          13  0.660000026              25
+ User Comp Final returning
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+ Test finished, my_pet =            3
  -----------------------------------------------------------------
  -----------------------------------------------------------------
  Comp Finalize returned
