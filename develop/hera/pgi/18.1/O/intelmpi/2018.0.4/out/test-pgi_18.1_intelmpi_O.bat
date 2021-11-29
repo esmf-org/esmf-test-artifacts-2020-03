@@ -1,6 +1,6 @@
-Mon Nov 29 08:06:18 UTC 2021
+Mon Nov 29 20:40:36 UTC 2021
 #!/bin/sh -l
-#SBATCH --account=da-cpu
+#SBATCH --account=nems
 #SBATCH -o test-pgi_18.1_intelmpi_O.bat_%j.o
 #SBATCH -e test-pgi_18.1_intelmpi_O.bat_%j.e
 #SBATCH --time=2:00:00
@@ -17,7 +17,7 @@ module list >& module-test.log
 
 set -x
 
-export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/pgi_18.1_intelmpi_O_develop
+export ESMF_DIR=/scratch1/NCEPDEV/stmp2/role.esmfmaint/pgi_18.1_intelmpi_O_develop
 export ESMF_COMPILER=pgi
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'
