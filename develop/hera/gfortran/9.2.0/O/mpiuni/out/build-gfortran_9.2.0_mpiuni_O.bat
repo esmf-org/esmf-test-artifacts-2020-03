@@ -1,6 +1,6 @@
-Mon Nov 29 06:20:56 UTC 2021
+Mon Nov 29 19:16:23 UTC 2021
 #!/bin/sh -l
-#SBATCH --account=da-cpu
+#SBATCH --account=nems
 #SBATCH -o build-gfortran_9.2.0_mpiuni_O.bat_%j.o
 #SBATCH -e build-gfortran_9.2.0_mpiuni_O.bat_%j.e
 #SBATCH --time=1:00:00
@@ -10,7 +10,7 @@ Mon Nov 29 06:20:56 UTC 2021
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
-export ESMF_MPIRUN=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
+export ESMF_MPIRUN=/scratch1/NCEPDEV/stmp2/role.esmfmaint/gfortran_9.2.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load gnu/9.2.0  netcdf/4.7.2
 module load hdf5/1.10.5 
 module list >& module-build.log
@@ -24,7 +24,7 @@ export ESMF_NETCDF_LIBPATH=$NETCDF/lib
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
 export ESMF_NETCDF=nc-config
 tar xvfz ~/pytest-input.tar.gz
-export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_mpiuni_O_develop
+export ESMF_DIR=/scratch1/NCEPDEV/stmp2/role.esmfmaint/gfortran_9.2.0_mpiuni_O_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpiuni
 export ESMF_BOPT='O'
