@@ -1,6 +1,6 @@
-Mon Nov 29 06:41:39 UTC 2021
+Mon Nov 29 19:48:46 UTC 2021
 #!/bin/sh -l
-#SBATCH --account=da-cpu
+#SBATCH --account=nems
 #SBATCH -o build-gfortran_9.2.0_mpiuni_g.bat_%j.o
 #SBATCH -e build-gfortran_9.2.0_mpiuni_g.bat_%j.e
 #SBATCH --time=1:00:00
@@ -23,7 +23,7 @@ export ESMF_NETCDF_LIBPATH=$NETCDF/lib
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
 export ESMF_NETCDF=nc-config
 tar xvfz ~/pytest-input.tar.gz
-export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_mpiuni_g_develop
+export ESMF_DIR=/scratch1/NCEPDEV/stmp2/role.esmfmaint/gfortran_9.2.0_mpiuni_g_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
