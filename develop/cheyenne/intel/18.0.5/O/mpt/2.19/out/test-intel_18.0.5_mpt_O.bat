@@ -1,22 +1,30 @@
+<<<<<<< HEAD
+Thu Dec 2 17:40:05 MST 2021
+=======
 Thu Dec 2 05:35:15 MST 2021
+>>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
 #!/bin/sh -l
 #PBS -N test-intel_18.0.5_mpt_O.bat
 #PBS -l walltime=3:00:00
 #PBS -q regular
-#PBS -A p48503002
+#PBS -A p93300606
 #PBS -l select=1:ncpus=36:mpiprocs=36
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
+<<<<<<< HEAD
+cd /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_O_develop
+=======
 cd /glade/scratch/mpotts/intel_18.0.5_mpt_O_develop
 
 module load python
+>>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
 module load intel/18.0.5 mpt/2.19 netcdf/4.6.3
 module list >& module-test.log
 
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_mpt_O_develop
+export ESMF_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_O_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpt
 export ESMF_BOPT='O'
