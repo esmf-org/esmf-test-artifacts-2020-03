@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Thu Dec 2 17:34:57 MST 2021
+=======
+Thu Dec 2 05:38:00 MST 2021
+>>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
 #!/bin/sh -l
 #PBS -N build-intel_18.0.5_intelmpi_g.bat
 #PBS -l walltime=1:00:00
@@ -8,7 +12,13 @@ Thu Dec 2 17:34:57 MST 2021
 #PBS -l select=1:ncpus=36:mpiprocs=36
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
+<<<<<<< HEAD
 cd /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_g_develop
+=======
+cd /glade/scratch/mpotts/intel_18.0.5_intelmpi_g_develop
+
+module load python
+>>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
 module load intel/18.0.5 impi/2018.4.274 netcdf/4.6.3
 module list >& module-build.log
 
