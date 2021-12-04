@@ -1,11 +1,11 @@
-build time -- 2021-12-03 06:02:51
-[1638512180.733863] [h10c46:77601:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1638512180.738691] [h10c46:77601:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1638512180.731719] [h10c46:77602:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1638512180.736567] [h10c46:77602:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+build time -- 2021-12-04 06:01:44
+[1638598488.415855] [h19c24:88645:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1638598488.420803] [h19c24:88645:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1638598488.415714] [h19c24:88644:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1638598488.420806] [h19c24:88644:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+  Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
   Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
   NUMBER_OF_PROCESSORS           2
-  Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
   NUMBER_OF_PROCESSORS           2
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
@@ -172,6 +172,9 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
  Field Print Starts ====>
  Field base status = Ready
    Name = 'Field030'
+ Base name    = Field030
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
  Field Print Starts ====>
  Field base status = Ready
    Name = 'Field030'
@@ -179,9 +182,6 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Base name    = Field030
- Status: Base = Ready,  object = Ready
- Proxy        = no
  Root Info (Attributes):
 {} Field status =            4
  gridrank =            1
@@ -202,9 +202,26 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
 DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
+~ local data in LocalArray for DE 1 ~
+LocalArrayPrint: Array at address 0x19ca760:
+            rank = 1, typekind = 6, base_addr = 0x19c7200
+            dim[0] = 5  
+  Real, *8, Dim 1, Data values:
+( 1) =  0
+( 2) =  0
+( 3) =  0
+( 4) =  0
+( 5) =  0
+dim 1: [0]: [1 [1 [1, 5] 5] 5]
+--- ESMCI::Array::print end ---
+{}Array typekind/rank: Real*8 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 2
+localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x2780770:
-            rank = 1, typekind = 6, base_addr = 0x2780aa0
+LocalArrayPrint: Array at address 0x24de2b0:
+            rank = 1, typekind = 6, base_addr = 0x24de5e0
             dim[0] = 7  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -223,26 +240,6 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
- Field Print Ends   ====>
-{}Array typekind/rank: Real*8 / 1 
-~ lower class' values ~
-DistGrid dimCount = 1
-deCount = 2
-localDeCount = 1
-~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x240dba0:
-            rank = 1, typekind = 6, base_addr = 0x240a640
-            dim[0] = 5  
-  Real, *8, Dim 1, Data values:
-( 1) =  0
-( 2) =  0
-( 3) =  0
-( 4) =  0
-( 5) =  0
-dim 1: [0]: [1 [1 [1, 5] 5] 5]
---- ESMCI::Array::print end ---
  arrayrank =            1
  gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
            1          -1          -1                0           0
@@ -250,6 +247,9 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
@@ -422,14 +422,17 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
  Field Print Starts ====>
  Field base status = Ready
    Name = 'Field068'
- Base name    = Field068
- Status: Base = Ready,  object = Ready
  Field Print Starts ====>
  Field base status = Ready
- Proxy        = no
- Root Info (Attributes):
    Name = 'Field068'
  Base name    = Field068
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Base name    = Field068
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
 {} Field status =            4
  gridrank =            1
 --- ESMCI::Array::print start ---
@@ -437,19 +440,21 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+{} Field status =            4
+ gridrank =            1
+--- ESMCI::Array::print start ---
+ Base name    = Array069
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{} Field status =            4
- gridrank =            1
 {}Array typekind/rank: Real*8 / 1 
 ~ lower class' values ~
 DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x255abd0:
-            rank = 1, typekind = 6, base_addr = 0x2557670
+LocalArrayPrint: Array at address 0x1b17790:
+            rank = 1, typekind = 6, base_addr = 0x1b14230
             dim[0] = 5  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -459,26 +464,14 @@ LocalArrayPrint: Array at address 0x255abd0:
 ( 5) =  0
 dim 1: [0]: [1 [1 [1, 5] 5] 5]
 --- ESMCI::Array::print end ---
---- ESMCI::Array::print start ---
- Base name    = Array069
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- arrayrank =            1
- gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
-           1          -1          -1                0           0
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
 {}Array typekind/rank: Real*8 / 1 
 ~ lower class' values ~
 DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0x28cd980:
-            rank = 1, typekind = 6, base_addr = 0x28cdcb0
+LocalArrayPrint: Array at address 0x262b4c0:
+            rank = 1, typekind = 6, base_addr = 0x262b7f0
             dim[0] = 7  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -490,6 +483,13 @@ LocalArrayPrint: Array at address 0x28cd980:
 ( 7) =  0
 dim 1: [0]: [1 [1 [1, 7] 7] 7]
 --- ESMCI::Array::print end ---
+ arrayrank =            1
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                0           0
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
@@ -504,29 +504,29 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
  - before SMM from A -> X
-           1           5   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
  - before SMM from A -> X
+           1           5   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
            1           7   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
  - SMM from A -> X
    1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        0.0000000000000000     
  - SMM from A -> X
    1.0000000000000000        1.0000000000000000        1.0000000000000000        0.0000000000000000        0.0000000000000000     
  - SMM from A -> X
-   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000     
- - after SMM from A -> X
-   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000     
- - B before SMM from X -> B
-   0.0000000000000000        0.0000000000000000     
  - SMM from A -> X
    1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000        2.0000000000000000     
  - after SMM from A -> X
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000     
+ - after SMM from A -> X
    1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000        2.0000000000000000     
  - B before SMM from X -> B
    0.0000000000000000        0.0000000000000000     
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000     
+ - B before SMM from X -> B
+   0.0000000000000000        0.0000000000000000     
  - B after SMM from X -> B
-   1.0000000074505806        1.0000000298023224     
  - B after SMM from X -> B
    1.6666666790843010        1.6666667163372040     
+   1.0000000074505806        1.0000000298023224     
   PASS  Create xgrid and regrid through xgrid, variable src flux, ESMF_FieldRegridXGSMMUTest.F90, line 67
   PASS  Create xgrid and regrid through xgrid, variable src flux, ESMF_FieldRegridXGSMMUTest.F90, line 67
            1 weights:            8 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000     
@@ -555,15 +555,15 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
   PASS  Regrid then create xgrid and regrid through xgrid, half overlap, ESMF_FieldRegridXGSMMUTest.F90, line 74
            1 flux on xgrid:    2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000     
   PASS  Regrid then create xgrid and regrid through xgrid, half overlap, ESMF_FieldRegridXGSMMUTest.F90, line 74
-           1 weights:           32 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000       0.99999999999999911        1.0000000000000000        1.0000000000000000       0.99999999999999933       0.99999999999999867       0.99999999999999911        1.0000000000000000       0.99999999999999889       0.99999999999999956       0.99999999999999911       0.99999999999999845       0.99999999999999778        1.0000000000000000       0.99999999999999778       0.99999999999999889        1.0000000000000000       0.99999999999999822       0.99999999999999889        1.0000000000000000        1.0000000000000000       0.99999999999999911       0.99999999999999978       0.99999999999999822        1.0000000000000000        1.0000000000000000       0.99999999999999867        1.0000000000000000        1.0000000000000000     
-           1 indices:            2 -          32
-           1 ->           1
-           5 ->           6
            0 weights:           32 -   1.0000000000000000       0.99999999999999956        1.0000000000000000       0.99999999999999933        1.0000000000000000       0.99999999999999845        1.0000000000000000        1.0000000000000000        1.0000000000000000       0.99999999999999978       0.99999999999999956        1.0000000000000000       0.99999999999999845        1.0000000000000000       0.99999999999999956        1.0000000000000000        1.0000000000000000       0.99999999999999978       0.99999999999999867        1.0000000000000000       0.99999999999999956        1.0000000000000000       0.99999999999999956       0.99999999999999933        1.0000000000000000       0.99999999999999911        1.0000000000000000       0.99999999999999933       0.99999999999999978        1.0000000000000000       0.99999999999999778       0.99999999999999822     
            0 indices:            2 -          32
            1 ->           1
            1 ->           2
           64          64
+           1 weights:           32 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000       0.99999999999999911        1.0000000000000000        1.0000000000000000       0.99999999999999933       0.99999999999999867       0.99999999999999911        1.0000000000000000       0.99999999999999889       0.99999999999999956       0.99999999999999911       0.99999999999999845       0.99999999999999778        1.0000000000000000       0.99999999999999778       0.99999999999999889        1.0000000000000000       0.99999999999999822       0.99999999999999889        1.0000000000000000        1.0000000000000000       0.99999999999999911       0.99999999999999978       0.99999999999999822        1.0000000000000000        1.0000000000000000       0.99999999999999867        1.0000000000000000        1.0000000000000000     
+           1 indices:            2 -          32
+           1 ->           1
+           5 ->           6
           64          64
            0 flux on xgrid:    2.0000000000000000        1.9999999999999991        2.0000000000000000        1.9999999999999987        2.0000000000000000        1.9999999999999969        2.0000000000000000        2.0000000000000000        2.0000000000000000        1.9999999999999996        1.9999999999999991        2.0000000000000000        1.9999999999999969        2.0000000000000000        1.9999999999999991        2.0000000000000000        2.0000000000000000        1.9999999999999996        1.9999999999999973        2.0000000000000000        1.9999999999999991        2.0000000000000000        1.9999999999999991        1.9999999999999987        2.0000000000000000        1.9999999999999982        2.0000000000000000        1.9999999999999987        1.9999999999999996        2.0000000000000000        1.9999999999999956        1.9999999999999964     
   PASS  Regrid then create xgrid and regrid through xgrid, check containment, ESMF_FieldRegridXGSMMUTest.F90, line 81
@@ -574,9 +574,9 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
            0 weights:         3741
            0 indices:         3741
         7569        7569
+        7569        7569
            0 src idx range:            1          74
            0 dst idx range:            1        6360
-        7569        7569
            1 src idx range:            4          78
            1 dst idx range:           41        6400
   PASS  Regrid then create xgrid and regrid through xgrid, check clipping, ESMF_FieldRegridXGSMMUTest.F90, line 88
@@ -1283,5 +1283,5 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
   PASS  Regrid then create xgrid and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGSMMUTest.F90, line 102
   Ending Test, file ESMF_FieldRegridXGSMMUTest.F90, line 112
   Ending Test, file ESMF_FieldRegridXGSMMUTest.F90, line 112
-  PET           1  Test Elapsed Time    376.77499999999998       msec.
-  PET           0  Test Elapsed Time    376.85699999999991       msec.
+  PET           1  Test Elapsed Time    369.51499999999993       msec.
+  PET           0  Test Elapsed Time    369.17899999999997       msec.
