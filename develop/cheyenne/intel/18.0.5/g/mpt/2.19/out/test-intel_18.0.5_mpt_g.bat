@@ -1,4 +1,4 @@
-Thu Dec 2 18:20:44 MST 2021
+Tue Dec 7 07:55:24 MST 2021
 #!/bin/sh -l
 #PBS -N test-intel_18.0.5_mpt_g.bat
 #PBS -l walltime=3:00:00
@@ -23,10 +23,8 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh cheyenne6 /glade/scratch/rlong/esmf-testing//glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_develop/getres-int.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh cheyenne6 /glade/scratch/rlong/esmf-testing//glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_develop/getres-int.sh
