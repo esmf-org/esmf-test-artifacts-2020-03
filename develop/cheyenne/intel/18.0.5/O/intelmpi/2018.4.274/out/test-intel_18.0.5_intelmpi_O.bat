@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Thu Dec 2 17:35:20 MST 2021
-=======
-Thu Dec 2 05:25:31 MST 2021
->>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
+Tue Dec 7 06:26:13 MST 2021
 #!/bin/sh -l
 #PBS -N test-intel_18.0.5_intelmpi_O.bat
 #PBS -l walltime=3:00:00
@@ -11,13 +7,7 @@ Thu Dec 2 05:25:31 MST 2021
 #PBS -l select=1:ncpus=36:mpiprocs=36
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-<<<<<<< HEAD
 cd /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop
-=======
-cd /glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop
-
-module load python
->>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
 module load intel/18.0.5 impi/2018.4.274 netcdf/4.6.3
 module list >& module-test.log
 
@@ -33,19 +23,11 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-<<<<<<< HEAD
-ssh cheyenne6 /glade/scratch/rlong/esmf-testing//glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/getres-int.sh
-=======
->>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-<<<<<<< HEAD
-ssh cheyenne6 /glade/scratch/rlong/esmf-testing//glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/getres-int.sh
-=======
->>>>>>> 630b9fc76aa7fce4b8e37709048d3cdb7132447d
 
 cd ../src/addon/ESMPy
 
