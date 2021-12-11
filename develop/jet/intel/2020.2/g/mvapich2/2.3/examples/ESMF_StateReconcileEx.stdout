@@ -1,4 +1,4 @@
-build time -- 2021-12-10 04:25:38
+build time -- 2021-12-11 04:06:51
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -41,35 +41,35 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  ESMF_StatePrint: (pet 1):
   State name: Ocn2Atm
  ready to set entry point 1
-  State name: Ocn2Atm
  ready to set entry point 2
  ready to call init for comp 1
+  State name: Ocn2Atm
  ready to set entry point 1
  ready to set entry point 2
  ready to call init for comp 1
+ ready to call init for comp 2
      status: Unspecified intent direction, object count: 0
- ready to call init for comp 2
- ready to call init for comp 2
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
  i am comp2_init
+ ready to call init for comp 2
  i am comp2_init
  Base name    = Ocn2Atm
  Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
+ Proxy        = no
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Proxy        = no
  Root Info (Attributes):
  State Example 2 finished
  State before calling StateReconcile()
  State Example 2 finished
  State before calling StateReconcile()
- ESMF_StatePrint: (pet 3):
-  State name: Ocn2Atm
  ESMF_StatePrint: (pet 2):
+  State name: Ocn2Atm
+ ESMF_StatePrint: (pet 3):
   State name: Ocn2Atm
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
@@ -86,15 +86,15 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
 {} State after calling StateReconcile()
 {} State after calling StateReconcile()
 {} State after calling StateReconcile()
-{} State after calling StateReconcile()
- ESMF_StatePrint: (pet 2):
-  State name: Ocn2Atm
- ESMF_StatePrint: (pet 3):
-  State name: Ocn2Atm
  ESMF_StatePrint: (pet 0):
   State name: Ocn2Atm
  ESMF_StatePrint: (pet 1):
   State name: Ocn2Atm
+ ESMF_StatePrint: (pet 2):
+  State name: Ocn2Atm
+{} State after calling StateReconcile()
+ ESMF_StatePrint: (pet 3):
+  State name: Ocn2Atm
      status: Unspecified intent direction, object count: 0
      reconcile needed: F
      status: Unspecified intent direction, object count: 0
@@ -109,7 +109,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Root Info (Attributes):
  Base name    = Ocn2Atm
  Status: Base = Ready,  object = Ready
  Proxy        = no
@@ -119,6 +118,7 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  Root Info (Attributes):
  Proxy        = no
  Root Info (Attributes):
+ Root Info (Attributes):
 {} State Example 3 finished
 {} State Example 3 finished
 {} State Example 3 finished
@@ -127,15 +127,15 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Example ESMF_StateReconcileEx, ESMF_StateReconcileEx.F90, line 294
   PASS  Example ESMF_StateReconcileEx, ESMF_StateReconcileEx.F90, line 294
   PASS  Example ESMF_StateReconcileEx, ESMF_StateReconcileEx.F90, line 294
-Error in system call pthread_mutex_destroy: Device or resource busy
-    src/mpi/init/initthread.c:241
-Error in system call pthread_mutex_destroy: Device or resource busy
-    src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
  PASS: ESMF_StateReconcileEx.F90
  PASS: ESMF_StateReconcileEx.F90
+Error in system call pthread_mutex_destroy: Device or resource busy
+    src/mpi/init/initthread.c:241
+Error in system call pthread_mutex_destroy: Device or resource busy
+    src/mpi/init/initthread.c:241
  PASS: ESMF_StateReconcileEx.F90
  PASS: ESMF_StateReconcileEx.F90
