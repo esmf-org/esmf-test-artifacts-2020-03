@@ -1,4 +1,4 @@
-build time -- 2021-12-12 04:06:02
+build time -- 2021-12-13 04:05:58
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -7,22 +7,22 @@ Beginning Test, file ESMC_ArrayUTest.C, line 46
 Beginning Test, file ESMC_ArrayUTest.C, line 46
 NUMBER_OF_PROCESSORS 4
 NUMBER_OF_PROCESSORS 4
-Beginning Test, file ESMC_ArrayUTest.C, line 46
-NUMBER_OF_PROCESSORS 4
 PASS ArraySpecSet, ESMC_ArrayUTest.C, line 55
 PASS ArraySpecSet, ESMC_ArrayUTest.C, line 55
-PASS ArraySpecSet, ESMC_ArrayUTest.C, line 55
-PASS Set up minIndex, ESMC_ArrayUTest.C, line 65
 PASS Set up minIndex, ESMC_ArrayUTest.C, line 65
 PASS Set up minIndex, ESMC_ArrayUTest.C, line 65
 Beginning Test, file ESMC_ArrayUTest.C, line 46
-PASS Set up maxIndex, ESMC_ArrayUTest.C, line 76
 PASS Set up maxIndex, ESMC_ArrayUTest.C, line 76
 PASS Set up maxIndex, ESMC_ArrayUTest.C, line 76
 NUMBER_OF_PROCESSORS 4
 PASS ArraySpecSet, ESMC_ArrayUTest.C, line 55
 PASS Set up minIndex, ESMC_ArrayUTest.C, line 65
 PASS Set up maxIndex, ESMC_ArrayUTest.C, line 76
+Beginning Test, file ESMC_ArrayUTest.C, line 46
+NUMBER_OF_PROCESSORS 4
+PASS ArraySpecSet, ESMC_ArrayUTest.C, line 55
+PASS Set up minIndex, ESMC_ArrayUTest.C, line 65
+PASS Set up maxIndex, ESMC_ArrayUTest.C, line 76
 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_ArrayUTest.C, line 84
 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_ArrayUTest.C, line 84
 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_ArrayUTest.C, line 84
@@ -30,14 +30,19 @@ PASS Create 5 x 10 ESMC_DistGrid object, ESMC_ArrayUTest.C, line 84
 PASS Create ESMC_Array object, ESMC_ArrayUTest.C, line 96
 PASS Create ESMC_Array object, ESMC_ArrayUTest.C, line 96
 PASS Create ESMC_Array object, ESMC_ArrayUTest.C, line 96
---- ESMCI::Array::print start ---
---- ESMCI::Array::print start ---
 PASS Create ESMC_Array object, ESMC_ArrayUTest.C, line 96
 --- ESMCI::Array::print start ---
 --- ESMCI::Array::print start ---
+--- ESMCI::Array::print start ---
+--- ESMCI::Array::print start ---
+ Base name    = array1
+ Base name    = array1
  Base name    = array1
  Status: Base = Ready,  object = Ready
- Base name    = array1
+ Proxy        = no
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
@@ -45,11 +50,6 @@ PASS Create ESMC_Array object, ESMC_ArrayUTest.C, line 96
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Base name    = array1
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Proxy        = no
  Root Info (Attributes):
 {}Array typekind/rank: Integer*4 / 2 
 ~ lower class' values ~
@@ -67,7 +67,6 @@ DistGrid dimCount = 2
 deCount = 4
 localDeCount = 1
 ~ local data in LocalArray for DE 2 ~
-LocalArrayPrint: Array at address 0x1588210:
 {}Array typekind/rank: Integer*4 / 2 
 ~ lower class' values ~
 DistGrid dimCount = 2
@@ -76,23 +75,18 @@ localDeCount = 1
 ~ local data in LocalArray for DE 3 ~
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-            rank = 2, typekind = 3, base_addr = 0x2b731b507d40
+LocalArrayPrint: Array at address 0x28601c0:
+            rank = 2, typekind = 3, base_addr = 0x2b2eb453fd40
             dim[0] = 1  dim[1] = 10  
   Integer, *4, Dim 2, Data values:
-( 1, 1) =  458259712
-( 1, 2) =  11123
-( 1, 3) =  544240928
-( 1, 4) =  1232626029
-LocalArrayPrint: Array at address 0x2427e50:
-            rank = 2, typekind = 3, base_addr = 0x2ab8a2563fa0
+( 1, 1) =  -1269564160
+( 1, 2) =  11054
+LocalArrayPrint: Array at address 0x1634e40:
+            rank = 2, typekind = 3, base_addr = 0x2b5fda713fa0
             dim[0] = 2  dim[1] = 10  
   Integer, *4, Dim 2, Data values:
-LocalArrayPrint: Array at address 0xd67210:
-            rank = 2, typekind = 3, base_addr = 0x2b42cb13bd40
-            dim[0] = 1  dim[1] = 10  
-  Integer, *4, Dim 2, Data values:
-( 1, 1) =  -887898880
-( 1, 2) =  11074
+( 1, 3) =  544240928
+( 1, 4) =  1232626029
 ( 1, 5) =  2019910766
 ( 1, 6) =  1397039148
 ( 1, 7) =  1096762189
@@ -100,14 +94,21 @@ LocalArrayPrint: Array at address 0xd67210:
 ( 1, 9) =  1936020565
 ( 1,10) =  742600308
 dim 1: [0]: [1 [1 [1, 1] 1] 1]
-dim 2: [1]: [1 [1 [1, 10] 10] 10]
---- ESMCI::Array::print end ---
-LocalArrayPrint: Array at address 0x17b7210:
-            rank = 2, typekind = 3, base_addr = 0x2b2a04c9bd40
+LocalArrayPrint: Array at address 0x18c61c0:
+            rank = 2, typekind = 3, base_addr = 0x2abbb8d0fd40
             dim[0] = 1  dim[1] = 10  
   Integer, *4, Dim 2, Data values:
-( 1, 1) =  80329984
-( 1, 2) =  11050
+( 1, 1) =  -1194263296
+( 1, 2) =  10939
+( 1, 3) =  544240928
+( 1, 4) =  1232626029
+( 1, 5) =  2019910766
+LocalArrayPrint: Array at address 0x1dfe1c0:
+            rank = 2, typekind = 3, base_addr = 0x2b06f1027d40
+            dim[0] = 1  dim[1] = 10  
+  Integer, *4, Dim 2, Data values:
+( 1, 1) =  -251495168
+( 1, 2) =  11014
 ( 1, 3) =  544240928
 ( 1, 4) =  1232626029
 ( 1, 5) =  2019910766
@@ -142,15 +143,14 @@ dim 2: [1]: [1 [1 [1, 10] 10] 10]
 dim 1: [0]: [1 [1 [1, 2] 2] 2]
 dim 2: [1]: [1 [1 [1, 10] 10] 10]
 --- ESMCI::Array::print end ---
-( 1, 3) =  544240928
-( 1, 4) =  1232626029
-( 1, 5) =  2019910766
 ( 1, 6) =  1397039148
 ( 1, 7) =  1096762189
 ( 1, 8) =  2036429426
 ( 1, 9) =  1936020565
 ( 1,10) =  742600308
 dim 1: [0]: [1 [1 [1, 1] 1] 1]
+dim 2: [1]: [1 [1 [1, 10] 10] 10]
+--- ESMCI::Array::print end ---
 dim 2: [1]: [1 [1 [1, 10] 10] 10]
 --- ESMCI::Array::print end ---
 PASS Print ESMC_Array object, ESMC_ArrayUTest.C, line 104
@@ -165,19 +165,19 @@ PASS Destroy ESMC_Array object, ESMC_ArrayUTest.C, line 120
 PASS Destroy ESMC_Array object, ESMC_ArrayUTest.C, line 120
 PASS Destroy ESMC_Array object, ESMC_ArrayUTest.C, line 120
 Ending Test, file ESMC_ArrayUTest.C, line 124
+Ending Test, file ESMC_ArrayUTest.C, line 124
 PASS Destroy ESMC_Array object, ESMC_ArrayUTest.C, line 120
 Ending Test, file ESMC_ArrayUTest.C, line 124
 Ending Test, file ESMC_ArrayUTest.C, line 124
-Ending Test, file ESMC_ArrayUTest.C, line 124
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
- PET 0 Test Elapsed Time  2.464000 msec.
- PET 1 Test Elapsed Time  2.535000 msec.
- PET 2 Test Elapsed Time  2.534000 msec.
+ PET 0 Test Elapsed Time  2.597000 msec.
+ PET 2 Test Elapsed Time  2.657000 msec.
+ PET 1 Test Elapsed Time  2.415000 msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
- PET 3 Test Elapsed Time  2.624000 msec.
+ PET 3 Test Elapsed Time  2.740000 msec.
