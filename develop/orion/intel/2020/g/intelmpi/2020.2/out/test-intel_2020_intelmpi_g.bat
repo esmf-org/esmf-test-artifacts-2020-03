@@ -1,4 +1,4 @@
-Mon Oct 4 08:10:34 CDT 2021
+Fri Dec 10 06:35:18 CST 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-intel_2020_intelmpi_g.bat_%j.o
@@ -18,6 +18,7 @@ module list >& module-test.log
 set -x
 export ESMF_NETCDF=nc-config
 
+tar xvfz ~/pytest-input.tar.gz
 export ESMF_DIR=/work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_g_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
@@ -27,13 +28,11 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh Orion-login-1.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox//work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_g_develop/getres-int.sh
 export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
 chmod +x runpython.sh
 cd nuopc-app-prototypes
 ./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
 
-ssh Orion-login-1.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox//work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_g_develop/getres-int.sh
 
 cd ../src/addon/ESMPy
 

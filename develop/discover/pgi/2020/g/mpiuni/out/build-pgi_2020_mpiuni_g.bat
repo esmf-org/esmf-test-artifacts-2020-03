@@ -1,9 +1,9 @@
-Thu Sep 30 04:51:57 EDT 2021
+Tue Nov 16 02:52:20 EST 2021
 #!/bin/sh -l
 #SBATCH --account=s2326
 #SBATCH -o build-pgi_2020_mpiuni_g.bat_%j.o
 #SBATCH -e build-pgi_2020_mpiuni_g.bat_%j.e
-#SBATCH --time=1:20:00
+#SBATCH --time=2:00:00
 #SBATCH --partition=compute
 #SBATCH --qos=allnccs
 #SBATCH --nodes=1

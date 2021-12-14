@@ -1,4 +1,4 @@
-Mon Oct 4 05:10:52 CDT 2021
+Fri Dec 10 02:59:54 CST 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-gfortran_8.3.0_openmpi_O.bat_%j.o
@@ -19,6 +19,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
+tar xvfz ~/pytest-input.tar.gz
 export ESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=openmpi

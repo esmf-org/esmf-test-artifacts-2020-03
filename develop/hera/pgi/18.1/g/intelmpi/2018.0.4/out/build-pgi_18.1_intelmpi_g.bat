@@ -1,9 +1,9 @@
-Thu Sep 30 07:53:55 UTC 2021
+Fri Dec 10 08:05:24 UTC 2021
 #!/bin/sh -l
-#SBATCH --account=da-cpu
+#SBATCH --account=nems
 #SBATCH -o build-pgi_18.1_intelmpi_g.bat_%j.o
 #SBATCH -e build-pgi_18.1_intelmpi_g.bat_%j.e
-#SBATCH --time=1:20:00
+#SBATCH --time=2:00:00
 #SBATCH --partition=hera
 #SBATCH --qos=batch
 #SBATCH --nodes=1
@@ -17,7 +17,7 @@ module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/pgi_18.1_intelmpi_g_develop
+export ESMF_DIR=/scratch1/NCEPDEV/stmp2/role.esmfmaint/pgi_18.1_intelmpi_g_develop
 export ESMF_COMPILER=pgi
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='g'

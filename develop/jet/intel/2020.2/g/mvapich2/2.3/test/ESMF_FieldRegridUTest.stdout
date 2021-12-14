@@ -1,4 +1,4 @@
-build time -- 2021-10-04 04:08:26
+build time -- 2021-12-10 04:25:38
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -76,13 +76,13 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Nearest STOD regrid between 3D Cart. Meshes, ESMF_FieldRegridUTest.F90, 
  line 202
   PASS  Nearest DTOS regrid between 3D Cart. Meshes, ESMF_FieldRegridUTest.F90, 
+  PASS  Nearest DTOS regrid between 3D Cart. Meshes, ESMF_FieldRegridUTest.F90, 
+ line 218
  line 218
   PASS  Nearest DTOS regrid between 3D Cart. Meshes, ESMF_FieldRegridUTest.F90, 
  line 218
   PASS  Nearest DTOS regrid between 3D Cart. Meshes, ESMF_FieldRegridUTest.F90, 
  line 218
-  PASS  Nearest DTOS regrid between 3D Cart. Meshes, ESMF_FieldRegridUTest.F90, 
- line 218
   PASS  Regrid with destination masks, ESMF_FieldRegridUTest.F90, line 234
   PASS  Regrid with destination masks, ESMF_FieldRegridUTest.F90, line 234
   PASS  Regrid with destination masks, ESMF_FieldRegridUTest.F90, line 234
@@ -303,8 +303,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  7
   PASS  Test unmapped destination point list, ESMF_FieldRegridUTest.F90, line 80
  7
-  PASS  Test regridding from a 2 tile distgrid, ESMF_FieldRegridUTest.F90, line 
- 823
   PASS  Test regridding from a 2 tile distgrid, ESMF_FieldRegridUTest.F90, line 
  823
   PASS  Test regridding from a 2 tile distgrid, ESMF_FieldRegridUTest.F90, line 
@@ -315,6 +313,8 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
            1 deBlockList:           1          26         200          50
            2 deBlockList:           1          51         200          75
            3 deBlockList:           1          76         200         100
+  PASS  Test regridding from a 2 tile distgrid, ESMF_FieldRegridUTest.F90, line 
+ 823
   PASS  Test regridding with holes in srcGrid, ESMF_FieldRegridUTest.F90, line 8
  39
   PASS  Test regridding with holes in srcGrid, ESMF_FieldRegridUTest.F90, line 8
@@ -419,10 +419,10 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  est.F90, line 1043
   PASS  Regrid from LocStream to Grid using nearest neighbor, ESMF_FieldRegridUT
  est.F90, line 1043
-           1  Time to do Patch FieldRegridStore()=   5.92946505546570     
-           2  Time to do Patch FieldRegridStore()=   5.92958903312683     
-           3  Time to do Patch FieldRegridStore()=   5.92949700355530     
-           0  Time to do Patch FieldRegridStore()=   5.92973899841309     
+           1  Time to do Patch FieldRegridStore()=   5.87638902664185     
+           2  Time to do Patch FieldRegridStore()=   5.87648296356201     
+           3  Time to do Patch FieldRegridStore()=   5.87648892402649     
+           0  Time to do Patch FieldRegridStore()=   5.87667894363403     
   PASS  Regrid from Grid to a LocStream with regular distribution, bilinear and 
  patch, ESMF_FieldRegridUTest.F90, line 1060
   PASS  Regrid from Grid to a LocStream with regular distribution, bilinear and 
@@ -468,8 +468,8 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Regrid from Grid to Grid/Mesh/LocStream (GML) with identical points, ESM
  F_FieldRegridUTest.F90, line 1152
   PASS  Regrid from Grid to Grid/Mesh/LocStream (GML) with identical points, ESM
-  PASS  Regrid from Grid to Grid/Mesh/LocStream (GML) with identical points, ESM
  F_FieldRegridUTest.F90, line 1152
+  PASS  Regrid from Grid to Grid/Mesh/LocStream (GML) with identical points, ESM
  F_FieldRegridUTest.F90, line 1152
   PASS  Regrid from Mesh containing pentagons and hexagons to Grid, ESMF_FieldRe
  gridUTest.F90, line 1169
@@ -609,13 +609,13 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   Ending Test, file ESMF_FieldRegridUTest.F90, line 1467
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           0  Test Elapsed Time    36983.8640000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           2  Test Elapsed Time    36991.2960000000       msec.
+  PET           0  Test Elapsed Time    37026.4010000000       msec.
+  PET           2  Test Elapsed Time    37035.6210000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
+  PET           1  Test Elapsed Time    37037.1550000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           3  Test Elapsed Time    36992.7940000000       msec.
-  PET           1  Test Elapsed Time    36992.5550000000       msec.
+  PET           3  Test Elapsed Time    37038.3060000000       msec.

@@ -1,6 +1,6 @@
-Mon Oct 4 08:05:25 UTC 2021
+Fri Dec 10 07:59:04 UTC 2021
 #!/bin/sh -l
-#SBATCH --account=da-cpu
+#SBATCH --account=nems
 #SBATCH -o build-gfortran_9.2.0b_intelmpi_O.bat_%j.o
 #SBATCH -e build-gfortran_9.2.0b_intelmpi_O.bat_%j.e
 #SBATCH --time=1:00:00
@@ -17,7 +17,8 @@ module list >& module-build.log
 
 set -x
 
-export ESMF_DIR=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0b_intelmpi_O_develop
+tar xvfz ~/pytest-input.tar.gz
+export ESMF_DIR=/scratch1/NCEPDEV/stmp2/role.esmfmaint/gfortran_9.2.0b_intelmpi_O_develop
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'

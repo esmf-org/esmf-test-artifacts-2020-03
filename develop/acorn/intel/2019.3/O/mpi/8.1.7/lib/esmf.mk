@@ -1,4 +1,4 @@
-build time -- 2021-10-04 20:14:06
+build time -- 2021-12-10 01:32:39
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -13,12 +13,12 @@ build time -- 2021-10-04 20:14:06
 #
 
 #----------------------------------------------
-ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_20-18-g0aeed17f50
+ESMF_VERSION_STRING=8.3.0 beta snapshot
+ESMF_VERSION_STRING_GIT=ESMF_8_3_0_beta_snapshot_04-8-g60a38ef462
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
-ESMF_VERSION_MINOR=2
+ESMF_VERSION_MINOR=3
 ESMF_VERSION_REVISION=0
 ESMF_VERSION_PATCHLEVEL=0
 ESMF_VERSION_PUBLIC='F'
@@ -33,17 +33,17 @@ ESMF_F90COMPILER=ftn
 ESMF_F90LINKER=ftn
 
 ESMF_F90COMPILEOPTS=-O -fPIC -assume realloc_lhs -m64 -mcmodel=small -pthread -threads  -qopenmp
-ESMF_F90COMPILEPATHS=-I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/mod/modO/Linux.intel.64.mpi.default -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/src/include -I/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/include -I/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_20-18-g0aeed17f50' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop
+ESMF_F90COMPILEPATHS=-I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/mod/modO/Linux.intel.64.mpi.default -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/src/include -I/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/include -I/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/include
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_04-8-g60a38ef462' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
 ESMF_F90COMPILEFIXNOCPP=
 
 ESMF_F90LINKOPTS=  -m64 -mcmodel=small -pthread -threads -Wl,--no-as-needed  -qopenmp
-ESMF_F90LINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -L/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib -L/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib 
+ESMF_F90LINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -L/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib -L/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib 
 ESMF_F90ESMFLINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default
-ESMF_F90LINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -Wl,-rpath,/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib -Wl,-rpath,/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib
+ESMF_F90LINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -Wl,-rpath,/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib -Wl,-rpath,/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib
 ESMF_F90ESMFLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default
 ESMF_F90LINKLIBS= -lmpi -lfmpich -cxxlib -lrt -ldl -lnetcdf -lnetcdff
 ESMF_F90ESMFLINKLIBS=-lesmf  -lmpi -lfmpich -cxxlib -lrt -ldl -lnetcdf -lnetcdff
@@ -52,13 +52,13 @@ ESMF_CXXCOMPILER=CC
 ESMF_CXXLINKER=CC
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -O -DNDEBUG -fPIC -m64 -mcmodel=small -pthread  -qopenmp
-ESMF_CXXCOMPILEPATHS= -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/src/include  -I/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/include -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-fPIC -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_20-18-g0aeed17f50' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_20-18-g0aeed17f50' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop -D__SDIR__='' -DESMF_CXXSTD=11
+ESMF_CXXCOMPILEPATHS= -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/src/include  -I/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/include -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/src/prologue/yaml-cpp/include
+ESMF_CXXCOMPILECPPFLAGS=-fPIC -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_04-8-g60a38ef462' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_04-8-g60a38ef462' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop -D__SDIR__='' -DESMF_CXXSTD=11
 
 ESMF_CXXLINKOPTS=-fPIC -lnetcdff -lnetcdff  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -qopenmp
-ESMF_CXXLINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -L/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib -L/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib -L/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
+ESMF_CXXLINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -L/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib -L/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib -L/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
 ESMF_CXXESMFLINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default
-ESMF_CXXLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -Wl,-rpath,/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib -Wl,-rpath,/apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib -Wl,-rpath,/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
+ESMF_CXXLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default -Wl,-rpath,/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib -Wl,-rpath,/apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib -Wl,-rpath,/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
 ESMF_CXXESMFLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/lib/libO/Linux.intel.64.mpi.default
 ESMF_CXXLINKLIBS= -lmpi -lfmpich -limf -lm -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -liomp5 -lintlc -lpthread -lsvml -lgcc -lgcc_s -lirc_s -ldl -lrt -ldl -lnetcdf -lnetcdff
 ESMF_CXXESMFLINKLIBS=-lesmf  -lmpi -lfmpich -limf -lm -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -liomp5 -lintlc -lpthread -lsvml -lgcc -lgcc_s -lirc_s -ldl -lrt -ldl -lnetcdf -lnetcdff
@@ -118,12 +118,12 @@ ESMF_INTERNAL_MPIRUN=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_O_develop/scri
 # ESMF_LAPACK:            internal
 # ESMF_ACC_SOFTWARE_STACK:            none
 # ESMF_NETCDF:            nc-config
-# ESMF_NETCDF_INCLUDE:    /apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/include
+# ESMF_NETCDF_INCLUDE:    /apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/include
 # ESMF_NETCDF_LIBS:       -lnetcdf
-# ESMF_NETCDF_LIBPATH:    /apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib
+# ESMF_NETCDF_LIBPATH:    /apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib
 # ESMF_NFCONFIG:          nf-config
-# ESMF_NETCDFF_INCLUDE:   /apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/include
+# ESMF_NETCDFF_INCLUDE:   /apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/include
 # ESMF_NETCDFF_LIBS:      -lnetcdff
-# ESMF_NETCDFF_LIBPATH:   /apps/prod/netcdf-hdf5parallel/4.7.4/intel/19.1.3.304/cray-mpich/8.1.4/lib
+# ESMF_NETCDFF_LIBPATH:   /apps/prod/hpc-stack/intel-19.1.3.304/cray-mpich-8.1.4/netcdf/4.7.4/lib
 # ESMF_PIO:               internal
 # ESMF_YAMLCPP:           internal
