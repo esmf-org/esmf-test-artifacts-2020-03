@@ -1,4 +1,4 @@
-build time -- 2021-12-17 04:12:05
+build time -- 2021-12-18 04:12:38
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -8,19 +8,19 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMComponentUTest.F90, line 216
   NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMComponentUTest.F90, line 216
   NUMBER_OF_PROCESSORS           4
 --- ESMCI::VM::print() start ---
-  NUMBER_OF_PROCESSORS           4
---- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
+--- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
 --- ESMCI::VMId::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
-  vmKeyWidth = 1
+  vmKey=0xF0000000
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
@@ -29,16 +29,16 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
-  vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0xf55610
+vm located at: 0x134c610
 npets = 4, mypet=2
-  pth_mutex =		 0x11c2370
+  pth_mutex =		 0x15b93c0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
@@ -47,12 +47,11 @@ MPI thread level support: 0
 mpi_mutex_flag: 1
 mpionly: 1
 --- VMK::print() start ---
-vm located at: 0x255a610
-npets = 4, mypet=0
+vm located at: 0x1ccb610
 --- VMK::print() start ---
-vm located at: 0x18da610
+vm located at: 0x2027610
 npets = 4, mypet=1
-  pth_mutex =		 0x1b47370
+  pth_mutex =		 0x22943c0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
@@ -66,9 +65,9 @@ threadsflag: 0
   lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
   lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
 --- VMK::print() start ---
-vm located at: 0x2813610
+vm located at: 0x11e0610
 npets = 4, mypet=3
-  pth_mutex =		 0x2a80370
+  pth_mutex =		 0x144d3c0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
@@ -77,7 +76,8 @@ MPI thread level support: 0
 mpi_mutex_flag: 1
 mpionly: 1
 threadsflag: 0
-  pth_mutex =		 0x25b2440
+npets = 4, mypet=0
+  pth_mutex =		 0x1d23440
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -148,17 +148,17 @@ ncores = 4
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
  ne 296
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
+ ne 303
+  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
  ne 296
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
+ ne 303
+  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
+ ne 303
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
  ne 296
   PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
  ne 303
-  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
- ne 303
-  PASS  Testing VM IsCreated for uncreated object, ESMF_VMComponentUTest.F90, li
- ne 303
- ne 303
   PASS  Create test VM for IsCreated, ESMF_VMComponentUTest.F90, line 311
   PASS  Create test VM for IsCreated, ESMF_VMComponentUTest.F90, line 311
   PASS  Create test VM for IsCreated, ESMF_VMComponentUTest.F90, line 311
@@ -167,14 +167,16 @@ ncores = 4
   PASS  Set test VM for IsCreated, ESMF_VMComponentUTest.F90, line 320
   PASS  Set test VM for IsCreated, ESMF_VMComponentUTest.F90, line 320
   PASS  Set test VM for IsCreated, ESMF_VMComponentUTest.F90, line 320
-  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  336
-  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
   PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
   PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
   PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
   336
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  336
+  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  343
+  PASS  Get test VM for IsCreated, ESMF_VMComponentUTest.F90, line 328
   PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
   336
   PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
@@ -184,11 +186,9 @@ ncores = 4
   PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
   343
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  343
-  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
-  343
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
+  PASS  Testing VM IsCreated for created object, ESMF_VMComponentUTest.F90, line
+  343
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
   PASS  Destroy test VM for IsCreated, ESMF_VMComponentUTest.F90, line 351
   PASS  Exhaustive Component Create/SetServices/Destroy Test, ESMF_VMComponentUT
@@ -219,7 +219,7 @@ Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-  PET           2  Test Elapsed Time    572.413000000000       msec.
-  PET           0  Test Elapsed Time    572.416000000000       msec.
-  PET           1  Test Elapsed Time    572.438000000000       msec.
-  PET           3  Test Elapsed Time    572.522000000000       msec.
+  PET           0  Test Elapsed Time    598.340000000000       msec.
+  PET           1  Test Elapsed Time    598.618000000000       msec.
+  PET           2  Test Elapsed Time    598.625000000000       msec.
+  PET           3  Test Elapsed Time    598.868000000000       msec.
