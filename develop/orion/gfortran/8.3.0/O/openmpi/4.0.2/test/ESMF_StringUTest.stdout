@@ -1,11 +1,15 @@
-build time -- 2021-12-18 11:01:16
-  Beginning Test, file ESMF_StringUTest.F90, line 46
+build time -- 2021-12-19 06:29:50
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
+  Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
  -- exiting f90ints subroutine
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
@@ -107,10 +111,33 @@ build time -- 2021-12-18 11:01:16
 -- ready to call f90int by callback with local ints
  -- entering f90ints subroutine
   ints=         102         204         409         819
- -- entering f90ints subroutine
-  ints=         102         204         409         819
   rc=           0
  -- exiting f90ints subroutine
+
+
+-- returned from call of f90int by callback with local ints
+
+
+-- ready to call f90string2 by callback, passing 15
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          15
+  fstr=ABCDEFGHIJKLMNO
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
+
+
+-- ready to call f90string2 by callback, passing 25
+ -- entering f90string2 subroutine
+  ints=         102         204         409         819
+  strlen =          25
+  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
+ -- leaving f90string2 subroutine
+
+
+-- returned from call f90string2 by callback
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
   ints=         102         204         409         819
@@ -222,32 +249,11 @@ build time -- 2021-12-18 11:01:16
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          15
-  rc=           0
- -- exiting f90ints subroutine
-
-
--- returned from call of f90int by callback with local ints
-
-
--- ready to call f90string2 by callback, passing 15
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
-  strlen =          15
-  fstr=ABCDEFGHIJKLMNO
- -- leaving f90string2 subroutine
-
-
   fstr=ABCDEFGHIJKLMNO
  -- leaving f90string2 subroutine
 
 
 -- returned from call f90string2 by callback
--- returned from call f90string2 by callback
-
-
--- ready to call f90string2 by callback, passing 25
- -- entering f90string2 subroutine
-  ints=         102         204         409         819
 
 
 -- ready to call f90string2 by callback, passing 25
@@ -262,12 +268,7 @@ build time -- 2021-12-18 11:01:16
 
 
 -- ready to call f90string3 by callback, passing 14, 24
-  strlen =          25
-  fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
- -- leaving f90string2 subroutine
-
-
--- returned from call f90string2 by callback
+ -- entering f90string3 subroutine
 
 
 -- ready to call f90string3 by callback, passing 14, 24
@@ -275,7 +276,9 @@ build time -- 2021-12-18 11:01:16
   ints=         102         204         409         819
   strlen =          14
   fstr=ABCDEFGHIJKLMN
- -- entering f90string3 subroutine
+  strlen2 =          24
+  fstr2=0123456789abcdefghijklmn
+ -- leaving f90string3 subroutine
   ints=         102         204         409         819
   strlen =          14
   fstr=ABCDEFGHIJKLMN
@@ -284,9 +287,6 @@ build time -- 2021-12-18 11:01:16
  -- leaving f90string3 subroutine
 
 
-  strlen2 =          24
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
 
 
 -- returned from call f90string3 by callback
@@ -301,5 +301,5 @@ build time -- 2021-12-18 11:01:16
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           1  Test Elapsed Time    4.2649999999999908       msec.
-  PET           0  Test Elapsed Time    4.3750000000000178       msec.
+  PET           0  Test Elapsed Time    4.2540000000000076       msec.
+  PET           1  Test Elapsed Time    4.2490000000000023       msec.
