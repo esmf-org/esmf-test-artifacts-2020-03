@@ -1,4 +1,4 @@
-build time -- 2021-12-20 04:12:25
+build time -- 2021-12-21 04:13:13
 Warning: Process to core binding is enabled and OMP_NUM_THREADS is set to non-zero (1) value
 If your program has OpenMP sections, this can cause over-subscription of cores and consequently poor performance
 To avoid this, please re-run your application after setting MV2_ENABLE_AFFINITY=0
@@ -8,6 +8,8 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   NUMBER_OF_PROCESSORS           8
   Beginning Test, file ESMF_ProfileUTest.F90, line 64
   NUMBER_OF_PROCESSORS           8
+  Beginning Test, file ESMF_ProfileUTest.F90, line 64
+  NUMBER_OF_PROCESSORS           8
   NUMBER_OF_PROCESSORS           8
   Beginning Test, file ESMF_ProfileUTest.F90, line 64
   NUMBER_OF_PROCESSORS           8
@@ -19,8 +21,6 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   NUMBER_OF_PROCESSORS           8
   PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
   PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
-  PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
-  PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
   PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
   PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
   PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
@@ -29,12 +29,12 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
   PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
   PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
   PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
-  PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
-  PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
-  Beginning Test, file ESMF_ProfileUTest.F90, line 64
-  NUMBER_OF_PROCESSORS           8
   PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
   PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
+  PASS  Test trace user region enter, ESMF_ProfileUTest.F90, line 80
+  PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
+  PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
+  PASS  Test trace user region exit, ESMF_ProfileUTest.F90, line 88
  Inside Init
  Inside Init
  Inside Init
@@ -49,32 +49,37 @@ Use MV2_USE_THREAD_WARNING=0 to suppress this message
  Inside Finalize
  Inside Finalize
  Inside Finalize
- Inside Finalize
-  PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
   PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
  Inside Finalize
   PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
+ Inside Finalize
   PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
   PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
   PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
   PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
   PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
-  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
-  Ending Test, file ESMF_ProfileUTest.F90, line 138
-  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
-  Ending Test, file ESMF_ProfileUTest.F90, line 138
-  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
-  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
-  Ending Test, file ESMF_ProfileUTest.F90, line 138
-  Ending Test, file ESMF_ProfileUTest.F90, line 138
+  PASS  Test trace phase enter/exit, ESMF_ProfileUTest.F90, line 116
   PASS  Close trace, ESMF_ProfileUTest.F90, line 127
   PASS  Close trace, ESMF_ProfileUTest.F90, line 127
   PASS  Close trace, ESMF_ProfileUTest.F90, line 127
   Ending Test, file ESMF_ProfileUTest.F90, line 138
   Ending Test, file ESMF_ProfileUTest.F90, line 138
+  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
+  Ending Test, file ESMF_ProfileUTest.F90, line 138
+  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
+  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
+  Ending Test, file ESMF_ProfileUTest.F90, line 138
+  Ending Test, file ESMF_ProfileUTest.F90, line 138
   Ending Test, file ESMF_ProfileUTest.F90, line 138
   PASS  Close trace, ESMF_ProfileUTest.F90, line 127
   Ending Test, file ESMF_ProfileUTest.F90, line 138
+  PASS  Close trace, ESMF_ProfileUTest.F90, line 127
+  Ending Test, file ESMF_ProfileUTest.F90, line 138
+Error in system call pthread_mutex_destroy: Device or resource busy
+    src/mpi/init/initthread.c:241
+Error in system call pthread_mutex_destroy: Device or resource busy
+    src/mpi/init/initthread.c:241
+  PET           0  Test Elapsed Time    4.02400000000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
@@ -85,17 +90,12 @@ Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
+  PET           1  Test Elapsed Time    4.21099999999999       msec.
+  PET           5  Test Elapsed Time    4.37200000000000       msec.
+  PET           3  Test Elapsed Time    4.29100000000000       msec.
+  PET           2  Test Elapsed Time    4.32300000000001       msec.
+  PET           4  Test Elapsed Time    4.34899999999999       msec.
+  PET           6  Test Elapsed Time    4.38500000000000       msec.
 Error in system call pthread_mutex_destroy: Device or resource busy
     src/mpi/init/initthread.c:241
-Error in system call pthread_mutex_destroy: Device or resource busy
-    src/mpi/init/initthread.c:241
-  PET           1  Test Elapsed Time    5.06699999999993       msec.
-  PET           3  Test Elapsed Time    4.98299999999996       msec.
-  PET           2  Test Elapsed Time    4.61399999999999       msec.
-  PET           6  Test Elapsed Time    4.96999999999992       msec.
-  PET           4  Test Elapsed Time    5.00099999999992       msec.
-  PET           5  Test Elapsed Time    5.13299999999994       msec.
-  PET           0  Test Elapsed Time    4.84200000000001       msec.
-Error in system call pthread_mutex_destroy: Device or resource busy
-    src/mpi/init/initthread.c:241
-  PET           7  Test Elapsed Time    5.92199999999998       msec.
+  PET           7  Test Elapsed Time    5.18200000000001       msec.
