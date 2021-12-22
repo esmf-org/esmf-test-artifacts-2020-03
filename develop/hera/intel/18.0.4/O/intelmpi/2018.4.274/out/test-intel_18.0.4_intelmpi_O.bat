@@ -1,4 +1,4 @@
-Tue Dec 21 07:02:38 UTC 2021
+Wed Dec 22 06:00:58 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=nems
 #SBATCH -o test-intel_18.0.4_intelmpi_O.bat_%j.o
