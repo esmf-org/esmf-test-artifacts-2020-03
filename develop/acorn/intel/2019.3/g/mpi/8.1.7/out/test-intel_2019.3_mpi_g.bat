@@ -1,4 +1,4 @@
-Wed Dec 22 01:53:59 UTC 2021
+Thu Dec 23 01:32:56 UTC 2021
 #!/bin/sh -l
 #PBS -N test-intel_2019.3_mpi_g.bat
 #PBS -l walltime=1:00:00
