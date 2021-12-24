@@ -1,4 +1,4 @@
-Thu Dec 23 03:16:54 CST 2021
+Fri Dec 24 04:27:13 CST 2021
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-gfortran_8.3.0_mpiuni_O.bat_%j.o
