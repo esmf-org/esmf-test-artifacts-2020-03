@@ -1,9 +1,9 @@
 Sat Dec 25 06:00:32 UTC 2021
 #!/bin/sh -l
 #SBATCH --account=nems
-#SBATCH -o test-gfortran_9.2.0_mpiuni_g.bat_%j.o
-#SBATCH -e test-gfortran_9.2.0_mpiuni_g.bat_%j.e
-#SBATCH --time=2:00:00
+#SBATCH -o build-gfortran_9.2.0_mpiuni_g.bat_%j.o
+#SBATCH -e build-gfortran_9.2.0_mpiuni_g.bat_%j.e
+#SBATCH --time=1:00:00
 #SBATCH --partition=hera
 #SBATCH --qos=batch
 #SBATCH --nodes=1
@@ -12,7 +12,7 @@ Sat Dec 25 06:00:32 UTC 2021
 export JOBID=$SLURM_JOBID
 module load gnu/9.2.0  netcdf/4.7.2
 module load hdf5/1.10.5 
-module list >& module-test.log
+module list >& module-build.log
 
 set -x
 export ESMF_NETCDF=nc-config
@@ -29,11 +29,5 @@ export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
-make info 2>&1| tee info.log 
-make install 2>&1| tee install_$JOBID.log 
-make all_tests 2>&1| tee test_$JOBID.log 
-export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`
-chmod +x runpython.sh
-cd nuopc-app-prototypes
-./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log 
+make -j 40 2>&1| tee build_$JOBID.log
 
