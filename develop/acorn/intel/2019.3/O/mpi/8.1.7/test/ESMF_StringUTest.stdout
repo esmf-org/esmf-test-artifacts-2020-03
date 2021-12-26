@@ -1,11 +1,7 @@
-build time -- 2021-12-25 01:32:36
+build time -- 2021-12-26 01:32:40
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
-  ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
-  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
@@ -68,7 +64,11 @@ build time -- 2021-12-25 01:32:36
 -- ready to call f90string2 by callback, passing 25
  -- entering f90string2 subroutine
   ints=         102         204         409         819
-  strlen =          -- entering f90string2 subroutine
+  strlen =           ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
+  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
+ -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          60
   fstr=0123456789abcdefghijklmnopqrstuvwxyz
@@ -131,11 +131,7 @@ build time -- 2021-12-25 01:32:36
 -- returned from call f90string2 by callback
 
 
--- ready to call f90string3 by callback, passing 14, 24
- -- entering f90string3 subroutine
-  ints=         102         204         409         819
-  strlen =          14
-  fstr=ABC 25
+ 25
   fstr=ABCDEFGHIJKLMNOPQRSTUVWXY
  -- leaving f90string2 subroutine
 
@@ -215,7 +211,11 @@ build time -- 2021-12-25 01:32:36
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
- -- DEFGHIJKLMN
+ -- -- ready to call f90string3 by callback, passing 14, 24
+ -- entering f90string3 subroutine
+  ints=         102         204         409         819
+  strlen =          14
+  fstr=ABCDEFGHIJKLMN
   strlen2 =          24
   fstr2=0123456789abcdefghijklmn
  -- leaving f90string3 subroutine
@@ -290,10 +290,7 @@ build time -- 2021-12-25 01:32:36
 
 
 -- leaving c_strings
-  PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
-  Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time   0.533999999999979       msec.
-leaving f90string3 subroutine
+  PASS  Calling c_stleaving f90string3 subroutine
 
 
 -- returned from call f90string3 by callback
@@ -302,4 +299,7 @@ leaving f90string3 subroutine
 -- leaving c_strings
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           1  Test Elapsed Time   0.470000000000026       msec.
+  PET           1  Test Elapsed Time   0.517000000000045       msec.
+rings with fstr2, ESMF_StringUTest.F90, line 112
+  Ending Test, file ESMF_StringUTest.F90, line 120
+  PET           0  Test Elapsed Time   0.495000000000023       msec.
