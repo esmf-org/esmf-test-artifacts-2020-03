@@ -1,80 +1,37 @@
-build time -- 2021-12-29 20:50:26.923328
+build time -- 2021-12-30 06:21:16.204530
 # ESMF application makefile fragment
-
 #
-# Internal ESMF variables, do NOT depend on these!
 # Use the following ESMF_ variables to compile and link
-
 # your ESMF application against this ESMF build.
-ESMF_INTERNAL_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_openmpi_O_develop
 #
-ESMF_INTERNAL_MPIRUN=mpirun 
 # !!! VERY IMPORTANT: If the location of this ESMF build is   !!!
-
 # !!! changed, e.g. libesmf.a is copied to another directory, !!!
-#
 # !!! this file - esmf.mk - must be edited to adjust to the   !!!
-# !!! The following options were used on this ESMF build !!!
 # !!! correct new path                                        !!!
 #
-#
-# ESMF_DIR: /glade/scratch/rlong/esmf-testing/intel_18.0.5_openmpi_O_develop
 # Please see end of file for options used on this ESMF build
 #
-# ESMF_OS: Linux
 
-# ESMF_MACHINE: x86_64
 #----------------------------------------------
-# ESMF_ABI: 64
-# ESMF_COMPILER: intel
 ESMF_VERSION_STRING=8.3.0 beta snapshot
 ESMF_VERSION_STRING_GIT=ESMF_8_3_0_beta_snapshot_05-1-g3e9d170f1f
-# ESMF_BOPT: O
 #----------------------------------------------
 
-# ESMF_COMM: openmpi
-# ESMF_SITE: default
-# ESMF_PTHREADS: ON
 ESMF_VERSION_MAJOR=8
-# ESMF_OPENMP: ON
-# ESMF_OPENACC: OFF
 ESMF_VERSION_MINOR=3
-# ESMF_ARRAY_LITE: FALSE
-# ESMF_NO_INTEGER_1_BYTE: TRUE
 ESMF_VERSION_REVISION=0
-# ESMF_NO_INTEGER_2_BYTE: TRUE
-# ESMF_FORTRANSYMBOLS: default
 ESMF_VERSION_PATCHLEVEL=0
-# ESMF_MAPPER_BUILD: OFF
-# ESMF_AUTO_LIB_BUILD: ON
 ESMF_VERSION_PUBLIC='F'
-# ESMF_DEFER_LIB_BUILD: ON
-# ESMF_SHARED_LIB_BUILD: ON
 ESMF_VERSION_BETASNAPSHOT='T'
-# 
 
-# ESMF environment variables pointing to 3rd party software:
 
-# ESMF_MOAB:              internal
 ESMF_APPSDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_openmpi_O_develop/apps/appsO/Linux.intel.64.openmpi.default
-# ESMF_LAPACK:            internal
 ESMF_LIBSDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_openmpi_O_develop/lib/libO/Linux.intel.64.openmpi.default
-# ESMF_ACC_SOFTWARE_STACK:            none
 
-# ESMF_NETCDF:            nc-config
-# ESMF_NETCDF_INCLUDE:    /glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/include
-# ESMF_NETCDF_LIBS:       -lnetcdf
 
-# ESMF_NETCDF_LIBPATH:    /glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib
-# ESMF_NFCONFIG:          nf-config
-# ESMF_NETCDFF_INCLUDE:   /glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/include
-# ESMF_NETCDFF_LIBS:      -lnetcdff -lnetcdf -lnetcdf
-# ESMF_NETCDFF_LIBPATH:   /glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib /glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib
 ESMF_F90COMPILER=mpifort
-# ESMF_PIO:               internal
 ESMF_F90LINKER=mpifort
 
-# ESMF_YAMLCPP:           internal
 ESMF_F90COMPILEOPTS=-O -fPIC -assume realloc_lhs -m64 -mcmodel=small -pthread -threads  -qopenmp
 ESMF_F90COMPILEPATHS=-I/glade/scratch/rlong/esmf-testing/intel_18.0.5_openmpi_O_develop/mod/modO/Linux.intel.64.openmpi.default -I/glade/scratch/rlong/esmf-testing/intel_18.0.5_openmpi_O_develop/src/include -I/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/include -I/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/include
 ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_05-1-g3e9d170f1f' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_openmpi_O_develop
