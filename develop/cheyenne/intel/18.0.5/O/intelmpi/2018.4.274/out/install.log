@@ -1,0 +1,68 @@
+Wed Dec 29 21:04:08 MST 2021
+ 
+Installing ESMF:
+ 
+mkdir -p /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/include
+cp -f /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/include/ESMC.h /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/include
+cp -f /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/include/ESMC_*.h /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/include
+cp -f /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/build_config/Linux.intel.default/ESMC_Conf.h /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/include
+mkdir -p /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.intelmpi.default
+cp -f /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/mod/modO/Linux.intel.64.intelmpi.default/*.mod /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.intelmpi.default
+mkdir -p /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default
+cp -f /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/lib/libO/Linux.intel.64.intelmpi.default/libesmf*.* /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default
+make ESMF_PRELOADDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default build_preload_script
+make[1]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+chmod 755 /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default/preload.sh
+make[1]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+ranlib /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default/libesmf*.a
+make install_apps
+make[1]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+mkdir -p /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.intelmpi.default
+make build_apps ESMF_APPSDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.intelmpi.default ESMF_LDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default ESMF_LIBDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default ESMF_MODDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.intelmpi.default
+make[2]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+cd /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps; make ACTION=tree_build_apps tree
+make[3]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps'
+tree_build_apps in: /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfo
+make[4]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfo'
+make chkdir_apps
+make[5]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfo'
+make[5]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfo'
+mpiifort    -m64 -mcmodel=small -pthread -threads -Wl,--no-as-needed  -qopenmp -L/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib  -Wl,-rpath,/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib -o /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.intelmpi.default/ESMF_PrintInfo /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/obj/objO/Linux.intel.64.intelmpi.default/src/apps/ESMF_PrintInfo/ESMF_PrintInfo.o -lesmf  -cxxlib -lrt -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
+make[4]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfo'
+tree_build_apps in: /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfoC
+make[4]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfoC'
+make chkdir_apps
+make[5]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfoC'
+make[5]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfoC'
+mpiicpc    -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -qopenmp -L/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib -L/glade/u/apps/opt/intel/2018u4/compilers_and_libraries_2018.5.274/linux/compiler/lib/intel64_lin/ -Wl,-rpath,/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib -Wl,-rpath,/glade/u/apps/opt/intel/2018u4/compilers_and_libraries_2018.5.274/linux/compiler/lib/intel64_lin/ -o /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.intelmpi.default/ESMF_PrintInfoC /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/obj/objO/Linux.intel.64.intelmpi.default/src/apps/ESMF_PrintInfoC/ESMF_PrintInfoC.o -lesmf  -lsz -lz -limf -lm -ldl -ldl -lrt -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -liomp5 -lintlc -lpthread -lsvml -lgcc -lgcc_s -lirc_s -ldl -lrt -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
+make[4]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_PrintInfoC'
+tree_build_apps in: /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_RegridWeightGen
+make[4]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_RegridWeightGen'
+make chkdir_apps
+make[5]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_RegridWeightGen'
+make[5]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_RegridWeightGen'
+mpiifort    -m64 -mcmodel=small -pthread -threads -Wl,--no-as-needed  -qopenmp -L/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -L/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib  -Wl,-rpath,/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.6.3/intel/18.0.5//lib -o /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.intelmpi.default/ESMF_RegridWeightGen /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/obj/objO/Linux.intel.64.intelmpi.default/src/apps/ESMF_RegridWeightGen/ESMF_RegridWeightGen.o -lesmf  -cxxlib -lrt -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
+make[4]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_RegridWeightGen'
+tree_build_apps in: /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_WebServController
+make[4]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_WebServController'
+make[4]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_WebServController'
+tree_build_apps in: /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_Scrip2Unstruct
+make[4]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_Scrip2Unstruct'
+make[4]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_Scrip2Unstruct'
+tree_build_apps in: /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_Regrid
+make[4]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_Regrid'
+make[4]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps/ESMF_Regrid'
+make[3]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/src/apps'
+ESMF apps built successfully.
+make[2]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+make[1]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+mkdir -p /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/doc
+make install_info_mk
+make[1]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+make info_mk ESMF_APPSDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.intel.64.intelmpi.default ESMF_LDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default ESMF_LIBDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.intel.64.intelmpi.default ESMF_MODDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.intel.64.intelmpi.default ESMF_INCDIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop/DEFAULTINSTALLDIR/include
+make[2]: Entering directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+make[2]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+make[1]: Leaving directory '/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop'
+ 
+ESMF installation complete.
+ 
