@@ -1,4 +1,4 @@
-Fri Jan 7 21:02:53 CST 2022
+Sat Jan 8 02:38:34 CST 2022
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-gfortran_8.3.0_openmpi_g.bat_%j.o
@@ -39,7 +39,7 @@ cd ../src/addon/ESMPy
 
 export PATH=$PATH:$HOME/.local/bin
 python3 setup.py build 2>&1 | tee python_build.log
-ssh Orion-login-2.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_develop/runpython.sh 2>&1 | tee python_build.log
+ssh Orion-login-1.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_develop/runpython.sh 2>&1 | tee python_build.log
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
