@@ -1,4 +1,4 @@
-Mon Jan 10 02:31:03 CST 2022
+Mon Jan 10 03:00:41 CST 2022
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-gfortran_8.3.0_mpiuni_g.bat_%j.o
