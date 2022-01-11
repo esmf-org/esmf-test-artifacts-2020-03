@@ -1,4 +1,4 @@
-build time -- 2022-01-10 01:28:18
+build time -- 2022-01-11 01:28:10
   Beginning Test, file ESMF_ArrayRedistUTest.F90, line 93
   NUMBER_OF_PROCESSORS           6
   Beginning Test, file ESMF_ArrayRedistUTest.F90, line 93
@@ -116,6 +116,12 @@ build time -- 2022-01-10 01:28:18
   PASS  ArrayRedistStore Test, ESMF_ArrayRedistUTest.F90, line 289
   PASS  Testing RouteHandle IsCreated for created object, ESMF_ArrayRedistUTest.F90, line 296
   PASS  Testing RouteHandle IsCreated for created object, ESMF_ArrayRedistUTest.F90, line 304
+  PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 313
+  PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 330
+  PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 341
+  PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 379
+  PASS  Testing RouteHandle IsCreated for destroyed object, ESMF_ArrayRedistUTest.F90, line 386
+  PASS  Testing RouteHandle IsCreated for destroyed object, ESMF_ArrayRedistUTest.F90, line 394
   PASS  ArrayRedistStore Test, ESMF_ArrayRedistUTest.F90, line 289
   PASS  Testing RouteHandle IsCreated for created object, ESMF_ArrayRedistUTest.F90, line 296
   PASS  Testing RouteHandle IsCreated for created object, ESMF_ArrayRedistUTest.F90, line 304
@@ -161,16 +167,11 @@ build time -- 2022-01-10 01:28:18
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 379
   PASS  Testing RouteHandle IsCreated for destroyed object, ESMF_ArrayRedistUTest.F90, line 386
   PASS  Testing RouteHandle IsCreated for destroyed object, ESMF_ArrayRedistUTest.F90, line 394
-  PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 313
-  PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 330
-  PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 341
-  PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 379
-  PASS  Testing RouteHandle IsCreated for destroyed object, ESMF_ArrayRedistUTest.F90, line 386
-  PASS  Testing RouteHandle IsCreated for destroyed object, ESMF_ArrayRedistUTest.F90, line 394
   PASS  ArrayRedistStore w/ srcToDstTransposeMap Test, ESMF_ArrayRedistUTest.F90, line 403
   PASS  ArrayRedist: srcArray -> dstArray w/ srcToDstTransposeMap Test, ESMF_ArrayRedistUTest.F90, line 412
   PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 433
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 471
+  PASS  srcArray Destroy Test, ESMF_ArrayRedistUTest.F90, line 478
   PASS  ArrayRedistStore w/ srcToDstTransposeMap Test, ESMF_ArrayRedistUTest.F90, line 403
   PASS  ArrayRedist: srcArray -> dstArray w/ srcToDstTransposeMap Test, ESMF_ArrayRedistUTest.F90, line 412
   PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 439
@@ -211,11 +212,14 @@ build time -- 2022-01-10 01:28:18
   PASS  srcDistgridWHoles Create Test, ESMF_ArrayRedistUTest.F90, line 501
   PASS  srcArray Create Test, ESMF_ArrayRedistUTest.F90, line 509
   PASS  Get srcArray Test, ESMF_ArrayRedistUTest.F90, line 516
-  PASS  srcArray Destroy Test, ESMF_ArrayRedistUTest.F90, line 478
   PASS  srcDistgridWHoles Create Test, ESMF_ArrayRedistUTest.F90, line 501
   PASS  srcArray Create Test, ESMF_ArrayRedistUTest.F90, line 509
   PASS  Get srcArray Test, ESMF_ArrayRedistUTest.F90, line 516
   PASS  ArrayRedistStore Test, ESMF_ArrayRedistUTest.F90, line 538
+  PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 546
+  PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 579
+  PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 590
+  PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 628
   PASS  ArrayRedistStore Test, ESMF_ArrayRedistUTest.F90, line 538
   PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 546
   PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 579
@@ -240,10 +244,6 @@ build time -- 2022-01-10 01:28:18
   PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 546
   PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 579
   PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 620
-  PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 628
-  PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 546
-  PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 579
-  PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 590
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 628
   PASS  Reverse ArrayRedistStore with holes Test, ESMF_ArrayRedistUTest.F90, line 640
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 647
@@ -333,6 +333,18 @@ build time -- 2022-01-10 01:28:18
   PASS  srcDistgrid Destroy Test, ESMF_ArrayRedistUTest.F90, line 875
   PASS  srcDistgrid Create Test, ESMF_ArrayRedistUTest.F90, line 912
   PASS  srcDistgrid2 Create Test, ESMF_ArrayRedistUTest.F90, line 935
+  PASS  srcArray Create Test, ESMF_ArrayRedistUTest.F90, line 945
+  PASS  srcArray2 Create Test, ESMF_ArrayRedistUTest.F90, line 954
+  PASS  srcArray3 Create Test, ESMF_ArrayRedistUTest.F90, line 962
+  PASS  srcArray6 Create Test, ESMF_ArrayRedistUTest.F90, line 970
+  PASS  srcArray7 Create Test, ESMF_ArrayRedistUTest.F90, line 978
+  PASS  srcArray8 Create Test, ESMF_ArrayRedistUTest.F90, line 986
+  PASS  Get srcArray Test, ESMF_ArrayRedistUTest.F90, line 994
+  PASS  Get srcArray2 Test, ESMF_ArrayRedistUTest.F90, line 1017
+  PASS  Get srcArray3 Test, ESMF_ArrayRedistUTest.F90, line 1039
+  PASS  Get srcArray6 Test, ESMF_ArrayRedistUTest.F90, line 1072
+  PASS  Get srcArray7 Test, ESMF_ArrayRedistUTest.F90, line 1105
+  PASS  Get srcArray8 Test, ESMF_ArrayRedistUTest.F90, line 1147
   PASS  ArrayRedistStore: array5 -> array4 (R4->R8) Test, ESMF_ArrayRedistUTest.F90, line 792
   PASS  ArrayRedist: array5 -> array4 (R4->R8) Test, ESMF_ArrayRedistUTest.F90, line 803
   PASS  Verify results in dstArray: array4 Test, ESMF_ArrayRedistUTest.F90, line 826
@@ -431,20 +443,10 @@ build time -- 2022-01-10 01:28:18
   PASS  Get srcArray6 Test, ESMF_ArrayRedistUTest.F90, line 1072
   PASS  Get srcArray7 Test, ESMF_ArrayRedistUTest.F90, line 1105
   PASS  Get srcArray8 Test, ESMF_ArrayRedistUTest.F90, line 1147
-  PASS  srcArray Create Test, ESMF_ArrayRedistUTest.F90, line 945
-  PASS  srcArray2 Create Test, ESMF_ArrayRedistUTest.F90, line 954
-  PASS  srcArray3 Create Test, ESMF_ArrayRedistUTest.F90, line 962
-  PASS  srcArray6 Create Test, ESMF_ArrayRedistUTest.F90, line 970
-  PASS  srcArray7 Create Test, ESMF_ArrayRedistUTest.F90, line 978
-  PASS  srcArray8 Create Test, ESMF_ArrayRedistUTest.F90, line 986
-  PASS  Get srcArray Test, ESMF_ArrayRedistUTest.F90, line 994
-  PASS  Get srcArray2 Test, ESMF_ArrayRedistUTest.F90, line 1017
-  PASS  Get srcArray3 Test, ESMF_ArrayRedistUTest.F90, line 1039
-  PASS  Get srcArray6 Test, ESMF_ArrayRedistUTest.F90, line 1072
-  PASS  Get srcArray7 Test, ESMF_ArrayRedistUTest.F90, line 1105
-  PASS  Get srcArray8 Test, ESMF_ArrayRedistUTest.F90, line 1147
   PASS  ArrayRedistStore Test, ESMF_ArrayRedistUTest.F90, line 1192
   PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 1200
+  PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 1217
+  PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 1231
   PASS  ArrayRedistStore Test, ESMF_ArrayRedistUTest.F90, line 1192
   PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 1200
   PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 1217
@@ -455,8 +457,6 @@ build time -- 2022-01-10 01:28:18
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) ESMF_ROUTESYNC_NBSTART Test, ESMF_ArrayRedistUTest.F90, line 1353
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBTESTFINISH Test, ESMF_ArrayRedistUTest.F90, line 1362
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBTESTFINISH finishedflag Test, ESMF_ArrayRedistUTest.F90, line 1387
-  PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH Test, ESMF_ArrayRedistUTest.F90, line 1405
-  PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH finishedflag Test, ESMF_ArrayRedistUTest.F90, line 1412
   PASS  ArrayRedistStore Test, ESMF_ArrayRedistUTest.F90, line 1192
   PASS  ArrayRedist: srcArray -> dstArray Test, ESMF_ArrayRedistUTest.F90, line 1200
   PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 1217
@@ -509,8 +509,6 @@ build time -- 2022-01-10 01:28:18
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH Test, ESMF_ArrayRedistUTest.F90, line 1405
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH finishedflag Test, ESMF_ArrayRedistUTest.F90, line 1412
   PASS  Verify results in dstArray2 (RRA) non-blocking Test, ESMF_ArrayRedistUTest.F90, line 1466
-  PASS  dstArray Get Test, ESMF_ArrayRedistUTest.F90, line 1217
-  PASS  Verify results in dstArray Test, ESMF_ArrayRedistUTest.F90, line 1231
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) Test, ESMF_ArrayRedistUTest.F90, line 1271
   PASS  dstArray2 Get Test, ESMF_ArrayRedistUTest.F90, line 1288
   PASS  Verify results in dstArray2 (RRA) Test, ESMF_ArrayRedistUTest.F90, line 1302
@@ -520,6 +518,8 @@ build time -- 2022-01-10 01:28:18
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH Test, ESMF_ArrayRedistUTest.F90, line 1405
   PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH finishedflag Test, ESMF_ArrayRedistUTest.F90, line 1412
   PASS  Verify results in dstArray2 (RRA) non-blocking Test, ESMF_ArrayRedistUTest.F90, line 1436
+  PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH Test, ESMF_ArrayRedistUTest.F90, line 1405
+  PASS  ArrayRedist: srcArray2 -> dstArray2 (RRA) NBWAITFINISH finishedflag Test, ESMF_ArrayRedistUTest.F90, line 1412
   PASS  Verify results in dstArray2 (RRA) non-blocking Test, ESMF_ArrayRedistUTest.F90, line 1442
   PASS  ArrayRedistStore with tensor dims Test, ESMF_ArrayRedistUTest.F90, line 1512
   PASS  ArrayRedist: srcArray3 -> dstArray3 Test, ESMF_ArrayRedistUTest.F90, line 1520
@@ -627,8 +627,6 @@ build time -- 2022-01-10 01:28:18
   PASS  dstArray6p Get Test, ESMF_ArrayRedistUTest.F90, line 1831
   PASS  ArrayRedist: dstArray6 -> dstArray6p Test, ESMF_ArrayRedistUTest.F90, line 1841
   PASS  Verify results in dstArray6p (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 1874
-  PASS  Verify results in dstArray6p (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 1916
-  PASS  routehandle66p Release Test, ESMF_ArrayRedistUTest.F90, line 1954
   PASS  ArrayRedistStore with tensor dims vector same decomp Test, ESMF_ArrayRedistUTest.F90, line 1824
   PASS  dstArray6p Get Test, ESMF_ArrayRedistUTest.F90, line 1831
   PASS  ArrayRedist: dstArray6 -> dstArray6p Test, ESMF_ArrayRedistUTest.F90, line 1841
@@ -659,8 +657,11 @@ build time -- 2022-01-10 01:28:18
   PASS  Verify results in dstArray6p (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 1904
   PASS  Verify results in dstArray6p (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 1946
   PASS  routehandle66p Release Test, ESMF_ArrayRedistUTest.F90, line 1954
+  PASS  Verify results in dstArray6p (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 1916
+  PASS  routehandle66p Release Test, ESMF_ArrayRedistUTest.F90, line 1954
   PASS  ArrayRedistStore with tensor dims vector Test, ESMF_ArrayRedistUTest.F90, line 1962
   PASS  dstArray6 Get Test, ESMF_ArrayRedistUTest.F90, line 1969
+  PASS  ArrayRedist: srcArray6 -> dstArray6 Test, ESMF_ArrayRedistUTest.F90, line 1979
   PASS  ArrayRedistStore with tensor dims vector Test, ESMF_ArrayRedistUTest.F90, line 1962
   PASS  dstArray6 Get Test, ESMF_ArrayRedistUTest.F90, line 1969
   PASS  ArrayRedist: srcArray6 -> dstArray6 Test, ESMF_ArrayRedistUTest.F90, line 1979
@@ -683,7 +684,7 @@ build time -- 2022-01-10 01:28:18
   PASS  dstArray8 Get Test, ESMF_ArrayRedistUTest.F90, line 2612
   PASS  ArrayRedist: srcArray7 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2622
   PASS  Verify results in dstArray8 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2672
-  PASS  Verify re  PASS  ArrayRedistStore with tensor dims vector Test, ESMF_ArrayRedistUTest.F90, line 1962
+  PASS  ArrayRedistStore with tensor dims vector Test, ESMF_ArrayRedistUTest.F90, line 1962
   PASS  dstArray6 Get Test, ESMF_ArrayRedistUTest.F90, line 1969
   PASS  ArrayRedist: srcArray6 -> dstArray6 Test, ESMF_ArrayRedistUTest.F90, line 1979
   PASS  Verify results in dstArray6 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2024
@@ -771,8 +772,7 @@ build time -- 2022-01-10 01:28:18
   PASS  dstArray8 Get Test, ESMF_ArrayRedistUTest.F90, line 2612
   PASS  ArrayRedist: srcArray7 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2622
   PASS  Verify results in dstArray8 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2696
-  PASS  Verify re  PASS  ArrayRedist: srcArray6 -> dstArray6 Test, ESMF_ArrayRedistUTest.F90, line 1979
-  PASS  Verify results in dstArray6 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2012
+  PASS  Verify re  PASS  Verify results in dstArray6 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2012
   PASS  Verify results in dstArray6 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2054
   PASS  dstArray7 Get Test, ESMF_ArrayRedistUTest.F90, line 2092
   PASS  ArrayRedist: srcArray7 -> dstArray7 using routehandle66 Test, ESMF_ArrayRedistUTest.F90, line 2102
@@ -792,7 +792,8 @@ build time -- 2022-01-10 01:28:18
   PASS  ArrayRedist: srcArray7 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2622
   PASS  Verify results in dstArray8 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2666
   PASS  Verify results in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2708
-  PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTesults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2714
+  PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTest.F90, line 2750
+  PASS  ArrayRedist: srcArray8 -> dstArray8 re-using routehandle Test  PASS  Verify results in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2714
   PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTest.F90, line 2756
   PASS  ArrayRedist: srcArray8 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2793
   PASS  Verify results in dstArray8 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2843
@@ -818,7 +819,7 @@ build time -- 2022-01-10 01:28:18
   PASS  dstDistgrid Destroy Test, ESMF_ArrayRedistUTest.F90, line 3086
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 3093
   Ending Test, file ESMF_ArrayRedistUTest.F90, line 3100
-  PET           1  Test Elapsed Time    11.679000000000000       msec.
+  PET           1  Test Elapsed Time    11.562999999999999       msec.
 sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2720
   PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTest.F90, line 2762
   PASS  ArrayRedist: srcArray8 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2793
@@ -845,7 +846,7 @@ sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2720
   PASS  dstDistgrid Destroy Test, ESMF_ArrayRedistUTest.F90, line 3086
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 3093
   Ending Test, file ESMF_ArrayRedistUTest.F90, line 3100
-  PET           2  Test Elapsed Time    11.723000000000001       msec.
+  PET           2  Test Elapsed Time    11.297999999999998       msec.
 sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2726
   PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTest.F90, line 2768
   PASS  ArrayRedist: srcArray8 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2793
@@ -872,7 +873,7 @@ sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2726
   PASS  dstDistgrid Destroy Test, ESMF_ArrayRedistUTest.F90, line 3086
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 3093
   Ending Test, file ESMF_ArrayRedistUTest.F90, line 3100
-  PET           3  Test Elapsed Time    11.737000000000000       msec.
+  PET           3  Test Elapsed Time    11.615000000000000       msec.
 sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2732
   PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTest.F90, line 2774
   PASS  ArrayRedist: srcArray8 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2793
@@ -899,7 +900,6 @@ sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2732
   PASS  dstDistgrid Destroy Test, ESMF_ArrayRedistUTest.F90, line 3086
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 3093
   Ending Test, file ESMF_ArrayRedistUTest.F90, line 3100
-  PET           4  Test Elapsed Time    10.342999999999998       msec.
 sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2738
   PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTest.F90, line 2780
   PASS  ArrayRedist: srcArray8 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2793
@@ -926,9 +926,8 @@ sults in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2738
   PASS  dstDistgrid Destroy Test, ESMF_ArrayRedistUTest.F90, line 3086
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 3093
   Ending Test, file ESMF_ArrayRedistUTest.F90, line 3100
-  PET           5  Test Elapsed Time    10.043999999999999       msec.
-st.F90, line 2750
-  PASS  ArrayRedist: srcArray8 -> dstArray8 re-using routehandle Test, ESMF_ArrayRedistUTest.F90, line 2793
+  PET           5  Test Elapsed Time    10.892000000000001       msec.
+, ESMF_ArrayRedistUTest.F90, line 2793
   PASS  Verify results in dstArray8 (tensor dim j=1) Test, ESMF_ArrayRedistUTest.F90, line 2837
   PASS  Verify results in dstArray8 (tensor dim j=2) Test, ESMF_ArrayRedistUTest.F90, line 2879
   PASS  Verify results in dstArray8 (tensor dim j=3) Test, ESMF_ArrayRedistUTest.F90, line 2921
@@ -952,4 +951,5 @@ st.F90, line 2750
   PASS  dstDistgrid Destroy Test, ESMF_ArrayRedistUTest.F90, line 3086
   PASS  routehandle Release Test, ESMF_ArrayRedistUTest.F90, line 3093
   Ending Test, file ESMF_ArrayRedistUTest.F90, line 3100
-  PET           0  Test Elapsed Time    11.757999999999999       msec.
+  PET           0  Test Elapsed Time    10.972999999999999       msec.
+  PET           4  Test Elapsed Time    10.099000000000000       msec.
