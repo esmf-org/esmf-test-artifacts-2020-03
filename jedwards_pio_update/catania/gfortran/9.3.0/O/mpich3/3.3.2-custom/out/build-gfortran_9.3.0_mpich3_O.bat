@@ -1,4 +1,4 @@
-Wed Jan 12 14:22:39 MST 2022
+Wed Jan 12 15:52:26 MST 2022
 #!/bin/bash -l
 export JOBID=12345
 
@@ -10,7 +10,6 @@ module list >& module-build.log
 set -x
 export ESMF_NETCDF=nc-config
 
-source /project/esmf/stack/homebrew/opt/modules/init/bash
 export ESMF_DIR=/Volumes/esmf/rocky/esmf-testing/gfortran_9.3.0_mpich3_O_jedwards_pio_update
 export ESMF_COMPILER=gfortran
 export ESMF_COMM=mpich3
