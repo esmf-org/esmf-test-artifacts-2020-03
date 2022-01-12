@@ -1,4 +1,4 @@
-Tue Jan 11 06:54:00 UTC 2022
+Wed Jan 12 06:19:52 UTC 2022
 #!/bin/sh -l
 #SBATCH --account=star
 #SBATCH -o test-intel_2019.0.5_intelmpi_g.bat_%j.o
