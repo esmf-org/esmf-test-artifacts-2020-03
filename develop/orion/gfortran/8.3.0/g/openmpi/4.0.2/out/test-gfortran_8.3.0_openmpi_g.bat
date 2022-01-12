@@ -1,4 +1,4 @@
-Tue Jan 11 03:22:12 CST 2022
+Wed Jan 12 02:35:46 CST 2022
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-gfortran_8.3.0_openmpi_g.bat_%j.o
@@ -11,8 +11,8 @@ Tue Jan 11 03:22:12 CST 2022
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
 
-module load intelpython3
-module load gcc/8.3.0 openmpi/4.0.2 netcdf/4.7.2
+module load intelpython3 cmake
+module load gcc/8.3.0 openmpi/4.0.2 netcdf/4.7.4
 module list >& module-test.log
 
 set -x
