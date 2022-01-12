@@ -1,4 +1,4 @@
-Tue Jan 11 01:29:45 EST 2022
+Wed Jan 12 01:09:27 EST 2022
 #!/bin/sh -l
 #SBATCH --account=s2326
 #SBATCH -o build-gfortran_8.3.0_mpiuni_O.bat_%j.o
@@ -10,7 +10,6 @@ Tue Jan 11 01:29:45 EST 2022
 #SBATCH --ntasks-per-node=28
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
-export ESMF_MPIRUN=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load comp/gcc/8.3.0  
 
 module list >& module-build.log
