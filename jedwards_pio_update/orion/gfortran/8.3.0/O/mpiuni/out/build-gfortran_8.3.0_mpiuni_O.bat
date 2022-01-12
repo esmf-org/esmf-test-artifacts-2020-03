@@ -1,4 +1,4 @@
-Tue Jan 11 03:02:13 CST 2022
+Wed Jan 12 02:34:19 CST 2022
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o build-gfortran_8.3.0_mpiuni_O.bat_%j.o
@@ -11,9 +11,9 @@ Tue Jan 11 03:02:13 CST 2022
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
 
-module load intelpython3
+module load intelpython3 cmake
 export ESMF_MPIRUN=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_jedwards_pio_update/src/Infrastructure/stubs/mpiuni/mpirun
-module load gcc/8.3.0  netcdf/4.7.2
+module load gcc/8.3.0  netcdf/4.7.4
 module list >& module-build.log
 
 set -x
