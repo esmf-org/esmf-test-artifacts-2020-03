@@ -1,4 +1,4 @@
-build time -- 2022-01-14 06:01:29
+build time -- 2022-01-15 06:01:54
 running test
 test_assertNumpyAll_bad_mask (ESMF.test.base_test.Test) ... ok
 test_assertNumpyAll_type_differs (ESMF.test.base_test.Test) ... ok
@@ -112,7 +112,7 @@ test_mesh_50_ngons (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_copy (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_create_from_file_esmfmesh (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_create_from_file_scrip (ESMF.test.test_api.test_mesh.TestMesh) ... ok
-test_mesh_slicing (ESMF.test.test_api.test_mesh.TestMesh) ... ok
+test_mesh_slicing (ESMF.test.test_api.test_mesh.TestMesh) ... FAIL
 test_slice_mesh_created_from_file_elem_coords (ESMF.test.test_api.test_mesh.TestMesh) ... SKIP
 test_slice_mesh_created_from_file_esmfmesh (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_slice_mesh_created_from_file_scrip (ESMF.test.test_api.test_mesh.TestMesh) ... ('mesh.coords[0][0].shape = ', (866,))
@@ -133,9 +133,31 @@ pet_count = 1
 
 ok
 
+======================================================================
+FAIL: test_mesh_slicing (ESMF.test.test_api.test_mesh.TestMesh)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/scratch1/NCEPDEV/stmp2/role.esmfmaint/intel_18.0.4_intelmpi_g_develop/src/addon/ESMPy/src/ESMF/test/test_api/test_mesh.py", line 243, in test_mesh_slicing
+    assert mesh.size == [12, 10]
+AssertionError
+
 ----------------------------------------------------------------------
 XML: /scratch1/NCEPDEV/stmp2/role.esmfmaint/intel_18.0.4_intelmpi_g_develop/src/addon/ESMPy/nosetests.xml
 ----------------------------------------------------------------------
-Ran 89 tests in 4.205s
+Ran 89 tests in 4.984s
 
-OK (SKIP=13)
+FAILED (SKIP=13, failures=1)
+Traceback (most recent call last):
+  File "setup.py", line 273, in <module>
+    'test_regrid_from_file_parallel': TestRegridFromFileParallelCommand})
+  File "/apps/oneapi/intelpython/latest/lib/python3.7/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/apps/oneapi/intelpython/latest/lib/python3.7/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/apps/oneapi/intelpython/latest/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "setup.py", line 49, in run
+    subprocess.check_call(cmd)
+  File "/apps/oneapi/intelpython/latest/lib/python3.7/subprocess.py", line 363, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['nosetests', '-vs', '--with-xunit', '-a', '!slow,!parallel', 'src/ESMF']' returned non-zero exit status 1.
