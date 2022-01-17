@@ -1,4 +1,4 @@
-Mon Jan 17 04:00:11 GMT 2022
+Mon Jan 17 05:01:59 GMT 2022
 #!/bin/sh -l
 #SBATCH --account=hfv3gfs
 #SBATCH -o test-intel_2020.2_intelmpi_g.bat_%j.o
