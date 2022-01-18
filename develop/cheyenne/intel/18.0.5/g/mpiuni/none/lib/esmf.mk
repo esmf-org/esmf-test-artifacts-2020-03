@@ -1,4 +1,4 @@
-build time -- 2022-01-17 06:16:16.678097
+build time -- 2022-01-18 06:16:35.293384
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -14,7 +14,7 @@ build time -- 2022-01-17 06:16:16.678097
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.3.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_3_0_beta_snapshot_05-28-g1022def4d0
+ESMF_VERSION_STRING_GIT=ESMF_8_3_0_beta_snapshot_05-30-gf84ebe0184
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -34,7 +34,7 @@ ESMF_F90LINKER=ifort
 
 ESMF_F90COMPILEOPTS=-g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -pthread -threads  -qopenmp
 ESMF_F90COMPILEPATHS=-I/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop/mod/modg/Linux.intel.64.mpiuni.default -I/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop/src/include -I/glade/u/apps/ch/opt/netcdf/4.8.1/intel/19.1.1/include -I/glade/u/apps/ch/opt/netcdf/4.8.1/intel/19.1.1/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_05-28-g1022def4d0' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop -DESMF_MPIUNI
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_05-30-gf84ebe0184' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop -DESMF_MPIUNI
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=icpc
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -traceback -Wcheck -fPIC -m64 -mcmodel=small -pthread  -qopenmp
 ESMF_CXXCOMPILEPATHS= -I/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop/src/include  -I/glade/u/apps/ch/opt/netcdf/4.8.1/intel/19.1.1/include -I/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop/src/Infrastructure/stubs/mpiuni -I/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_05-28-g1022def4d0' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_MPIUNI
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_3_0_beta_snapshot_05-30-gf84ebe0184' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_MPIUNI
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -qopenmp
 ESMF_CXXLINKPATHS=-L/glade/scratch/rlong/esmf-testing/intel_18.0.5_mpiuni_g_develop/lib/libg/Linux.intel.64.mpiuni.default -L/glade/u/apps/ch/opt/netcdf/4.8.1/intel/19.1.1/lib -L/glade/u/apps/ch/opt/netcdf/4.8.1/intel/19.1.1/lib -L/glade/u/apps/opt/intel/2020u1/compilers_and_libraries_2020.1.217/linux/compiler/lib/intel64_lin/
