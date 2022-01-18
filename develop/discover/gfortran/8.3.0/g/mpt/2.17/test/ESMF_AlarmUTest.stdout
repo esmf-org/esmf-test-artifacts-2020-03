@@ -1,4 +1,4 @@
-build time -- 2022-01-17 01:17:20.031466
+build time -- 2022-01-18 02:13:09.197173
   Beginning Test, file ESMF_AlarmUTest.F90, line 98
   NUMBER_OF_PROCESSORS           4
   PASS  Set Time Interval Initialization Test, ESMF_AlarmUTest.F90, line 138
@@ -294,6 +294,14 @@ build time -- 2022-01-17 01:17:20.031466
 Alarm ----------------------------------
 name = ALARM1
 ringInterval = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
   PASS  Clock Get Alarm List Test 4 - single-element length alarmList specified, ESMF_AlarmUTest.F90, line 632
   PASS  Clock Get Alarm List Test 5, ESMF_AlarmUTest.F90, line 646
   PASS  Alarm Assignment Test, ESMF_AlarmUTest.F90, line 663
@@ -342,6 +350,18 @@ yy    = 0
 mm    = 0
 d     = 0
 d_r8  = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+ringDuration = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 end TimeInterval -----------------------
 
 ringDuration = 
@@ -358,31 +378,11 @@ d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
-ringDuration = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
 ringTime = 
+
+yy    = 0
+mm    = 0
+d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
@@ -392,18 +392,29 @@ BaseTime -------------------------------
 s = 211930387200
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211930387200
 sN = 0
 sD = 1
+end BaseTime ---------------------------
+
 end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
+Calendar -------------------------------
+name = Gregorian
 calkindflag = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
@@ -418,6 +429,18 @@ end Time -------------------------------
 
 firstRingTime = 
 Time -----------------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+firstRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 BaseTime -------------------------------
 s = 211930387200
 sN = 0
@@ -427,41 +450,14 @@ end BaseTime ---------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
-Alarm ----------------------------------
-name = ALARM1
-ringInterval = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-ringDuration = 
-TimeInterval ---------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-yy    = 0
-mm    = 0
-d     = 0
-d_r8  = 0
-end TimeInterval -----------------------
-
-ringTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211930387200
+Calendar -------------------------------
+name = Gregorian
+calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -469,6 +465,14 @@ daysPerYear = 365
 daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
+
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
 
 timeZone = 0
 end Time -------------------------------
@@ -477,21 +481,27 @@ prevRingTime =
 Time -----------------------------------
 BaseTime -------------------------------
 s = 211930387200
+prevRingTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
 sN = 0
 sD = 1
-end BaseTime ---------------------------
-
 sN = 0
 sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+end BaseTime ---------------------------
+
+Calendar -------------------------------
 name = Gregorian
+name = Gregorian
+calkindflag = Gregorian
 calkindflag = Gregorian
 daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
+monthsPerYear = 12
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
 monthsPerYear = 12
 secondsPerDay = 86400
 secondsPerYear = 31536000
@@ -500,27 +510,35 @@ daysPerYeardN = 0
 daysPerYeardD = 1
 end Calendar ---------------------------
 
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
 timeZone = 0
 end Time -------------------------------
 
 stopTime = 
 Time -----------------------------------
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
+BaseTime -------------------------------
+
+stopTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
 timeZone = 0
 end Time -------------------------------
 
-firstRingTime = 
-BaseTime -------------------------------
-s = 0
-sN = 0
 sD = 1
 end BaseTime ---------------------------
 
@@ -529,20 +547,19 @@ end Time -------------------------------
 
 ringBegin = 
 Time -----------------------------------
+ringBegin = 
+Time -----------------------------------
 BaseTime -------------------------------
 s = 0
 sN = 0
-Time -----------------------------------
+sD = 1
 BaseTime -------------------------------
-s = 211930387200
+s = 0
 sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-sD = 1
+timeZone = 0
 end BaseTime ---------------------------
 
 timeZone = 0
@@ -550,54 +567,64 @@ end Time -------------------------------
 
 ringEnd = 
 Time -----------------------------------
+end Time -------------------------------
+
+ringEnd = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211914387927
+sN = 0
 BaseTime -------------------------------
 s = 211914387927
 sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-prevRingTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-s = 211930387200
-sN = 0
 sD = 1
 end BaseTime ---------------------------
 
 Calendar -------------------------------
+Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
+name = Gregorian
+calkindflag = Gregorian
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
+monthsPerYear = 12
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+secondsPerDay = 86400
+secondsPerYear = 31536000
+daysPerYear = 365
+daysPerYeardN = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+daysPerYeardD = 1
+end Calendar ---------------------------
+
+timeZone = 0
+end Time -------------------------------
+
+refTime = 
+Time -----------------------------------
+end Time -------------------------------
+
 refTime = 
 Time -----------------------------------
 BaseTime -------------------------------
 s = 0
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
 sN = 0
 sD = 1
 end BaseTime ---------------------------
@@ -607,37 +634,23 @@ end Time -------------------------------
 
 ringTimeStepCount = 1
 timeStepRingingCount = 0
-ringing = false
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
 timeZone = 0
 end Time -------------------------------
 
-stopTime = 
+ringTimeStepCount = 1
+timeStepRingingCount = 0
+ringing = false
+ringingOnPrevTimeStep = false
+ringing = false
 ringingOnPrevTimeStep = false
 enabled = true
 sticky = true
 end Alarm ------------------------------
 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
+enabled = true
+sticky = true
+end Alarm ------------------------------
 
-timeZone = 0
-end Time -------------------------------
-
-ringBegin = 
-Time -----------------------------------
   PASS  Clock Get Alarm List Test 4 - single-element length alarmList specified, ESMF_AlarmUTest.F90, line 632
   PASS  Clock Get Alarm List Test 5, ESMF_AlarmUTest.F90, line 646
   PASS  Alarm Assignment Test, ESMF_AlarmUTest.F90, line 663
@@ -682,31 +695,11 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-timeZone = 0
-end Time -------------------------------
-
-ringEnd = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 211914387927
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
-BaseTime -------------------------------
-s = 0
-sN = 0
-sD = 1
-end BaseTime ---------------------------
-
 yy    = 0
 mm    = 0
 d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
-Calendar -------------------------------
-name = Gregorian
-calkindflag = Gregorian
 
 ringDuration = 
 TimeInterval ---------------------------
@@ -722,23 +715,6 @@ d     = 0
 d_r8  = 0
 end TimeInterval -----------------------
 
-daysPerMonth = 31 28 31 30 31 30 31 31 30 31 30 31 
-monthsPerYear = 12
-secondsPerDay = 86400
-secondsPerYear = 31536000
-daysPerYear = 365
-daysPerYeardN = 0
-daysPerYeardD = 1
-end Calendar ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-refTime = 
-Time -----------------------------------
-BaseTime -------------------------------
-s = 0
-sN = 0
 ringTime = 
 Time -----------------------------------
 BaseTime -------------------------------
@@ -747,20 +723,7 @@ sN = 0
 sD = 1
 end BaseTime ---------------------------
 
-sD = 1
-end BaseTime ---------------------------
-
-timeZone = 0
-end Time -------------------------------
-
-ringTimeStepCount = 1
-timeStepRingingCount = 0
-ringing = false
-ringingOnPrevTimeStep = false
-enabled = true
-sticky = true
-end Alarm ------------------------------
-
+Alarm ----------------------------------
 Calendar -------------------------------
 name = Gregorian
 calkindflag = Gregorian
@@ -885,6 +848,43 @@ ringingOnPrevTimeStep = false
 enabled = true
 sticky = true
 end Alarm ------------------------------
+
+name = ALARM1
+ringInterval = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+ringDuration = 
+TimeInterval ---------------------------
+BaseTime -------------------------------
+s = 0
+sN = 0
+sD = 1
+end BaseTime ---------------------------
+
+yy    = 0
+mm    = 0
+d     = 0
+d_r8  = 0
+end TimeInterval -----------------------
+
+ringTime = 
+Time -----------------------------------
+BaseTime -------------------------------
+s = 211930387200
+sN = 0
+sD = 1
+end BaseTime ---------------------------
 
 Calendar -------------------------------
 name = Gregorian
@@ -1269,25 +1269,25 @@ end Alarm ------------------------------
   PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
   PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
-  PET           0  Test Elapsed Time    20.977999999999998       msec.
+  PET           0  Test Elapsed Time    21.475999999999999       msec.
   PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
   PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
   PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
   PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
   PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
-  PET           1  Test Elapsed Time    19.519999999999996       msec.
+  PET           1  Test Elapsed Time    21.430000000000000       msec.
   PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
   PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
   PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
   PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
   PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
-  PET           2  Test Elapsed Time    20.890999999999998       msec.
+  PET           2  Test Elapsed Time    19.512000000000000       msec.
   PASS  Test ESMF_DIRECTION_FORWARD to an alarm point, ESMF_DIRECTION_REVERSE, ESMF_DIRECTION_FORWARD, ESMF_DIRECTION_REVERSE, ESMF_AlarmUTest.F90, line 3032
   PASS  Test forward to an alarm point, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3104
   PASS  Test forward to a non-ringing step, then step backward using a negative timeStep, ESMF_AlarmUTest.F90, line 3176
   PASS  Test alarm after destroying its associated clock, ESMF_AlarmUTest.F90, line 3187
   PASS  Test arbitrary positive/negative timeStep runs with differing alarms, ESMF_AlarmUTest.F90, line 3349
   Ending Test, file ESMF_AlarmUTest.F90, line 3388
-  PET           3  Test Elapsed Time    20.782999999999998       msec.
+  PET           3  Test Elapsed Time    21.193999999999999       msec.
