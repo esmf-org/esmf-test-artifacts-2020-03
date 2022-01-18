@@ -1,4 +1,4 @@
-Mon Jan 17 23:39:59 EST 2022
+Tue Jan 18 00:32:20 EST 2022
 #!/bin/sh -l
 #SBATCH --account=nggps_emc
 #SBATCH -o test-intel_2019.5_mpi_O.bat_%j.o
