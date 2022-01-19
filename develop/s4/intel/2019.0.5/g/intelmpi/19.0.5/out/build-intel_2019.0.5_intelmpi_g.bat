@@ -1,4 +1,4 @@
-Tue Jan 18 07:08:31 UTC 2022
+Wed Jan 19 06:28:03 UTC 2022
 #!/bin/sh -l
 #SBATCH --account=star
 #SBATCH -o build-intel_2019.0.5_intelmpi_g.bat_%j.o
