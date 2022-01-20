@@ -1,0 +1,79 @@
+build time -- 2022-01-20 02:30:05
+running test_examples
+test_field_read (examples.exampletest.TestExamples) ... ERROR
+test_grid_create_peridim_mask (examples.exampletest.TestExamples) ... ok
+test_grid_locstream_regrid (examples.exampletest.TestExamples) ... ok
+test_helloworld (examples.exampletest.TestExamples) ... ok
+test_locstream_grid_regrid (examples.exampletest.TestExamples) ... ok
+test_mesh_locstream_regrid (examples.exampletest.TestExamples) ... ok
+test_read_write_weight_file (examples.exampletest.TestExamples) ... ok
+test_regrid_from_file (examples.exampletest.TestExamples) ... ERROR
+test_ugrid_latlon_regrid (examples.exampletest.TestExamples) ... ok
+test_ungridded_dimension_regrid (examples.exampletest.TestExamples) ... ok
+
+======================================================================
+ERROR: test_field_read (examples.exampletest.TestExamples)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/examples/exampletest.py", line 32, in test_field_read
+    from . import field_read
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/examples/field_read.py", line 31, in <module>
+    srcfield.read(filename=datafile, variable="so", timeslice=2)
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/src/ESMF/api/field.py", line 410, in read
+    iofmt=format)
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/src/ESMF/interface/cbindings.py", line 1941, in ESMP_FieldRead
+    constants._errmsg)
+ValueError: ESMC_FieldRead() failed with rc = 21.    Please check the log files (named "*ESMF_LogFile").
+
+======================================================================
+ERROR: test_regrid_from_file (examples.exampletest.TestExamples)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/examples/exampletest.py", line 59, in test_regrid_from_file
+    from . import regrid_from_file
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/examples/regrid_from_file.py", line 32, in <module>
+    variable="so", timeslice=2)
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/src/ESMF/api/field.py", line 410, in read
+    iofmt=format)
+  File "/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/src/ESMF/interface/cbindings.py", line 1941, in ESMP_FieldRead
+    constants._errmsg)
+ValueError: ESMC_FieldRead() failed with rc = 21.    Please check the log files (named "*ESMF_LogFile").
+
+----------------------------------------------------------------------
+XML: /work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_O_jedwards_pio_update/src/addon/ESMPy/nosetests.xml
+----------------------------------------------------------------------
+Ran 10 tests in 7.456s
+
+FAILED (errors=2)
+Successfully created a grid with masking and switched periodic dimensions for regridding!
+ESMPy Grid LocStream Regridding Example
+  interpolation mean relative error = 0.0194427563576
+Hello ESMPy World from PET (processor) 0!
+ESMPy LocStream Grid Regridding Example
+  interpolation mean relative error = 8.97353432315e-05
+ESMPy Grid Mesh Regridding Example
+  interpolation mean relative error = 2.2839050714e-05
+ESMPy Grid Mesh Regridding Example
+  interpolation mean relative error = 0.00296215416503
+ESMPy UGRID to LatLon Regridding Example
+ESMPy Ungridded Field Dimensions Example
+  interpolation mean relative error = 0.000768815903364
+  mass conservation relative error  = 8.9554575094e-16
+Traceback (most recent call last):
+  File "setup.py", line 273, in <module>
+    'test_regrid_from_file_parallel': TestRegridFromFileParallelCommand})
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "setup.py", line 15, in wrapper
+    return func(self)
+  File "setup.py", line 166, in run
+    AbstractESMFNoseCommand.run(self)
+  File "setup.py", line 49, in run
+    subprocess.check_call(cmd)
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/subprocess.py", line 363, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['nosetests', '-vs', '--with-xunit', '-a', '!slow,!parallel', 'examples/exampletest.py']' returned non-zero exit status 1.
