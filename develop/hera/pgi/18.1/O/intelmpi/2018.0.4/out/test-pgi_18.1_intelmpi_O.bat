@@ -1,4 +1,4 @@
-Thu Jan 20 07:56:16 UTC 2022
+Fri Jan 21 07:10:29 UTC 2022
 #!/bin/sh -l
 #SBATCH --account=nems
 #SBATCH -o test-pgi_18.1_intelmpi_O.bat_%j.o
