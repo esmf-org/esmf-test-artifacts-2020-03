@@ -1,4 +1,4 @@
-Thu Jan 20 23:34:44 EST 2022
+Fri Jan 21 23:31:09 EST 2022
 #!/bin/sh -l
 #SBATCH --account=nggps_emc
 #SBATCH -o build-intel_2019.5_mpiuni_O.bat_%j.o
