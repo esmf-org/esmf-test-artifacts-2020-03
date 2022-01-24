@@ -1,10 +1,10 @@
-build time -- 2022-01-23 04:05:24
+build time -- 2022-01-24 04:05:16
+ -------------------------------- 
+ Start of System Test FieldRegridLS:
  -------------------------------- 
  -------------------------------- 
  Start of System Test FieldRegridLS:
  -------------------------------- 
- -------------------------------- 
- Start of System Test FieldRegridLS:
  -------------------------------- 
  Start of System Test FieldRegridLS:
  -------------------------------- 
@@ -40,12 +40,12 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Created component user one-way coupler, rc =           0
  Comp Creates finished
  Created component user one-way coupler, rc =           0
- Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
  Created component user one-way coupler, rc =           0
+ Comp Creates finished
  Comp Creates finished
  Comp SetServices finished, rc=            0           0
  Comp SetServices finished, rc=            0           0
@@ -63,22 +63,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Coupler Initialize finished, rc =           0
  Comp 1 Run returned, rc =           0
  Comp 1 Run returned, rc =           0
- in user register routine
- in user register routine
- Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
- Comp SetServices finished, rc=            0           0
  Coupler Run returned, rc =           0
  Comp 2 Run returned, rc =           0
- Comp 1 Finalize finished, rc =           0           0
- Comp 2 Finalize finished, rc =           0           0
- Coupler Finalize finished, rc =           0           0
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, pet_id =            4
- ------------------------------------------------------------
- ------------------------------------------------------------
- Comp Finalize returned
  Coupler Run returned, rc =           0
  Comp 2 Run returned, rc =           0
  Comp 1 Finalize finished, rc =           0           0
@@ -90,12 +76,19 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  ------------------------------------------------------------
  ------------------------------------------------------------
  Comp Finalize returned
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            4
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ in user register routine
+ in user register routine
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
- Comp SetServices finished, rc=            0           0
- In user register routine
- Registered Initialize, Run, and Finalize routines
- In user register routine
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
  Comp SetServices finished, rc=            0           0
@@ -103,8 +96,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  System Test FieldRegridLS complete.
  All Destroy routines done
  System Test FieldRegridLS complete.
+ Comp SetServices finished, rc=            0           0
+ In user register routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ In user register routine
   PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
  dLSSTest.F90, line 394
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
   PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
  dLSSTest.F90, line 394
  in user setservices routine
@@ -120,24 +120,24 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
  Comp 1 Initialize finished, rc =           0
+           1 User Comp 2 Init starting
+           0 User Comp 1 Init starting
            1 User Comp 1 Init starting
  Comp 1 Initialize finished, rc =           0
            0 User Comp 2 Init starting
-           1 User Comp 2 Init starting
-           0 User Comp 1 Init starting
+           1 User Comp 2 Init returning
+ Comp 2 Initialize finished, rc =           0
            0 User Comp 1 Init returning
+ Comp 1 Initialize finished, rc =           0
            1 User Comp 1 Init returning
  Comp 1 Initialize finished, rc =           0
- Comp 1 Initialize finished, rc =           0
- Comp 2 Initialize finished, rc =           0
- Comp 2 Initialize finished, rc =           0
- User Coupler Init starting
            0 User Comp 2 Init returning
  Comp 2 Initialize finished, rc =           0
  User Coupler Init starting
-           1 User Comp 2 Init returning
+ User Coupler Init starting
  Comp 2 Initialize finished, rc =           0
  User Coupler Init starting
+ Comp 2 Initialize finished, rc =           0
  User Coupler Init starting
  Import State contains            1  items.
  Export State contains            1  items.
@@ -151,6 +151,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Coupler Initialize finished, rc =           0
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
+ User Comp Run starting
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  Comp 1 Run returned, rc =           0
@@ -162,25 +163,24 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  User Comp Run returning
  Comp 1 Run returned, rc =           0
  User Coupler Run starting
- User Comp Run starting
  User Comp Run returning
  Comp 1 Run returned, rc =           0
  User Coupler Run starting
- User Coupler Run returning
  User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0
- Comp 2 Run returned, rc =           0
- User Comp Final starting
  User Coupler Run returning
  Coupler Run returned, rc =           0
  User Comp2 Run starting
- Coupler Run returned, rc =           0
- Comp 2 Run returned, rc =           0
- User Comp Final starting
  User Coupler Run returning
  Coupler Run returned, rc =           0
  User Comp2 Run starting
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ User Comp Final starting
+ User Comp Final starting
  User Comp Final returning
  Comp 1 Finalize finished, rc =           0           0
  User Comp Final returning
@@ -189,14 +189,16 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  User Coupler Final starting
  Comp 2 Finalize finished, rc =           0           0
  User Coupler Final starting
+ User Comp2 Run returning
+ Comp 2 Run returned, rc =           0
  User Coupler Final returning
- Coupler Finalize finished, rc =           0           0
- ------------------------------------------------------------
  User Comp2 Run returning
  Comp 2 Run returned, rc =           0
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
  ------------------------------------------------------------
+ ------------------------------------------------------------
+ Coupler Finalize finished, rc =           0           0
  ------------------------------------------------------------
  ------------------------------------------------------------
  Test finished, pet_id =            1
@@ -207,34 +209,20 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  ------------------------------------------------------------
  ------------------------------------------------------------
  Comp Finalize returned
- User Comp2 Run returning
- Comp 2 Run returned, rc =           0
  Comp 1 Finalize finished, rc =           0           0
  User Comp Final starting
  Comp 1 Finalize finished, rc =           0           0
  User Comp Final starting
+ User Comp Final returning
+ Comp 2 Finalize finished, rc =           0           0
  All Destroy routines done
  System Test FieldRegridLS complete.
  All Destroy routines done
  System Test FieldRegridLS complete.
- User Comp Final returning
- Comp 2 Finalize finished, rc =           0           0
  User Coupler Final starting
  User Comp Final returning
  Comp 2 Finalize finished, rc =           0           0
  User Coupler Final starting
-  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
- dLSSTest.F90, line 394
-  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
- dLSSTest.F90, line 394
- User Coupler Final returning
- Coupler Finalize finished, rc =           0           0
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, pet_id =            3
- ------------------------------------------------------------
- ------------------------------------------------------------
- Comp Finalize returned
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
  ------------------------------------------------------------
@@ -243,6 +231,18 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  ------------------------------------------------------------
  ------------------------------------------------------------
  Comp Finalize returned
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            3
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
+ dLSSTest.F90, line 394
+  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
+ dLSSTest.F90, line 394
  All Destroy routines done
  System Test FieldRegridLS complete.
  All Destroy routines done
