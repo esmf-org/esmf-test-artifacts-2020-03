@@ -1,4 +1,4 @@
-Tue Jan 25 04:07:07 GMT 2022
+Tue Jan 25 05:23:55 GMT 2022
 #!/bin/sh -l
 #SBATCH --account=hfv3gfs
 #SBATCH -o test-intel_2020.2_mvapich2_g.bat_%j.o
