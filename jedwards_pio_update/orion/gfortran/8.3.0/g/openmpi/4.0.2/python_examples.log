@@ -1,0 +1,44 @@
+build time -- 2022-01-27 02:35:16
+running test_examples
+test_field_read (examples.exampletest.TestExamples) ... ERROR: 0 set loglevel to 0
+ERROR: 0 set loglevel to 0
+ERROR: 0 set loglevel to 0
+ERROR: 0 set loglevel to 0
+Abort with message unexpected record in file /work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/src/Infrastructure/IO/PIO/ParallelIO/src/clib/pio_darray_int.c at line 1447
+Obtained 10 stack frames.
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(print_trace+0x32) [0x7fb1ccc97269]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(piodie+0x74) [0x7fb1ccc9736d]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(pioassert+0x39) [0x7fb1ccc973bd]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(pio_read_darray_nc_serial+0x1e7) [0x7fb1ccccccfe]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(PIOc_read_darray+0x3de) [0x7fb1cccca967]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(_ZN5ESMCI11PIO_Handler9arrayReadEPNS_5ArrayEPKcPiS5_+0xbad) [0x7fb1cb875445]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(_ZN5ESMCI2IO4readEPi+0x36b) [0x7fb1cb63fc83]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(_ZN5ESMCI2IO4readERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE15ESMC_IOFmt_FlagPi+0x10e) [0x7fb1cb63f6be]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(c_esmc_ioread_+0x1ee) [0x7fb1cb635813]
+/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_openmpi_g_jedwards_pio_update/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.openmpi.default/libesmf_fullylinked.so(__esmf_iomod_MOD_esmf_ioread+0x11e) [0x7fb1cc385957]
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode -1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "setup.py", line 273, in <module>
+    'test_regrid_from_file_parallel': TestRegridFromFileParallelCommand})
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "setup.py", line 15, in wrapper
+    return func(self)
+  File "setup.py", line 166, in run
+    AbstractESMFNoseCommand.run(self)
+  File "setup.py", line 49, in run
+    subprocess.check_call(cmd)
+  File "/apps/intel-2020.2/intel-2020.2/intelpython3/lib/python3.7/subprocess.py", line 363, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['nosetests', '-vs', '--with-xunit', '-a', '!slow,!parallel', 'examples/exampletest.py']' returned non-zero exit status 255.
