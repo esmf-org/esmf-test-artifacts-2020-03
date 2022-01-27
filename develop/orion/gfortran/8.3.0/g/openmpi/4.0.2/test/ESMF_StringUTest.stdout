@@ -1,12 +1,17 @@
-build time -- 2022-01-26 02:39:44
-  Beginning Test, file ESMF_StringUTest.F90, line 46
+build time -- 2022-01-27 02:42:39
   Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
+  Beginning Test, file ESMF_StringUTest.F90, line 46
   NUMBER_OF_PROCESSORS           2
  -- entering f90ints subroutine
   ints=         102         204         409         819
   rc=           0
  -- exiting f90ints subroutine
+ -- entering f90ints subroutine
+  ints=         102         204         409         819
+  rc=           0
+ -- exiting f90ints subroutine
+  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
   PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
  -- entering f90string2 subroutine
   ints=         102         204         409         819
@@ -137,11 +142,21 @@ build time -- 2022-01-26 02:39:44
 
 
 -- ready to call f90string3 by callback, passing 14, 24
- -- entering f90ints subroutine
+ -- entering f90string3 subroutine
   ints=         102         204         409         819
-  rc=           0
- -- exiting f90ints subroutine
-  PASS  Calling f90ints() directly from F90, ESMF_StringUTest.F90, line 69
+  strlen =          14
+  fstr=ABCDEFGHIJKLMN
+  strlen2 =          24
+  fstr2=0123456789abcdefghijklmn
+ -- leaving f90string3 subroutine
+
+
+-- returned from call f90string3 by callback
+
+
+-- leaving c_strings
+  PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
+  Ending Test, file ESMF_StringUTest.F90, line 120
  -- entering f90string2 subroutine
   ints=         102         204         409         819
   strlen =          60
@@ -270,23 +285,9 @@ build time -- 2022-01-26 02:39:44
 -- returned from call f90string2 by callback
 
 
- -- entering f90string3 subroutine
-  ints=         102         204         409         819
-  strlen =          14
-  fstr=ABCDEFGHIJKLMN
-  strlen2 =          24
-  fstr2=0123456789abcdefghijklmn
- -- leaving f90string3 subroutine
-
-
--- returned from call f90string3 by callback
-
-
--- leaving c_strings
 -- ready to call f90string3 by callback, passing 14, 24
  -- entering f90string3 subroutine
   ints=         102         204         409         819
-  PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   strlen =          14
   fstr=ABCDEFGHIJKLMN
   strlen2 =          24
@@ -298,8 +299,7 @@ build time -- 2022-01-26 02:39:44
 
 
 -- leaving c_strings
-  Ending Test, file ESMF_StringUTest.F90, line 120
   PASS  Calling c_strings with fstr2, ESMF_StringUTest.F90, line 112
   Ending Test, file ESMF_StringUTest.F90, line 120
-  PET           0  Test Elapsed Time    4.4039999999999910       msec.
-  PET           1  Test Elapsed Time    4.3890000000000038       msec.
+  PET           1  Test Elapsed Time    7.8829999999999734       msec.
+  PET           0  Test Elapsed Time    7.7360000000000202       msec.
