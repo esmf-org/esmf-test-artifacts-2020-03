@@ -1,4 +1,4 @@
-Thu Jan 27 01:05:25 EST 2022
+Fri Jan 28 01:04:23 EST 2022
 #!/bin/sh -l
 #SBATCH --account=s2326
 #SBATCH -o test-gfortran_8.3.0_mpiuni_O.bat_%j.o
