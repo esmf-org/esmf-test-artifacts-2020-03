@@ -1,4 +1,4 @@
-Sun Jan 30 01:29:02 UTC 2022
+Sun Jan 30 01:55:34 UTC 2022
 #!/bin/sh -l
 #PBS -N test-gfortran_10.3.0_mpich3_g.bat
 #PBS -l walltime=1:00:00
