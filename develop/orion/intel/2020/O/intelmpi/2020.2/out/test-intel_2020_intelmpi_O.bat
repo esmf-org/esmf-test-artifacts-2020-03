@@ -1,4 +1,4 @@
-Mon Jan 31 06:34:04 CST 2022
+Tue Feb 1 02:33:20 CST 2022
 #!/bin/sh -l
 #SBATCH --account=da-cpu
 #SBATCH -o test-intel_2020_intelmpi_O.bat_%j.o
