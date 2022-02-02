@@ -1,4 +1,4 @@
-Tue Feb 1 06:39:58 UTC 2022
+Wed Feb 2 06:03:42 UTC 2022
 #!/bin/sh -l
 #SBATCH --account=nems
 #SBATCH -o test-intel_18.0.4_mpiuni_g.bat_%j.o
