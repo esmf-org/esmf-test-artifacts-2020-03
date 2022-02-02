@@ -1,21 +1,21 @@
-Mon Oct 4 07:13:52 MDT 2021
+Wed Feb 2 12:54:37 MST 2022
 #!/bin/sh -l
 #PBS -N build-intel_18.0.5_intelmpi_O.bat
 #PBS -l walltime=1:00:00
 #PBS -l walltime=3:00:00
 #PBS -q regular
-#PBS -A p48503002
+#PBS -A p93300606
 #PBS -l select=1:ncpus=36:mpiprocs=36
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
-cd /glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop
+cd /glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop
 module load intel/18.0.5 impi/2018.4.274 netcdf/4.6.3
 module list >& module-build.log
 
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/glade/scratch/mpotts/intel_18.0.5_intelmpi_O_develop
+export ESMF_DIR=/glade/scratch/rlong/esmf-testing/intel_18.0.5_intelmpi_O_develop
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'
