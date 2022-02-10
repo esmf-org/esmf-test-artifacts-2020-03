@@ -1,8 +1,8 @@
-Thu Feb 10 01:16:08 EST 2022
+Thu Feb 10 01:16:10 EST 2022
 #!/bin/sh -l
 #SBATCH --account=s2326
-#SBATCH -o test-gfortran_8.3.0_mpt_g.bat_%j.o
-#SBATCH -e test-gfortran_8.3.0_mpt_g.bat_%j.e
+#SBATCH -o test-gfortran_8.3.0_mpiuni_g.bat_%j.o
+#SBATCH -e test-gfortran_8.3.0_mpiuni_g.bat_%j.e
 #SBATCH --time=1:00:00
 #SBATCH --partition=compute
 #SBATCH --qos=allnccs
@@ -10,15 +10,15 @@ Thu Feb 10 01:16:08 EST 2022
 #SBATCH --ntasks-per-node=28
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
-module load comp/gcc/8.3.0 mpi/sgi-mpt/2.17 
+module load comp/gcc/8.3.0  
 
 module list >& module-test.log
 
 set -x
 
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpt_g_develop
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpiuni_g_develop
 export ESMF_COMPILER=gfortran
-export ESMF_COMM=mpt
+export ESMF_COMM=mpiuni
 export ESMF_BOPT='g'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
