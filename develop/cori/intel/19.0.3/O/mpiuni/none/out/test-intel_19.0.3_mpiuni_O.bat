@@ -1,8 +1,8 @@
-Wed Feb 9 15:18:27 PST 2022
+Thu Feb 10 03:17:41 PST 2022
 #!/bin/sh -l
 #SBATCH --account=e3sm
-#SBATCH -o test-intel_19.0.3_mpi_O.bat_%j.o
-#SBATCH -e test-intel_19.0.3_mpi_O.bat_%j.e
+#SBATCH -o test-intel_19.0.3_mpiuni_O.bat_%j.o
+#SBATCH -e test-intel_19.0.3_mpiuni_O.bat_%j.e
 #SBATCH --time=3:00:00
 #SBATCH -C haswell
 #SBATCH --qos=regular
@@ -10,7 +10,7 @@ Wed Feb 9 15:18:27 PST 2022
 #SBATCH --ntasks-per-node=32
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
-module load intel/19.0.3.199 cray-mpich/7.7.10 cray-netcdf/4.6.3.2
+module load intel/19.0.3.199  cray-netcdf/4.6.3.2
 module list >& module-test.log
 
 set -x
@@ -18,9 +18,9 @@ export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdf"
 export ESMF_NETCDFF_LIBS="-lnetcdff"
-export ESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpi_O_develop
+export ESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_O_develop
 export ESMF_COMPILER=intel
-export ESMF_COMM=mpi
+export ESMF_COMM=mpiuni
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
