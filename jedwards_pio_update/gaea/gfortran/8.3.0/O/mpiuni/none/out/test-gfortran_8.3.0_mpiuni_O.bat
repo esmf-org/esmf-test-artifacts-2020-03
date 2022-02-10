@@ -1,8 +1,8 @@
-Wed Feb 9 00:44:14 EST 2022
+Wed Feb 9 23:14:52 EST 2022
 #!/bin/sh -l
 #SBATCH --account=nggps_emc
-#SBATCH -o test-gfortran_8.3.0_mpi_O.bat_%j.o
-#SBATCH -e test-gfortran_8.3.0_mpi_O.bat_%j.e
+#SBATCH -o test-gfortran_8.3.0_mpiuni_O.bat_%j.o
+#SBATCH -e test-gfortran_8.3.0_mpiuni_O.bat_%j.e
 #SBATCH --time=3:00:00
 #SBATCH --cluster=c4
 #SBATCH --qos=normal
@@ -14,16 +14,16 @@ export JOBID=$SLURM_JOBID
 module unload PrgEnv-intel
 
 module load PrgEnv-gnu
-module load gcc/8.3.0 cray-mpich/7.7.11 cray-netcdf/4.6.3.2
+module load gcc/8.3.0  cray-netcdf/4.6.3.2
 module list >& module-test.log
 
 set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-export ESMF_DIR=/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O_jedwards_pio_update
+export ESMF_DIR=/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpiuni_O_jedwards_pio_update
 export ESMF_COMPILER=gfortran
-export ESMF_COMM=mpi
+export ESMF_COMM=mpiuni
 export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
