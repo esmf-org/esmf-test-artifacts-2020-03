@@ -1,4 +1,4 @@
-Thu Feb 17 01:41:32 EST 2022
+Thu Feb 17 23:52:32 EST 2022
 #!/bin/sh -l
 #SBATCH --account=nggps_emc
 #SBATCH -o test-gfortran_8.3.0_mpi_g.bat_%j.o
@@ -13,7 +13,7 @@ export JOBID=$SLURM_JOBID
 
 module unload PrgEnv-intel
 
-module load PrgEnv-gnu
+module load PrgEnv-gnu git/2.26.0
 module load gcc/8.3.0 cray-mpich/7.7.11 cray-netcdf/4.6.3.2
 module list >& module-test.log
 
