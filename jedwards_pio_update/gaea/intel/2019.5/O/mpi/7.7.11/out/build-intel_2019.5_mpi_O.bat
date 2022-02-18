@@ -1,4 +1,4 @@
-Thu Feb 17 00:38:21 EST 2022
+Thu Feb 17 23:46:35 EST 2022
 #!/bin/sh -l
 #SBATCH --account=nggps_emc
 #SBATCH -o build-intel_2019.5_mpi_O.bat_%j.o
@@ -10,6 +10,8 @@ Thu Feb 17 00:38:21 EST 2022
 #SBATCH --ntasks-per-node=24
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+
+module load git/2.26.0
 module load intel/19.0.5.281 cray-mpich/7.7.11 cray-netcdf/4.6.3.2
 module list >& module-build.log
 
