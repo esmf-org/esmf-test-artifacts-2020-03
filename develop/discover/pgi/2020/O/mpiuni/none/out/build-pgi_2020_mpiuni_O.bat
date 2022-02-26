@@ -1,4 +1,4 @@
-Fri Feb 25 02:46:26 EST 2022
+Sat Feb 26 01:35:56 EST 2022
 #!/bin/sh -l
 #SBATCH --account=s2326
 #SBATCH -o build-pgi_2020_mpiuni_O.bat_%j.o
@@ -10,6 +10,7 @@ Fri Feb 25 02:46:26 EST 2022
 #SBATCH --ntasks-per-node=28
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+export ESMF_MPIRUN=/gpfsm/dnb04/projects/p98/mpotts/esmf/pgi_2020_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load comp/pgi/20.4  
 
 module list >& module-build.log
