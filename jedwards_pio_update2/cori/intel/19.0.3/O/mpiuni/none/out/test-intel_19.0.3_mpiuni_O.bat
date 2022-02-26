@@ -1,8 +1,8 @@
-Sat Feb 26 14:08:49 PST 2022
+Sat Feb 26 14:17:48 PST 2022
 #!/bin/sh -l
 #SBATCH --account=e3sm
-#SBATCH -o test-intel_19.0.3_mpiuni_g.bat_%j.o
-#SBATCH -e test-intel_19.0.3_mpiuni_g.bat_%j.e
+#SBATCH -o test-intel_19.0.3_mpiuni_O.bat_%j.o
+#SBATCH -e test-intel_19.0.3_mpiuni_O.bat_%j.e
 #SBATCH --time=3:00:00
 #SBATCH -C haswell
 #SBATCH --qos=regular
@@ -18,10 +18,10 @@ export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdf"
 export ESMF_NETCDFF_LIBS="-lnetcdff"
-export ESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_g_develop
+export ESMF_DIR=/global/u2/r/rsdunlap/esmf-testing/intel_19.0.3_mpiuni_O_jedwards_pio_update2
 export ESMF_COMPILER=intel
 export ESMF_COMM=mpiuni
-export ESMF_BOPT='g'
+export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
