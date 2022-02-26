@@ -1,4 +1,4 @@
-Sat Feb 26 01:16:29 EST 2022
+Sat Feb 26 01:16:16 EST 2022
 #!/bin/sh -l
 #SBATCH --account=s2326
 #SBATCH -o build-intel_2020_intelmpi_O.bat_%j.o
@@ -18,7 +18,7 @@ set -x
 export ESMF_NETCDF=nc-config
 
 export ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"
-export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/intel_2020_intelmpi_O_develop
+export ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/intel_2020_intelmpi_O_jedwards_pio_update2
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
 export ESMF_BOPT='O'
