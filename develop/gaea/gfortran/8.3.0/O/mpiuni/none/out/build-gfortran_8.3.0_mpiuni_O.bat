@@ -1,4 +1,4 @@
-Fri Feb 25 00:45:27 EST 2022
+Fri Feb 25 23:20:31 EST 2022
 #!/bin/sh -l
 #SBATCH --account=nggps_emc
 #SBATCH -o build-gfortran_8.3.0_mpiuni_O.bat_%j.o
@@ -14,6 +14,7 @@ export JOBID=$SLURM_JOBID
 module unload PrgEnv-intel
 
 module load PrgEnv-gnu git/2.26.0
+export ESMF_MPIRUN=/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load gcc/8.3.0  cray-netcdf/4.6.3.2
 module list >& module-build.log
 
