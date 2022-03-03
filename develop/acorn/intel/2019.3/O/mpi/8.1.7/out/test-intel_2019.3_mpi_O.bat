@@ -1,4 +1,4 @@
-Fri Feb 11 01:55:35 UTC 2022
+Thu 03 Mar 2022 03:06:57 PM UTC
 #!/bin/sh -l
 #PBS -N test-intel_2019.3_mpi_O.bat
 #PBS -l walltime=1:00:00
