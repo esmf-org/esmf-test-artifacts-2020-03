@@ -1,0 +1,108 @@
+build time -- 2022-03-03 06:32:41.122014
+3:   Beginning Test, file ESMF_IOUTest.F90, line 57
+0:   Beginning Test, file ESMF_IOUTest.F90, line 57
+1:   Beginning Test, file ESMF_IOUTest.F90, line 57
+2:   Beginning Test, file ESMF_IOUTest.F90, line 57
+1:   NUMBER_OF_PROCESSORS           4
+3:   NUMBER_OF_PROCESSORS           4
+0:   NUMBER_OF_PROCESSORS           4
+2:   NUMBER_OF_PROCESSORS           4
+2: MPT ERROR: Rank 2(g:2) received signal SIGSEGV(11).
+2: 	Process ID: 26515, Host: r1i5n28, Program: /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest
+2: 	MPT Version: HPE MPT 2.19  02/23/19 05:30:09
+2: 
+2: MPT: --------stack traceback-------
+2: MPT: Attaching to program: /proc/26515/exe, process 26515
+2: MPT: Try: zypper install -C "debuginfo(build-id)=4e96cf37d52b9c2f3648e691878b682da5abfa42"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=5eb2f40ad3b0125943aba8f08dd08609351a2967"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=b115bb26e97505a5bd3b56d70d20459aa1206ac9"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=4f3d05f200db29c6835a48e466e0378a8541fd36"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: [Thread debugging using libthread_db enabled]
+2: MPT: Using host libthread_db library "/glade/u/apps/ch/os/lib64/libthread_db.so.1".
+2: MPT: Try: zypper install -C "debuginfo(build-id)=113718dffda97ded5e3e87c2c557efb3657c185c"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=5f9ec139af58fa59c33f72d1b3e56f083f1613ae"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=93c4deac1088eb84fbd01cf2a2c54399f516e9a7"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=ad6d98e9e3042e77c051f1f27e971460bf1e428b"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=4c08f43bb18e99a7df4bad5c4a52bac67ddf9b8d"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=3ae04b58bd81ea7745dba789d89937e719309568"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=76d8c012144838e4e5466798858289fba2057537"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: Try: zypper install -C "debuginfo(build-id)=ba8002518966160a27c335e04ce8932989f69056"
+2: MPT: (no debugging symbols found)...done.
+2: MPT: 0x00002ac0849936da in waitpid ()
+2: MPT:    from /glade/u/apps/ch/os/lib64/libpthread.so.0
+2: MPT: Missing separate debuginfos, use: zypper install glibc-debuginfo-2.22-49.16.x86_64
+2: MPT: (gdb) #0  0x00002ac0849936da in waitpid ()
+2: MPT:    from /glade/u/apps/ch/os/lib64/libpthread.so.0
+2: MPT: #1  0x00002ac0850d2db6 in mpi_sgi_system (
+2: MPT: #2  MPI_SGI_stacktraceback (
+2: MPT:     header=header@entry=0x7ffd027d7380 "MPT ERROR: Rank 2(g:2) received signal SIGSEGV(11).\n\tProcess ID: 26515, Host: r1i5n28, Program: /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/test/testg/Linux.intel.64.mpt."...) at sig.c:340
+2: MPT: #3  0x00002ac0850d2fb2 in first_arriver_handler (signo=signo@entry=11, 
+2: MPT:     stack_trace_sem=stack_trace_sem@entry=0x2ac08a080080) at sig.c:489
+2: MPT: #4  0x00002ac0850d334b in slave_sig_handler (signo=11, 
+2: MPT:     siginfo=<optimized out>, extra=<optimized out>) at sig.c:564
+2: MPT: #5  <signal handler called>
+2: MPT: #6  0x00002ac07f4e5d9d in ESMCI::LogErr::MsgFoundError (
+2: MPT:     this=0x2ac083cc9b80 <ESMC_LogDefault>, rcToCheck=0, 
+2: MPT:     msg=0x2ac081dd1eec "Internal subroutine call returned Error", LINE=464, 
+2: MPT:     FILE=0x2ac081dd1ecc "ESMCI_IO.C", 
+2: MPT:     method=0x2ac081dd1fd8 "ESMCI::IO::write()", rcToReturn=0xa1443c7c)
+2: MPT:     at /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/src/Infrastructure/LogErr/src/ESMCI_LogErr.C:586
+2: MPT: #7  0x00002ac07f4bd287 in ESMCI::IO::write (this=0x2488640, file=..., 
+2: MPT:     iofmt=ESMF_IOFMT_NETCDF, overwrite=false, status=ESMC_FILESTATUS_UNKNOWN, 
+2: MPT:     timeslice=0x0)
+2: MPT:     at /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/src/Infrastructure/IO/src/ESMCI_IO.C:464
+2: MPT: #8  0x00002ac07ef25a4a in ESMCI::Array::write (this=0x2488d60, file=..., 
+2: MPT:     variableName=..., convention=..., purpose=..., overwrite=0x7ffd027d87d3, 
+2: MPT:     status=0x7ffd027d89c8, timeslice=0x0, iofmt=0x7ffd027d89b8)
+2: MPT:     at /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/src/Infrastructure/Array/src/ESMCI_Array.C:4091
+2: MPT: #9  0x00002ac07ef07173 in c_esmc_arraywrite_ (array=0x7ffd027d8e50, 
+2: MPT:     file=0x7ffd027da8a0 "doodle.nc", ' ' <repeats 23 times>, "\314\314\314\314\314\314\314\314 ESMF_OutputWeightFile", ' ' <repeats 138 times>..., 
+2: MPT:     variableName=0x2ac0824a52d0 <__STRLITPACK_1550> "S", 
+2: MPT:     convention=0x2ac0824a52d4 <__STRLITPACK_1549> "netcdf", 
+2: MPT:     purpose=0x2ac0824a52dc <__STRLITPACK_1548> "metadata", 
+2: MPT:     opt_overwriteflag=0x7ffd027d89d8, status=0x7ffd027d89c8, timeslice=0x0, 
+2: MPT:     iofmt=0x7ffd027d89b8, rc=0x7ffd027d8958, file_l=32, varname_l=1, 
+2: MPT:     convention_l=6, purpose_l=8)
+2: MPT:     at /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/src/Infrastructure/Array/interface/ESMCI_Array_F.C:798
+2: MPT: #10 0x00002ac07fb64d9b in esmf_arraymod::esmf_arraywrite (array=..., 
+2: MPT:     filename=..., 
+2: MPT:     keywordenforcer=<error reading variable: Cannot access memory at address 0x0>, variablename=..., convention=..., purpose=..., overwrite=.FALSE., 
+2: MPT:     status=<error reading variable: Cannot access memory at address 0x0>, 
+2: MPT:     timeslice=<error reading variable: Cannot access memory at address 0x0>, 
+2: MPT:     iofmt=<error reading variable: Cannot access memory at address 0x0>, 
+2: MPT:     rc=18, .tmp.FILENAME.len_V$5a41=32, .tmp.VARIABLENAME.len_V$5a45=1, 
+2: MPT:     .tmp.CONVENTION.len_V$5a48=6, .tmp.PURPOSE.len_V$5a4b=8)
+2: MPT:     at /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/src/Infrastructure/Array/interface/ESMF_Array.F90:3989
+2: MPT: #11 0x00002ac0808ef2d2 in esmf_ioscripmod::esmf_outputweightfile (
+2: MPT:     weightfile=..., factorlist=..., factorindexlist=..., rc=-1, 
+2: MPT:     .tmp.WEIGHTFILE.len_V$39ee=32)
+2: MPT:     at /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/src/Infrastructure/IO/interface/ESMF_IOScrip.F90:346
+2: MPT: #12 0x00000000004097bc in esmf_ioutest () at ESMF_IOUTest.F90:79
+2: MPT: #13 0x0000000000408b9e in main ()
+2: MPT: #14 0x00002ac085d416e5 in __libc_start_main ()
+2: MPT:    from /glade/u/apps/ch/os/lib64/libc.so.6
+2: MPT: #15 0x0000000000408aa9 in _start () at ../sysdeps/x86_64/start.S:118
+2: MPT: (gdb) A debugging session is active.
+2: MPT: 
+2: MPT: 	Inferior 1 [process 26515] will be detached.
+2: MPT: 
+2: MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
+2: MPT: Detaching from program: /proc/26515/exe, process 26515
+2: 
+2: MPT: -----stack traceback ends-----
+2: MPT: On host r1i5n28, Program /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/test/testg/Linux.intel.64.mpt.default/ESMF_IOUTest, Rank 2, Process 26515: Dumping core on signal SIGSEGV(11) into directory /glade/scratch/rlong/esmf-testing/intel_18.0.5_mpt_g_jedwards_pio_update2/test/testg/Linux.intel.64.mpt.default
+-1: MPT ERROR: MPI_COMM_WORLD rank 2 has terminated without calling MPI_Finalize()
+-1: 	aborting job
+MPT: Received signal 11
