@@ -1,8 +1,8 @@
-Thu Mar 3 15:49:36 UTC 2022
+Thu Mar 3 15:49:32 UTC 2022
 #!/bin/sh -l
 #SBATCH --account=star
-#SBATCH -o test-intel_2019.0.5_intelmpi_g.bat_%j.o
-#SBATCH -e test-intel_2019.0.5_intelmpi_g.bat_%j.e
+#SBATCH -o test-intel_2019.0.5_intelmpi_O.bat_%j.o
+#SBATCH -e test-intel_2019.0.5_intelmpi_O.bat_%j.e
 #SBATCH --time=2:30:00
 #SBATCH --partition=s4
 #SBATCH --qos=normal
@@ -20,10 +20,10 @@ module list >& module-test.log
 set -x
 export ESMF_NETCDF=nc-config
 
-export ESMF_DIR=/scratch/users/mpotts/intel_2019.0.5_intelmpi_g_develop
+export ESMF_DIR=/scratch/users/mpotts/intel_2019.0.5_intelmpi_O_jedwards_pio_update2
 export ESMF_COMPILER=intel
 export ESMF_COMM=intelmpi
-export ESMF_BOPT='g'
+export ESMF_BOPT='O'
 export ESMF_TESTEXHAUSTIVE='ON'
 export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
